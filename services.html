@@ -1487,13 +1487,36 @@
 <script>
 
   /* =========================================
-     APPOINTMENT SERVICES STORAGE
+     SAFE SELECTED SERVICES STORAGE
      ========================================= */
 
-  let selectedServices =
-    JSON.parse(
-      localStorage.getItem("selectedServices")
-    ) || [];
+  let selectedServices = [];
+
+  try {
+
+    const savedServices =
+      localStorage.getItem("selectedServices");
+
+    if (savedServices) {
+
+      const parsedServices =
+        JSON.parse(savedServices);
+
+      if (Array.isArray(parsedServices)) {
+        selectedServices = parsedServices;
+      }
+
+    }
+
+  } catch (error) {
+
+    console.log("Old service data cleared.");
+
+    localStorage.removeItem("selectedServices");
+
+    selectedServices = [];
+
+  }
 
 
   /* =========================================
@@ -1502,43 +1525,24 @@
 
   function addService(serviceName, button) {
 
-    if (
-      !selectedServices.includes(serviceName)
-    ) {
+    if (!selectedServices.includes(serviceName)) {
 
       selectedServices.push(serviceName);
-
 
       localStorage.setItem(
         "selectedServices",
         JSON.stringify(selectedServices)
       );
 
-
-      updateBasket();
-
-
-      if (button) {
-
-        button.classList.add("added");
-
-        button.textContent = "✓ ADDED";
-
-      }
-
     }
 
-    else {
+    updateBasket();
 
-      /* Already selected */
+    if (button) {
 
-      if (button) {
+      button.classList.add("added");
 
-        button.classList.add("added");
-
-        button.textContent = "✓ ADDED";
-
-      }
+      button.textContent = "✓ ADDED";
 
     }
 
@@ -1551,23 +1555,26 @@
 
   function updateBasket() {
 
-    const count =
-      selectedServices.length;
-
-
     const countElement =
       document.getElementById("basketCount");
 
-
     const itemsElement =
       document.getElementById("basketItems");
+
+
+    if (!countElement || !itemsElement) {
+      return;
+    }
+
+
+    const count =
+      selectedServices.length;
 
 
     if (count === 0) {
 
       countElement.textContent =
         "0 Services Selected";
-
 
       itemsElement.textContent =
         "Select services to continue";
@@ -1590,7 +1597,7 @@
 
 
   /* =========================================
-     RESTORE BUTTON STATES
+     RESTORE SELECTED BUTTONS
      ========================================= */
 
   function restoreSelectedButtons() {
@@ -1610,24 +1617,22 @@
       }
 
 
-      selectedServices.forEach(
-        function(service) {
+      selectedServices.forEach(function(service) {
 
-          if (
-            onclickValue.includes(
-              "'" + service + "'"
-            )
-          ) {
+        if (
+          onclickValue.includes(
+            "'" + service + "'"
+          )
+        ) {
 
-            button.classList.add("added");
+          button.classList.add("added");
 
-            button.textContent =
-              "✓ ADDED";
-
-          }
+          button.textContent =
+            "✓ ADDED";
 
         }
-      );
+
+      });
 
     });
 
@@ -1643,7 +1648,6 @@
   restoreSelectedButtons();
 
 </script>
-
 
 </body>
 </html>
