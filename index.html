@@ -1,2603 +1,1848 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Charming Beauty Care | Luxury Ladies Beauty Salon in Bhopal</title>
 
-  <title>Charming Beauty Care | Luxury Ladies Beauty Salon in Bhopal</title>
+<meta name="description" content="Charming Beauty Care is a luxury ladies beauty salon and beautician training center in Bhopal. Professional beauty care, facial, makeup, hair, waxing, manicure, pedicure and beauty training since 2004.">
 
-  <meta name="description"
-    content="Charming Beauty Care is a ladies-only beauty salon and beautician training center in Bhopal. Professional beauty care, bridal makeup, facial, hair care, waxing, manicure, pedicure and beauty training since 2004.">
+<meta name="keywords" content="beauty parlour Bhopal, ladies beauty salon Bhopal, Charming Beauty Care, facial Bhopal, bridal makeup Bhopal, beauty parlour Arera Colony, beautician training Bhopal">
 
-  <meta name="keywords"
-    content="beauty parlour Bhopal, ladies beauty salon Bhopal, Charming Beauty Care, bridal makeup Bhopal, facial Bhopal, beauty training Bhopal">
+<meta name="author" content="Charming Beauty Care">
 
-  <meta name="author" content="Charming Beauty Care">
+<style>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+:root{
+    --wine:#54152b;
+    --wine-dark:#32101c;
+    --wine-light:#72263f;
+    --gold:#c9a45c;
+    --gold-light:#e7cf96;
+    --cream:#faf6f0;
+    --ivory:#fffdf9;
+    --blush:#f4e5e5;
+    --text:#33252a;
+    --muted:#75666b;
+    --white:#ffffff;
+    --shadow:0 15px 45px rgba(53,18,30,.12);
+}
 
-  <style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-    /* =========================================================
-       CHARMING BEAUTY CARE
-       PREMIUM MASTER WEBSITE
-       ========================================================= */
+html{
+    scroll-behavior:smooth;
+}
 
-    :root {
-      --wine: #5b1828;
-      --wine-dark: #350d18;
-      --wine-light: #7b2a3d;
+body{
+    font-family:'DM Sans',sans-serif;
+    color:var(--text);
+    background:var(--ivory);
+    line-height:1.7;
+}
 
-      --gold: #c9a45c;
-      --gold-light: #e5ca8d;
+img{
+    width:100%;
+    display:block;
+}
 
-      --ivory: #fffaf3;
-      --cream: #f7efe5;
-      --blush: #f4dfe1;
+a{
+    text-decoration:none;
+    color:inherit;
+}
 
-      --text: #33252a;
-      --muted: #76666b;
-      --white: #ffffff;
+button{
+    font-family:inherit;
+}
 
-      --shadow: 0 15px 45px rgba(52, 13, 24, 0.12);
+.container{
+    width:min(1180px,92%);
+    margin:auto;
+}
 
-      --serif: "Cormorant Garamond", Georgia, serif;
-      --sans: "Montserrat", Arial, sans-serif;
-    }
+/* ================= HEADER ================= */
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:999;
+    background:rgba(255,253,249,.96);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(201,164,92,.22);
+}
 
-    html {
-      scroll-behavior: smooth;
-    }
+.navbar{
+    height:78px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
 
-    body {
-      font-family: var(--sans);
-      background: var(--ivory);
-      color: var(--text);
-      line-height: 1.7;
-      overflow-x: hidden;
+.logo{
+    font-family:'Playfair Display',serif;
+    color:var(--wine);
+    font-size:22px;
+    font-weight:700;
+    letter-spacing:1px;
+}
 
-      /* Page entrance animation */
-      animation: pageFadeIn 1s ease both;
-    }
+.logo span{
+    display:block;
+    font-family:'DM Sans',sans-serif;
+    font-size:9px;
+    letter-spacing:3px;
+    color:var(--gold);
+    margin-top:-3px;
+}
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:28px;
+    list-style:none;
+}
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+.nav-links a{
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:1px;
+    color:var(--wine);
+    transition:.3s;
+}
 
-    button,
-    input,
-    textarea {
-      font-family: inherit;
-    }
+.nav-links a:hover{
+    color:var(--gold);
+}
 
-    .container {
-      width: min(1180px, 92%);
-      margin: auto;
-    }
+.nav-book{
+    padding:11px 18px;
+    background:var(--wine);
+    color:white!important;
+    border-radius:30px;
+}
 
-    /* =========================================================
-       GLOBAL
-       ========================================================= */
+.menu-btn{
+    display:none;
+    font-size:27px;
+    color:var(--wine);
+    cursor:pointer;
+}
 
-    .section {
-      padding: 100px 0;
-    }
+/* ================= HERO ================= */
 
-    .section-heading {
-      text-align: center;
-      max-width: 760px;
-      margin: 0 auto 55px;
-    }
-
-    .eyebrow {
-      color: var(--gold);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4 {
-      font-family: var(--serif);
-      line-height: 1.05;
-      color: var(--wine-dark);
-    }
-
-    h2 {
-      font-size: clamp(38px, 5vw, 58px);
-      margin-bottom: 18px;
-    }
-
-    .section-heading p {
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .gold-line {
-      width: 65px;
-      height: 1px;
-      background: var(--gold);
-      margin: 20px auto;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .gold-line::after {
-      content: "";
-      position: absolute;
-      left: -100%;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: var(--gold-light);
-      animation: goldLineMove 3s ease-in-out infinite;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 14px 25px;
-      border-radius: 40px;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1.2px;
-      transition:
-        transform .3s ease,
-        box-shadow .3s ease,
-        background .3s ease,
-        color .3s ease;
-      border: 1px solid transparent;
-      cursor: pointer;
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-    }
-
-    .btn-primary {
-      background: var(--gold);
-      color: var(--wine-dark);
-    }
-
-    .btn-primary:hover {
-      background: var(--gold-light);
-      box-shadow: 0 10px 25px rgba(201,164,92,.25);
-    }
-
-    .btn-outline {
-      border-color: var(--gold);
-      color: var(--gold-light);
-      background: transparent;
-    }
-
-    .btn-outline:hover {
-      background: var(--gold);
-      color: var(--wine-dark);
-    }
-
-    .btn-wine {
-      background: var(--wine);
-      color: white;
-    }
-
-    .btn-wine:hover {
-      background: var(--wine-dark);
-    }
-
-    /* =========================================================
-       HEADER
-       ========================================================= */
-
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      transition: .4s ease;
-    }
-
-    header.scrolled {
-      background: rgba(53, 13, 24, .97);
-      box-shadow: 0 5px 25px rgba(0,0,0,.15);
-      backdrop-filter: blur(10px);
-    }
-
-    .nav {
-      height: 82px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      color: white;
-      font-family: var(--serif);
-      font-size: 27px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      transition: .3s ease;
-    }
-
-    .logo:hover {
-      color: var(--gold-light);
-      transform: translateY(-1px);
-    }
-
-    .logo span {
-      display: block;
-      font-family: var(--sans);
-      font-size: 8px;
-      letter-spacing: 3px;
-      color: var(--gold-light);
-      text-align: center;
-      margin-top: -4px;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 27px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: white;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: .8px;
-      transition: .3s;
-      position: relative;
-    }
-
-    .nav-links a:not(.nav-cta)::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -7px;
-      width: 0;
-      height: 1px;
-      background: var(--gold-light);
-      transition: width .3s ease;
-    }
-
-    .nav-links a:not(.nav-cta):hover::after {
-      width: 100%;
-    }
-
-    .nav-links a:hover {
-      color: var(--gold-light);
-    }
-
-    .nav-cta {
-      padding: 10px 17px;
-      border: 1px solid var(--gold);
-      border-radius: 30px;
-    }
-
-    .menu-btn {
-      display: none;
-      color: white;
-      font-size: 27px;
-      cursor: pointer;
-      transition: .3s ease;
-    }
-
-    .menu-btn:hover {
-      color: var(--gold-light);
-    }
-
-    /* =========================================================
-       HERO
-       ========================================================= */
-
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      position: relative;
-      background:
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+    background:
         linear-gradient(90deg,
-        rgba(35,8,17,.92) 0%,
-        rgba(55,13,25,.75) 48%,
-        rgba(55,13,25,.28) 100%),
-        url("https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=2000&q=85")
-        center/cover;
-      color: white;
-      overflow: hidden;
-    }
-
-    /* Elegant light movement */
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: -20%;
-      left: -30%;
-      width: 35%;
-      height: 150%;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,.08),
-        transparent
-      );
-      transform: rotate(18deg);
-      animation: heroLight 9s ease-in-out infinite;
-      pointer-events: none;
-    }
-
-    .hero-content {
-      max-width: 700px;
-      padding-top: 70px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero .eyebrow {
-      color: var(--gold-light);
-      animation: luxuryFadeUp 1s ease .2s both;
-    }
-
-    .hero h1 {
-      color: white;
-      font-size: clamp(58px, 9vw, 105px);
-      margin-bottom: 8px;
-      animation: luxuryFadeUp 1s ease .4s both;
-    }
-
-    .hero-tagline {
-      font-family: var(--serif);
-      font-size: clamp(25px, 4vw, 40px);
-      color: var(--gold-light);
-      margin-bottom: 20px;
-      animation: luxuryFadeUp 1s ease .6s both;
-    }
-
-    .hero-description {
-      max-width: 610px;
-      font-size: 15px;
-      color: rgba(255,255,255,.86);
-      margin-bottom: 30px;
-      animation: luxuryFadeUp 1s ease .8s both;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-      animation: luxuryFadeUp 1s ease 1s both;
-    }
-
-    .trust {
-      margin-top: 38px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--gold-light);
-      font-size: 12px;
-      letter-spacing: 1px;
-      font-weight: 600;
-      animation: luxuryFadeUp 1s ease 1.2s both;
-    }
-
-    .trust-line {
-      width: 40px;
-      height: 1px;
-      background: var(--gold);
-    }
-
-    /* =========================================================
-       ABOUT
-       ========================================================= */
-
-    .about {
-      background: var(--ivory);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 70px;
-      align-items: center;
-    }
-
-    .image-placeholder {
-      min-height: 520px;
-      background:
-        linear-gradient(rgba(91,24,40,.12),rgba(91,24,40,.12)),
-        url("https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1000&q=80")
-        center/cover;
-      border-radius: 4px;
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: visible;
-    }
-
-    .image-placeholder::after {
-      content: "";
-      position: absolute;
-      inset: 12px;
-      border: 1px solid rgba(229,202,141,.6);
-      pointer-events: none;
-      transition: inset .5s ease;
-    }
-
-    .image-placeholder:hover::after {
-      inset: 18px;
-    }
-
-    .experience-box {
-      position: absolute;
-      right: -30px;
-      bottom: 35px;
-      background: var(--wine);
-      color: white;
-      padding: 25px 30px;
-      text-align: center;
-      box-shadow: var(--shadow);
-      animation: gentleFloat 4s ease-in-out infinite;
-      z-index: 2;
-    }
-
-    .experience-box strong {
-      display: block;
-      font-family: var(--serif);
-      font-size: 43px;
-      color: var(--gold-light);
-      line-height: 1;
-    }
-
-    .experience-box span {
-      font-size: 10px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-
-    .about-text p {
-      color: var(--muted);
-      margin-bottom: 20px;
-    }
-
-    .about-signature {
-      font-family: var(--serif);
-      color: var(--wine);
-      font-size: 28px;
-      margin-top: 25px;
-      transition: letter-spacing .4s ease;
-    }
-
-    .about-signature:hover {
-      letter-spacing: 1px;
-    }
-
-    /* =========================================================
-       SERVICES
-       ========================================================= */
-
-    .services {
-      background: var(--cream);
-    }
-
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
-
-    .service-card {
-      background: var(--white);
-      border: 1px solid rgba(201,164,92,.25);
-      overflow: hidden;
-      transition:
-        transform .45s ease,
-        box-shadow .45s ease;
-      box-shadow: 0 8px 30px rgba(50,20,25,.05);
-      position: relative;
-    }
-
-    .service-card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--gold);
-      transition: width .45s ease;
-      z-index: 2;
-    }
-
-    .service-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 45px rgba(52,13,24,.15);
-    }
-
-    .service-card:hover::before {
-      width: 100%;
-    }
-
-    .service-image {
-      height: 230px;
-      background-size: cover;
-      background-position: center;
-      transition: transform .7s ease;
-    }
-
-    .service-card:hover .service-image {
-      transform: scale(1.06);
-    }
-
-    .service-content {
-      padding: 25px;
-    }
-
-    .service-content h3 {
-      font-size: 29px;
-      margin-bottom: 9px;
-      transition: color .3s ease;
-    }
-
-    .service-card:hover .service-content h3 {
-      color: var(--wine-light);
-    }
-
-    .service-content p {
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 18px;
-    }
-
-    .learn-more {
-      color: var(--wine);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      transition: letter-spacing .3s ease;
-    }
-
-    .learn-more:hover {
-      letter-spacing: 1.8px;
-      color: var(--gold);
-    }
-
-    /* =========================================================
-       WHY US
-       ========================================================= */
-
-    .why-us {
-      background: var(--wine-dark);
-      color: white;
-    }
-
-    .why-us h2 {
-      color: white;
-    }
-
-    .why-us .section-heading p {
-      color: rgba(255,255,255,.7);
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 18px;
-    }
-
-    .feature {
-      text-align: center;
-      padding: 28px 15px;
-      border: 1px solid rgba(201,164,92,.3);
-      border-radius: 5px;
-      transition:
-        transform .4s ease,
-        border-color .4s ease,
-        background .4s ease,
-        box-shadow .4s ease;
-    }
-
-    .feature:hover {
-      transform: translateY(-7px);
-      border-color: var(--gold);
-      background: rgba(255,255,255,.04);
-      box-shadow: 0 15px 35px rgba(0,0,0,.18);
-    }
-
-    .feature-number {
-      font-family: var(--serif);
-      color: var(--gold-light);
-      font-size: 34px;
-      margin-bottom: 12px;
-      transition: transform .4s ease;
-    }
-
-    .feature:hover .feature-number {
-      transform: scale(1.12);
-    }
-
-    .feature h3 {
-      color: white;
-      font-size: 23px;
-      margin-bottom: 10px;
-    }
-
-    .feature p {
-      color: rgba(255,255,255,.68);
-      font-size: 12px;
-    }
-
-    /* =========================================================
-       OFFERS
-       ========================================================= */
-
-    .offers {
-      background: var(--blush);
-    }
-
-    .offer-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
-
-    .offer-card {
-      background: white;
-      padding: 35px 25px;
-      text-align: center;
-      border: 1px solid rgba(201,164,92,.35);
-      position: relative;
-      transition:
-        transform .45s ease,
-        box-shadow .45s ease;
-      overflow: hidden;
-    }
-
-    .offer-card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 2px;
-      background: var(--gold);
-      transition: left .5s ease;
-    }
-
-    .offer-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 45px rgba(91,24,40,.15);
-    }
-
-    .offer-card:hover::before {
-      left: 0;
-    }
-
-    .offer-label {
-      color: var(--gold);
-      font-size: 10px;
-      letter-spacing: 2px;
-      font-weight: 700;
-    }
-
-    .offer-card h3 {
-      font-size: 31px;
-      margin: 12px 0;
-    }
-
-    .price {
-      color: var(--wine);
-      font-family: var(--serif);
-      font-size: 48px;
-      font-weight: 700;
-      margin-bottom: 15px;
-      transition: transform .4s ease;
-    }
-
-    .offer-card:hover .price {
-      transform: scale(1.06);
-    }
-
-    .offer-card p {
-      color: var(--muted);
-      font-size: 13px;
-      margin-bottom: 25px;
-    }
-
-    .center-button {
-      text-align: center;
-      margin-top: 40px;
-    }
-
-    /* =========================================================
-       TRAINING
-       ========================================================= */
-
-    .training {
-      background: var(--ivory);
-    }
-
-    .training-box {
-      background:
-        linear-gradient(90deg, rgba(53,13,24,.96), rgba(91,24,40,.72)),
-        url("https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1800&q=80")
-        center/cover;
-      padding: 90px 10%;
-      color: white;
-      text-align: center;
-      border-radius: 5px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .training-box::before {
-      content: "";
-      position: absolute;
-      inset: 15px;
-      border: 1px solid rgba(229,202,141,.35);
-      pointer-events: none;
-    }
-
-    .training-box h2 {
-      color: white;
-    }
-
-    .training-box p {
-      max-width: 700px;
-      margin: 0 auto 28px;
-      color: rgba(255,255,255,.82);
-    }
-
-    /* =========================================================
-       GALLERY
-       ========================================================= */
-
-    .gallery {
-      background: var(--cream);
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-auto-rows: 220px;
-      gap: 15px;
-    }
-
-    .gallery-item {
-      background-size: cover;
-      background-position: center;
-      transition:
-        transform .6s ease,
-        filter .6s ease;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .gallery-item::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(91,24,40,0);
-      transition: background .5s ease;
-    }
-
-    .gallery-item:hover {
-      transform: scale(1.025);
-      filter: brightness(1.05);
-    }
-
-    .gallery-item:hover::after {
-      background: rgba(91,24,40,.08);
-    }
-
-    .gallery-item.large {
-      grid-column: span 2;
-      grid-row: span 2;
-    }
-
-    .gallery-item.tall {
-      grid-row: span 2;
-    }
-
-    /* =========================================================
-       TESTIMONIALS
-       ========================================================= */
-
-    .testimonials {
-      background: var(--ivory);
-    }
-
-    .testimonial-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
-
-    .testimonial {
-      background: white;
-      padding: 35px 28px;
-      border: 1px solid rgba(201,164,92,.25);
-      box-shadow: 0 8px 25px rgba(50,20,25,.05);
-      transition:
-        transform .4s ease,
-        box-shadow .4s ease;
-    }
-
-    .testimonial:hover {
-      transform: translateY(-7px);
-      box-shadow: 0 18px 40px rgba(52,13,24,.12);
-    }
-
-    .stars {
-      color: var(--gold);
-      letter-spacing: 3px;
-      margin-bottom: 18px;
-    }
-
-    .testimonial p {
-      color: var(--muted);
-      font-size: 13px;
-      font-style: italic;
-      margin-bottom: 20px;
-    }
-
-    .customer {
-      font-family: var(--serif);
-      font-size: 23px;
-      color: var(--wine);
-    }
-
-    /* =========================================================
-       APPOINTMENT CTA
-       ========================================================= */
-
-    .appointment {
-      background: var(--wine);
-      text-align: center;
-      color: white;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .appointment::before,
-    .appointment::after {
-      content: "";
-      position: absolute;
-      border: 1px solid rgba(229,202,141,.2);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-
-    .appointment::before {
-      width: 350px;
-      height: 350px;
-      left: -180px;
-      top: -180px;
-    }
-
-    .appointment::after {
-      width: 300px;
-      height: 300px;
-      right: -150px;
-      bottom: -150px;
-    }
-
-    .appointment h2 {
-      color: white;
-      position: relative;
-      z-index: 1;
-    }
-
-    .appointment p {
-      max-width: 650px;
-      margin: 0 auto 28px;
-      color: rgba(255,255,255,.8);
-      position: relative;
-      z-index: 1;
-    }
-
-    .appointment-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* =========================================================
-       CONTACT
-       ========================================================= */
-
-    .contact {
-      background: var(--cream);
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-    }
-
-    .contact-info h3 {
-      font-size: 38px;
-      margin-bottom: 8px;
-    }
-
-    .contact-subtitle {
-      color: var(--gold);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      margin-bottom: 25px;
-    }
-
-    .contact-detail {
-      display: flex;
-      gap: 15px;
-      margin: 18px 0;
-      align-items: flex-start;
-    }
-
-    .contact-icon {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      background: var(--wine);
-      color: var(--gold-light);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      transition:
-        transform .3s ease,
-        background .3s ease;
-    }
-
-    .contact-detail:hover .contact-icon {
-      transform: scale(1.08);
-      background: var(--wine-light);
-    }
-
-    .contact-detail strong {
-      display: block;
-      color: var(--wine);
-      font-size: 12px;
-      margin-bottom: 2px;
-    }
-
-    .contact-detail span {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .contact-form {
-      background: white;
-      padding: 35px;
-      box-shadow: var(--shadow);
-      transition: transform .4s ease, box-shadow .4s ease;
-    }
-
-    .contact-form:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 50px rgba(52,13,24,.15);
-    }
-
-    .contact-form h3 {
-      font-size: 34px;
-      margin-bottom: 20px;
-    }
-
-    .form-group {
-      margin-bottom: 15px;
-    }
-
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      border: 1px solid #e1d5d0;
-      padding: 13px 15px;
-      outline: none;
-      background: var(--ivory);
-      color: var(--text);
-      transition:
-        border-color .3s ease,
-        box-shadow .3s ease,
-        transform .3s ease;
-    }
-
-    .form-group textarea {
-      min-height: 110px;
-      resize: vertical;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      border-color: var(--gold);
-      box-shadow: 0 0 0 3px rgba(201,164,92,.10);
-      transform: translateY(-1px);
-    }
-
-    /* =========================================================
-       FOOTER
-       ========================================================= */
-
-    footer {
-      background: var(--wine-dark);
-      color: white;
-      padding-top: 70px;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
-      gap: 45px;
-      padding-bottom: 55px;
-    }
-
-    .footer-brand .logo {
-      display: inline-block;
-      margin-bottom: 15px;
-    }
-
-    .footer-brand p,
-    footer li,
-    footer a {
-      color: rgba(255,255,255,.65);
-      font-size: 12px;
-    }
-
-    footer h4 {
-      color: var(--gold-light);
-      font-family: var(--sans);
-      font-size: 12px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-
-    footer ul {
-      list-style: none;
-    }
-
-    footer li {
-      margin: 9px 0;
-    }
-
-    footer a:hover {
-      color: var(--gold-light);
-    }
-
-    .socials {
-      display: flex;
-      gap: 10px;
-      margin-top: 18px;
-    }
-
-    .socials a {
-      width: 35px;
-      height: 35px;
-      border: 1px solid rgba(201,164,92,.5);
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: var(--gold-light);
-      transition:
-        transform .3s ease,
-        background .3s ease,
-        color .3s ease;
-    }
-
-    .socials a:hover {
-      transform: translateY(-4px);
-      background: var(--gold);
-      color: var(--wine-dark);
-    }
-
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,.1);
-      padding: 20px 0;
-      text-align: center;
-      color: rgba(255,255,255,.5);
-      font-size: 11px;
-    }
-
-    /* =========================================================
-       FLOATING WHATSAPP
-       ========================================================= */
-
-    .whatsapp {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      width: 58px;
-      height: 58px;
-      border-radius: 50%;
-      background: #25D366;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 25px;
-      z-index: 999;
-      box-shadow: 0 8px 25px rgba(0,0,0,.2);
-      transition: .3s;
-      animation: whatsappPulse 3s infinite;
-    }
-
-    .whatsapp:hover {
-      transform: scale(1.08);
-    }
-
-    /* =========================================================
-       SCROLL REVEAL
-       ========================================================= */
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(35px);
-      transition:
-        opacity .8s ease,
-        transform .8s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Stagger animation for cards */
-    .service-card.reveal:nth-child(2),
-    .offer-card.reveal:nth-child(2),
-    .feature.reveal:nth-child(2),
-    .testimonial.reveal:nth-child(2) {
-      transition-delay: .08s;
-    }
-
-    .service-card.reveal:nth-child(3),
-    .offer-card.reveal:nth-child(3),
-    .feature.reveal:nth-child(3),
-    .testimonial.reveal:nth-child(3) {
-      transition-delay: .16s;
-    }
-
-    .service-card.reveal:nth-child(4),
-    .feature.reveal:nth-child(4) {
-      transition-delay: .24s;
-    }
-
-    .service-card.reveal:nth-child(5),
-    .feature.reveal:nth-child(5) {
-      transition-delay: .32s;
-    }
-
-    /* =========================================================
-       KEYFRAMES
-       ========================================================= */
-
-    @keyframes pageFadeIn {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
-    }
-
-    @keyframes luxuryFadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes gentleFloat {
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-8px);
-      }
-    }
-
-    @keyframes whatsappPulse {
-      0%,
-      70%,
-      100% {
-        box-shadow:
-          0 8px 25px rgba(0,0,0,.2);
-      }
-
-      75% {
-        box-shadow:
-          0 0 0 10px rgba(37,211,102,.12),
-          0 8px 25px rgba(0,0,0,.2);
-      }
-
-      85% {
-        box-shadow:
-          0 0 0 18px rgba(37,211,102,0),
-          0 8px 25px rgba(0,0,0,.2);
-      }
-    }
-
-    @keyframes heroLight {
-      0% {
-        left: -35%;
-      }
-
-      50% {
-        left: 110%;
-      }
-
-      100% {
-        left: 110%;
-      }
-    }
-
-    @keyframes goldLineMove {
-      0% {
-        left: -100%;
-      }
-
-      45%,
-      100% {
-        left: 100%;
-      }
-    }
-
-    /* =========================================================
-       MOBILE
-       ========================================================= */
-
-    @media (max-width: 950px) {
-
-      .nav-links {
-        position: absolute;
-        top: 82px;
-        left: 0;
-        width: 100%;
-        background: var(--wine-dark);
-        flex-direction: column;
-        gap: 0;
-        padding: 15px 0;
-        display: none;
-      }
-
-      .nav-links.active {
-        display: flex;
-        animation: mobileMenuOpen .35s ease both;
-      }
-
-      .nav-links li {
-        width: 100%;
-        text-align: center;
-      }
-
-      .nav-links a {
-        display: block;
-        padding: 12px;
-      }
-
-      .menu-btn {
-        display: block;
-      }
-
-      .about-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .service-grid,
-      .offer-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .features {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .testimonial-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .image-placeholder {
-        min-height: 450px;
-      }
-
-      .experience-box {
-        right: 15px;
-      }
-    }
-
-    @media (max-width: 650px) {
-
-      .section {
-        padding: 70px 0;
-      }
-
-      .nav {
-        height: 72px;
-      }
-
-      .nav-links {
-        top: 72px;
-      }
-
-      .logo {
-        font-size: 22px;
-      }
-
-      .hero {
-        min-height: 850px;
-      }
-
-      .hero-content {
-        padding-top: 100px;
-      }
-
-      .hero h1 {
-        font-size: 57px;
-      }
-
-      .hero-tagline {
-        font-size: 29px;
-      }
-
-      .hero-buttons {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .hero-buttons .btn {
-        width: 100%;
-      }
-
-      .about-grid {
-        gap: 40px;
-      }
-
-      .experience-box {
-        right: 15px;
-        bottom: 15px;
-      }
-
-      .service-grid,
-      .offer-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .features {
-        grid-template-columns: 1fr;
-      }
-
-      .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: 170px;
-      }
-
-      .gallery-item.large {
-        grid-column: span 2;
-        grid-row: span 2;
-      }
-
-      .gallery-item.tall {
-        grid-row: span 1;
-      }
-
-      .training-box {
-        padding: 60px 25px;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-form {
-        padding: 25px;
-      }
-
-      .whatsapp {
-        width: 54px;
-        height: 54px;
-        right: 15px;
-        bottom: 15px;
-      }
-    }
-
-    /* =========================================================
-       MOBILE MENU ANIMATION
-       ========================================================= */
-
-    @keyframes mobileMenuOpen {
-      from {
-        opacity: 0;
-        transform: translateY(-10px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* =========================================================
-       ACCESSIBILITY
-       ========================================================= */
-
-    @media (prefers-reduced-motion: reduce) {
-
-      *,
-      *::before,
-      *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
-        scroll-behavior: auto !important;
-      }
-
-      .reveal {
-        opacity: 1 !important;
-        transform: none !important;
-      }
-
-    }
-
-  </style>
+        rgba(50,16,28,.94) 0%,
+        rgba(50,16,28,.78) 43%,
+        rgba(50,16,28,.25) 100%),
+        url("salon-hero.jpg") center/cover no-repeat;
+}
+
+.hero-content{
+    color:white;
+    max-width:700px;
+    padding-top:70px;
+}
+
+.hero-small{
+    color:var(--gold-light);
+    letter-spacing:4px;
+    font-size:13px;
+    font-weight:600;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(48px,7vw,88px);
+    line-height:1.05;
+    margin-bottom:14px;
+}
+
+.hero h2{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(23px,3vw,38px);
+    font-weight:500;
+    color:var(--gold-light);
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:620px;
+    color:#f5eeee;
+    font-size:17px;
+    margin-bottom:30px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:14px 25px;
+    border-radius:40px;
+    font-weight:700;
+    font-size:12px;
+    letter-spacing:1px;
+    transition:.3s;
+}
+
+.btn-gold{
+    background:var(--gold);
+    color:var(--wine-dark);
+}
+
+.btn-gold:hover{
+    transform:translateY(-3px);
+    background:var(--gold-light);
+}
+
+.btn-outline{
+    border:1px solid var(--gold-light);
+    color:white;
+}
+
+.btn-outline:hover{
+    background:white;
+    color:var(--wine);
+}
+
+/* ================= GENERAL ================= */
+
+section{
+    padding:100px 0;
+}
+
+.section-tag{
+    color:var(--gold);
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:3px;
+    margin-bottom:10px;
+}
+
+.section-title{
+    font-family:'Playfair Display',serif;
+    color:var(--wine);
+    font-size:clamp(32px,4vw,52px);
+    line-height:1.2;
+    margin-bottom:18px;
+}
+
+.section-text{
+    color:var(--muted);
+    max-width:700px;
+}
+
+/* ================= ABOUT ================= */
+
+.about{
+    background:var(--cream);
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.about-image{
+    min-height:520px;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    background:url("about-salon.jpg") center/cover;
+}
+
+.about-content p{
+    margin-bottom:18px;
+    color:var(--muted);
+}
+
+.experience{
+    margin-top:28px;
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.experience-number{
+    font-family:'Playfair Display',serif;
+    font-size:55px;
+    color:var(--gold);
+    line-height:1;
+}
+
+.experience-text{
+    color:var(--wine);
+    font-weight:700;
+}
+
+/* ================= SERVICES ================= */
+
+.services{
+    background:var(--ivory);
+}
+
+.services-heading{
+    text-align:center;
+    max-width:700px;
+    margin:0 auto 50px;
+}
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.service-card{
+    background:white;
+    border:1px solid rgba(201,164,92,.18);
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 8px 30px rgba(53,18,30,.06);
+    transition:.35s;
+}
+
+.service-card:hover{
+    transform:translateY(-8px);
+    box-shadow:var(--shadow);
+}
+
+.service-image{
+    height:230px;
+    background-position:center;
+    background-size:cover;
+}
+
+.service-card:nth-child(1) .service-image{
+    background-image:url("hair-care.jpg");
+}
+
+.service-card:nth-child(2) .service-image{
+    background-image:url("facial.jpg");
+}
+
+.service-card:nth-child(3) .service-image{
+    background-image:url("bridal-makeup.jpg");
+}
+
+.service-card:nth-child(4) .service-image{
+    background-image:url("party-makeup.jpg");
+}
+
+.service-card:nth-child(5) .service-image{
+    background-image:url("manicure.jpg");
+}
+
+.service-card:nth-child(6) .service-image{
+    background-image:url("waxing.jpg");
+}
+
+.service-card:nth-child(7) .service-image{
+    background-image:url("hair-treatment.jpg");
+}
+
+.service-card:nth-child(8) .service-image{
+    background-image:url("beauty-package.jpg");
+}
+
+.service-card:nth-child(9) .service-image{
+    background-image:url("personalized-care.jpg");
+}
+
+.service-info{
+    padding:25px;
+}
+
+.service-info h3{
+    font-family:'Playfair Display',serif;
+    font-size:23px;
+    color:var(--wine);
+    margin-bottom:8px;
+}
+
+.service-info p{
+    color:var(--muted);
+    font-size:14px;
+    margin-bottom:17px;
+}
+
+.service-link{
+    color:var(--wine);
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:1px;
+    transition:.3s;
+}
+
+.service-link:hover{
+    color:var(--gold);
+}
+
+/* ================= WHY CHOOSE ================= */
+
+.why{
+    background:var(--wine-dark);
+    color:white;
+}
+
+.why .section-title{
+    color:white;
+}
+
+.why .section-tag{
+    color:var(--gold-light);
+}
+
+.why .section-text{
+    color:#e8dce0;
+}
+
+.why-grid{
+    margin-top:45px;
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:18px;
+}
+
+.why-card{
+    padding:28px 20px;
+    border:1px solid rgba(201,164,92,.25);
+    border-radius:16px;
+    background:rgba(255,255,255,.035);
+}
+
+.why-number{
+    color:var(--gold);
+    font-size:12px;
+    font-weight:700;
+}
+
+.why-card h3{
+    font-family:'Playfair Display',serif;
+    margin:14px 0 7px;
+    font-size:21px;
+}
+
+.why-card p{
+    font-size:13px;
+    color:#dbcdd1;
+}
+
+/* ================= OFFERS ================= */
+
+.offers{
+    background:var(--cream);
+}
+
+.offers-heading{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.offer-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.offer-card{
+    background:white;
+    padding:35px;
+    border-radius:18px;
+    border:1px solid rgba(201,164,92,.25);
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 8px 30px rgba(53,18,30,.05);
+}
+
+.offer-label{
+    display:inline-block;
+    color:var(--gold);
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:2px;
+    margin-bottom:12px;
+}
+
+.offer-card h3{
+    font-family:'Playfair Display',serif;
+    font-size:28px;
+    color:var(--wine);
+}
+
+.offer-price{
+    font-family:'Playfair Display',serif;
+    font-size:43px;
+    color:var(--gold);
+    margin:12px 0;
+}
+
+.offer-card p{
+    color:var(--muted);
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+.offer-btn{
+    display:inline-block;
+    padding:11px 22px;
+    border-radius:30px;
+    background:var(--wine);
+    color:white;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+/* ================= TRAINING ================= */
+
+.training{
+    background:
+        linear-gradient(90deg,
+        rgba(50,16,28,.94),
+        rgba(50,16,28,.75)),
+        url("training.jpg") center/cover;
+    color:white;
+}
+
+.training-content{
+    max-width:700px;
+}
+
+.training .section-title{
+    color:white;
+}
+
+.training p{
+    color:#eadfe2;
+    margin-bottom:25px;
+}
+
+/* ================= GALLERY ================= */
+
+.gallery-heading{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.gallery-item{
+    height:270px;
+    border-radius:15px;
+    overflow:hidden;
+    background-size:cover;
+    background-position:center;
+    transition:.4s;
+}
+
+.gallery-item:hover{
+    transform:scale(1.025);
+}
+
+.gallery-item:nth-child(1){
+    background-image:url("gallery-1.jpg");
+}
+
+.gallery-item:nth-child(2){
+    background-image:url("gallery-2.jpg");
+}
+
+.gallery-item:nth-child(3){
+    background-image:url("gallery-3.jpg");
+}
+
+.gallery-item:nth-child(4){
+    background-image:url("gallery-4.jpg");
+}
+
+.gallery-item:nth-child(5){
+    background-image:url("gallery-5.jpg");
+}
+
+.gallery-item:nth-child(6){
+    background-image:url("gallery-6.jpg");
+}
+
+.gallery-item:nth-child(7){
+    background-image:url("gallery-7.jpg");
+}
+
+.gallery-item:nth-child(8){
+    background-image:url("gallery-8.jpg");
+}
+
+/* ================= TESTIMONIALS ================= */
+
+.testimonials{
+    background:var(--cream);
+}
+
+.testimonial-heading{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.testimonial-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.testimonial{
+    background:white;
+    padding:30px;
+    border-radius:17px;
+    border:1px solid rgba(201,164,92,.18);
+}
+
+.stars{
+    color:var(--gold);
+    letter-spacing:3px;
+    margin-bottom:15px;
+}
+
+.testimonial p{
+    color:var(--muted);
+    font-size:14px;
+    margin-bottom:18px;
+}
+
+.customer{
+    color:var(--wine);
+    font-weight:700;
+}
+
+/* ================= CTA ================= */
+
+.cta{
+    background:var(--wine);
+    color:white;
+    text-align:center;
+}
+
+.cta .section-title{
+    color:white;
+}
+
+.cta p{
+    max-width:650px;
+    margin:0 auto 25px;
+    color:#eadfe2;
+}
+
+.cta-buttons{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    flex-wrap:wrap;
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+    background:var(--ivory);
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+}
+
+.contact-info h3{
+    font-family:'Playfair Display',serif;
+    color:var(--wine);
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.contact-info p{
+    color:var(--muted);
+    margin-bottom:20px;
+}
+
+.contact-detail{
+    margin:15px 0;
+    color:var(--wine);
+}
+
+.contact-form{
+    background:white;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:var(--shadow);
+}
+
+.contact-form input{
+    width:100%;
+    padding:14px;
+    margin-bottom:14px;
+    border:1px solid #ddd0d3;
+    border-radius:9px;
+    font-family:inherit;
+    outline:none;
+}
+
+.contact-form button{
+    width:100%;
+    border:none;
+    cursor:pointer;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:var(--wine-dark);
+    color:#e7dce0;
+    padding:65px 0 20px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr 1fr;
+    gap:40px;
+}
+
+.footer-logo{
+    font-family:'Playfair Display',serif;
+    color:white;
+    font-size:25px;
+    margin-bottom:12px;
+}
+
+footer h4{
+    color:var(--gold-light);
+    margin-bottom:15px;
+}
+
+footer p,
+footer li{
+    font-size:13px;
+    color:#cdbec3;
+}
+
+footer ul{
+    list-style:none;
+}
+
+footer li{
+    margin:7px 0;
+}
+
+footer a:hover{
+    color:var(--gold-light);
+}
+
+.footer-bottom{
+    margin-top:40px;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,.1);
+    text-align:center;
+    font-size:12px;
+    color:#b9a9af;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+    .nav-links{
+        position:absolute;
+        top:78px;
+        left:0;
+        width:100%;
+        background:var(--ivory);
+        flex-direction:column;
+        align-items:flex-start;
+        padding:25px;
+        display:none;
+        border-bottom:1px solid rgba(201,164,92,.2);
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .services-grid,
+    .offer-grid,
+    .testimonial-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .why-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .gallery-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .footer-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:650px){
+
+    section{
+        padding:75px 0;
+    }
+
+    .hero{
+        min-height:90vh;
+        background-position:center;
+    }
+
+    .hero-content{
+        padding-top:70px;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .hero h2{
+        font-size:25px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .about-grid,
+    .contact-grid{
+        grid-template-columns:1fr;
+        gap:35px;
+    }
+
+    .about-image{
+        min-height:380px;
+    }
+
+    .services-grid,
+    .offer-grid,
+    .testimonial-grid,
+    .why-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .gallery-item{
+        height:190px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .navbar{
+        height:70px;
+    }
+
+    .nav-links{
+        top:70px;
+    }
+
+}
+
+</style>
 </head>
 
 <body>
 
-  <!-- =======================================================
-       HEADER
-       ======================================================= -->
+<!-- ================= HEADER ================= -->
 
-  <header id="header">
+<header>
 
-    <div class="container nav">
+<div class="container navbar">
 
-      <a href="#home" class="logo">
-        CHARMING
-        <span>BEAUTY CARE</span>
-      </a>
+<a href="index.html" class="logo">
+    CHARMING BEAUTY CARE
+    <span>LUXURY LADIES BEAUTY SALON</span>
+</a>
 
-      <nav>
-        <ul class="nav-links" id="navLinks">
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
 
-          <li><a href="#home">HOME</a></li>
-          <li><a href="#about">ABOUT</a></li>
-          <li><a href="#services">SERVICES</a></li>
-          <li><a href="#offers">OFFERS</a></li>
-          <li><a href="#gallery">GALLERY</a></li>
-          <li><a href="#training">TRAINING</a></li>
-          <li><a href="#contact">CONTACT</a></li>
+<ul class="nav-links" id="navLinks">
 
-          <li>
-           <a href="appointment.html" class="btn btn-primary">
-              BOOK NOW
-          </a>
-          </li>
+<li><a href="#home">HOME</a></li>
+<li><a href="#about">ABOUT</a></li>
+<li><a href="services.html">SERVICES</a></li>
+<li><a href="#offers">OFFERS</a></li>
+<li><a href="#gallery">GALLERY</a></li>
+<li><a href="#training">TRAINING</a></li>
+<li><a href="#contact">CONTACT</a></li>
 
-        </ul>
-      </nav>
+<li>
+<a href="appointment.html" class="nav-book">
+BOOK NOW
+</a>
+</li>
 
-      <div class="menu-btn" id="menuBtn">☰</div>
+</ul>
 
-    </div>
+</div>
 
-  </header>
+</header>
 
 
-  <!-- =======================================================
-       HERO
-       ======================================================= -->
+<!-- ================= HERO ================= -->
 
-  <section class="hero" id="home">
+<section class="hero" id="home">
 
-    <div class="container">
+<div class="container">
 
-      <div class="hero-content">
+<div class="hero-content">
 
-        <div class="eyebrow">
-          LADIES BEAUTY SALON • BHOPAL
-        </div>
+<div class="hero-small">
+LADIES BEAUTY SALON • BHOPAL
+</div>
 
-        <h1>Charming Beauty Care</h1>
+<h1>
+Charming<br>
+Beauty Care
+</h1>
 
-        <div class="hero-tagline">
-          Where Beauty Meets Elegance
-        </div>
+<h2>
+Where Beauty Meets Elegance
+</h2>
 
-        <p class="hero-description">
-          Since 2004, we have been creating beautiful experiences
-          with professional beauty care, personalized attention
-          and timeless elegance.
-        </p>
+<p>
+Since 2004, we have been creating beautiful experiences with professional beauty care, personalized attention and timeless elegance.
+</p>
 
-        <div class="hero-buttons">
+<div class="hero-buttons">
 
-          <a href="#appointment" class="btn btn-primary">
-            BOOK AN APPOINTMENT
-          </a>
+<a href="appointment.html" class="btn btn-gold">
+BOOK AN APPOINTMENT
+</a>
 
-          <a href="#services" class="btn btn-outline">
-            EXPLORE OUR SERVICES
-          </a>
+<a href="services.html" class="btn btn-outline">
+EXPLORE OUR SERVICES
+</a>
 
-        </div>
+</div>
 
-        <div class="trust">
-          <span class="trust-line"></span>
-          TRUSTED BEAUTY CARE SINCE 2004
-        </div>
+</div>
 
-      </div>
+</div>
 
-    </div>
+</section>
 
-  </section>
 
+<!-- ================= ABOUT ================= -->
 
-  <!-- =======================================================
-       ABOUT
-       ======================================================= -->
+<section class="about" id="about">
 
-  <section class="section about" id="about">
+<div class="container about-grid">
 
-    <div class="container about-grid">
+<div class="about-image"></div>
 
-      <div class="image-placeholder">
+<div class="about-content">
 
-        <div class="experience-box">
-          <strong>20+</strong>
-          <span>Years of Experience</span>
-        </div>
+<div class="section-tag">
+OUR STORY
+</div>
 
-      </div>
+<h2 class="section-title">
+Beauty, Experience & Elegance Since 2004
+</h2>
 
-      <div class="about-text">
+<p>
+Charming Beauty Care is a ladies-only beauty salon dedicated to providing professional, personalized and premium beauty care in a comfortable and elegant environment.
+</p>
 
-        <div class="eyebrow">OUR STORY</div>
+<p>
+With years of experience, we focus on helping every woman look beautiful, feel confident and enjoy a truly special salon experience.
+</p>
 
-        <h2>Beauty, Experience & Elegance Since 2004</h2>
+<p>
+Beauty • Care • Confidence
+</p>
 
-        <div class="gold-line" style="margin-left:0;"></div>
+<div class="experience">
 
-        <p>
-          Charming Beauty Care is a ladies-only beauty salon
-          dedicated to providing professional, personalized and
-          premium beauty care in a comfortable and elegant
-          environment.
-        </p>
+<div class="experience-number">
+20+
+</div>
 
-        <p>
-          With years of experience, we focus on helping every woman
-          look beautiful, feel confident and enjoy a truly special
-          salon experience.
-        </p>
+<div class="experience-text">
+Years of<br>
+Beauty Experience
+</div>
 
-        <div class="about-signature">
-          Beauty • Care • Confidence
-        </div>
+</div>
 
-      </div>
+</div>
 
-    </div>
+</div>
 
-  </section>
+</section>
 
 
-  <!-- =======================================================
-       SERVICES
-       ======================================================= -->
+<!-- ================= SERVICES ================= -->
 
-  <section class="section services" id="services">
+<section class="services" id="services">
 
-    <div class="container">
+<div class="container">
 
-      <div class="section-heading">
+<div class="services-heading">
 
-        <div class="eyebrow">OUR EXPERTISE</div>
+<div class="section-tag">
+OUR EXPERTISE
+</div>
 
-        <h2>Our Signature Beauty Services</h2>
+<h2 class="section-title">
+Our Signature Beauty Services
+</h2>
 
-        <div class="gold-line"></div>
+<p class="section-text" style="margin:auto;">
+Discover professional beauty services designed to make you look beautiful, feel confident and leave refreshed.
+</p>
 
-        <p>
-          Discover professional beauty services designed to make
-          you look beautiful, feel confident and leave refreshed.
-        </p>
+</div>
 
-      </div>
 
+<div class="services-grid">
 
-      <div class="service-grid">
 
+<!-- 1 -->
 
-        <div class="service-card">
+<div class="service-card">
 
-          <div class="service-image"
-            style="background-image:url('https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=900&q=80');">
-          </div>
+<div class="service-image"></div>
 
-          <div class="service-content">
-            <h3>Hair Care & Styling</h3>
-            <p>
-              Professional cuts, styling, coloring and complete
-              hair care for your perfect look.
-            </p>
-            <a href="#appointment" class="learn-more">LEARN MORE →</a>
-          </div>
+<div class="service-info">
 
-        </div>
+<h3>Hair Care & Styling</h3>
 
+<p>
+Professional cuts, styling, coloring and complete hair care for your perfect look.
+</p>
 
-        <div class="service-card">
+<a href="services.html" class="service-link">
+VIEW SERVICES →
+</a>
 
-          <div class="service-image"
-            style="background-image:url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=80');">
-          </div>
+</div>
 
-          <div class="service-content">
-            <h3>Facial & Skin Care</h3>
-            <p>
-              Rejuvenating facial and skin care treatments for a
-              fresh and radiant glow.
-            </p>
-            <a href="#appointment" class="learn-more">LEARN MORE →</a>
-          </div>
+</div>
 
-        </div>
 
+<!-- 2 -->
 
-        <div class="service-card">
+<div class="service-card">
 
-          <div class="service-image"
-            style="background-image:url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80');">
-          </div>
+<div class="service-image"></div>
 
-          <div class="service-content">
-            <h3>Bridal Makeup</h3>
-            <p>
-              Elegant bridal beauty experiences designed for your
-              most special moments.
-            </p>
-            <a href="#appointment" class="learn-more">LEARN MORE →</a>
-          </div>
+<div class="service-info">
 
-        </div>
+<h3>Facial & Skin Care</h3>
 
+<p>
+Rejuvenating facial and skin care treatments for a fresh and radiant glow.
+</p>
 
-        <div class="service-card">
+<a href="services.html" class="service-link">
+VIEW SERVICES →
+</a>
 
-          <div class="service-image"
-            style="background-image:url('https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=900&q=80');">
-          </div>
+</div>
 
-          <div class="service-content">
-            <h3>Party Makeup</h3>
-            <p>
-              Sophisticated makeup looks for parties, celebrations
-              and special occasions.
-            </p>
-            <a href="#appointment" class="learn-more">LEARN MORE →</a>
-          </div>
+</div>
 
-        </div>
 
+<!-- 3 -->
 
-        <div class="service-card">
+<div class="service-card">
 
-          <div class="service-image"
-            style="background-image:url('https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=900&q=80');">
-          </div>
+<div class="service-image"></div>
 
-          <div class="service-content">
-            <h3>Manicure & Pedicure</h3>
-            <p>
-              Beautifully cared-for hands and feet with relaxing
-              professional treatments.
-            </p>
-            <a href="#appointment" class="learn-more">LEARN MORE →</a>
-          </div>
+<div class="service-info">
 
-        </div>
+<h3>Bridal Makeup</h3>
 
+<p>
+Elegant bridal beauty experiences designed for your most special moments.
+</p>
 
-        <div class="service-card">
+<a href="services.html" class="service-link">
+VIEW SERVICES →
+</a>
 
-          <div class="service-image"
-            style="background-image:url('https://images.unsplash.com/photo-1552693673-1bf958298935?auto=format&fit=crop&w=900&q=80');">
-          </div>
+</div>
 
-          <div class="service-content">
-            <h3>Waxing & Threading</h3>
-            <p>
-              Professional grooming services with attention to
-              comfort, hygiene and precision.
-            </p>
-            <a href="#appointment" class="learn-more">LEARN MORE →</a>
-          </div>
+</div>
 
-        </div>
 
+<!-- 4 -->
 
-        <div class="service-card">
+<div class="service-card">
 
-          <div class="service-image"
-            style="background-image:url('https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=900&q=80');">
-          </div>
+<div class="service-image"></div>
 
-          <div class="service-content">
-            <h3>Hair Treatments</h3>
-            <p>
-              Keratin, smoothening, spa and specialized treatments
-              for healthier-looking hair.
-            </p>
-            <a href="#appointment" class="learn-more">LEARN MORE →</a>
-          </div>
+<div class="service-info">
 
-        </div>
+<h3>Party Makeup</h3>
 
+<p>
+Sophisticated makeup looks for parties, celebrations and special occasions.
+</p>
 
-        <div class="service-card">
+<a href="services.html" class="service-link">
+VIEW SERVICES →
+</a>
 
-          <div class="service-image"
-            style="background-image:url('https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=900&q=80');">
-          </div>
+</div>
 
-          <div class="service-content">
-            <h3>Beauty Packages</h3>
-            <p>
-              Carefully selected beauty combinations for complete
-              care and exceptional value.
-            </p>
-            <a href="#appointment" class="learn-more">LEARN MORE →</a>
-          </div>
+</div>
 
-        </div>
 
+<!-- 5 -->
 
-        <div class="service-card">
+<div class="service-card">
 
-          <div class="service-image"
-            style="background-image:url('https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=80');">
-          </div>
+<div class="service-image"></div>
 
-          <div class="service-content">
-            <h3>Personalized Beauty Care</h3>
-            <p>
-              Personalized recommendations and beauty care based
-              on your individual needs.
-            </p>
-            <a href="#appointment" class="learn-more">LEARN MORE →</a>
-          </div>
+<div class="service-info">
 
-        </div>
+<h3>Manicure & Pedicure</h3>
 
+<p>
+Beautifully cared-for hands and feet with relaxing professional treatments.
+</p>
 
-      </div>
+<a href="services.html" class="service-link">
+VIEW SERVICES →
+</a>
 
-    </div>
+</div>
 
-  </section>
+</div>
 
 
-  <!-- =======================================================
-       WHY CHOOSE US
-       ======================================================= -->
+<!-- 6 -->
 
-  <section class="section why-us">
+<div class="service-card">
 
-    <div class="container">
+<div class="service-image"></div>
 
-      <div class="section-heading">
+<div class="service-info">
 
-        <div class="eyebrow">THE CHARMING DIFFERENCE</div>
+<h3>Waxing & Threading</h3>
 
-        <h2>Why Women Choose Charming Beauty Care</h2>
+<p>
+Professional grooming services with attention to comfort, hygiene and precision.
+</p>
 
-        <div class="gold-line"></div>
+<a href="services.html" class="service-link">
+VIEW SERVICES →
+</a>
 
-        <p>
-          Experience beauty care built around trust, comfort,
-          professionalism and personal attention.
-        </p>
+</div>
 
-      </div>
+</div>
 
 
-      <div class="features">
+<!-- 7 -->
 
+<div class="service-card">
 
-        <div class="feature">
-          <div class="feature-number">01</div>
-          <h3>Since 2004</h3>
-          <p>Years of trusted beauty experience.</p>
-        </div>
+<div class="service-image"></div>
 
+<div class="service-info">
 
-        <div class="feature">
-          <div class="feature-number">02</div>
-          <h3>Ladies Only</h3>
-          <p>Comfortable environment exclusively for women.</p>
-        </div>
+<h3>Hair Treatments</h3>
 
+<p>
+Keratin, smoothening, spa and specialized treatments for healthier-looking hair.
+</p>
 
-        <div class="feature">
-          <div class="feature-number">03</div>
-          <h3>Professional Care</h3>
-          <p>Experienced professionals focused on quality.</p>
-        </div>
+<a href="services.html" class="service-link">
+VIEW SERVICES →
+</a>
 
+</div>
 
-        <div class="feature">
-          <div class="feature-number">04</div>
-          <h3>Premium Experience</h3>
-          <p>Elegant surroundings and personalized attention.</p>
-        </div>
+</div>
 
 
-        <div class="feature">
-          <div class="feature-number">05</div>
-          <h3>Hygiene & Care</h3>
-          <p>Clean, comfortable and carefully maintained.</p>
-        </div>
+<!-- 8 -->
 
+<div class="service-card">
 
-      </div>
+<div class="service-image"></div>
 
-    </div>
+<div class="service-info">
 
-  </section>
+<h3>Beauty Packages</h3>
 
+<p>
+Carefully selected beauty combinations for complete care and exceptional value.
+</p>
 
-  <!-- =======================================================
-       OFFERS
-       ======================================================= -->
+<a href="services.html" class="service-link">
+VIEW SERVICES →
+</a>
 
-  <section class="section offers" id="offers">
+</div>
 
-    <div class="container">
+</div>
 
-      <div class="section-heading">
 
-        <div class="eyebrow">BEAUTY DEALS</div>
+<!-- 9 -->
 
-        <h2>Exclusive Beauty Offers</h2>
+<div class="service-card">
 
-        <div class="gold-line"></div>
+<div class="service-image"></div>
 
-        <p>
-          Beautiful experiences at specially selected prices.
-        </p>
+<div class="service-info">
 
-      </div>
+<h3>Personalized Beauty Care</h3>
 
+<p>
+Personalized recommendations and beauty care based on your individual needs.
+</p>
 
-      <div class="offer-grid">
+<a href="services.html" class="service-link">
+VIEW SERVICES →
+</a>
 
+</div>
 
-        <div class="offer-card">
+</div>
 
-          <div class="offer-label">POPULAR</div>
 
-          <h3>Glow Package</h3>
+</div>
 
-          <div class="price">₹999</div>
+</div>
 
-          <p>
-            Facial • D-Tan/Bleach • Waxing • Pedicure
-          </p>
+</section>
 
-          <a href="#appointment" class="btn btn-wine">
-            BOOK OFFER
-          </a>
 
-        </div>
+<!-- ================= WHY ================= -->
 
+<section class="why">
 
-        <div class="offer-card">
+<div class="container">
 
-          <div class="offer-label">SIGNATURE</div>
+<div class="section-tag">
+THE CHARMING DIFFERENCE
+</div>
 
-          <h3>Beauty Ritual</h3>
+<h2 class="section-title">
+Why Women Choose Charming Beauty Care
+</h2>
 
-          <div class="price">₹1499</div>
+<p class="section-text">
+Experience beauty care built around trust, comfort, professionalism and personal attention.
+</p>
 
-          <p>
-            Premium beauty services for a complete refresh.
-          </p>
 
-          <a href="#appointment" class="btn btn-wine">
-            BOOK OFFER
-          </a>
+<div class="why-grid">
 
-        </div>
+<div class="why-card">
+<div class="why-number">01</div>
+<h3>Since 2004</h3>
+<p>Years of trusted beauty experience.</p>
+</div>
 
+<div class="why-card">
+<div class="why-number">02</div>
+<h3>Ladies Only</h3>
+<p>Comfortable environment exclusively for women.</p>
+</div>
 
-        <div class="offer-card">
+<div class="why-card">
+<div class="why-number">03</div>
+<h3>Professional Care</h3>
+<p>Experienced professionals focused on quality.</p>
+</div>
 
-          <div class="offer-label">SEASONAL</div>
+<div class="why-card">
+<div class="why-number">04</div>
+<h3>Premium Experience</h3>
+<p>Elegant surroundings and personalized attention.</p>
+</div>
 
-          <h3>Special Offer</h3>
+<div class="why-card">
+<div class="why-number">05</div>
+<h3>Hygiene & Care</h3>
+<p>Clean, comfortable and carefully maintained.</p>
+</div>
 
-          <div class="price">₹1799</div>
+</div>
 
-          <p>
-            Selected beauty services combined for exceptional value.
-          </p>
+</div>
 
-          <a href="#appointment" class="btn btn-wine">
-            BOOK OFFER
-          </a>
+</section>
 
-        </div>
 
+<!-- ================= OFFERS ================= -->
 
-      </div>
+<section class="offers" id="offers">
 
+<div class="container">
 
-      <div class="center-button">
+<div class="offers-heading">
 
-        <a href="#contact" class="btn btn-wine">
-          VIEW ALL OFFERS
-        </a>
+<div class="section-tag">
+BEAUTY DEALS
+</div>
 
-      </div>
+<h2 class="section-title">
+Exclusive Beauty Offers
+</h2>
 
-    </div>
+<p class="section-text" style="margin:auto;">
+Beautiful experiences at specially selected prices.
+</p>
 
-  </section>
+</div>
 
 
-  <!-- =======================================================
-       TRAINING
-       ======================================================= -->
+<div class="offer-grid">
 
-  <section class="section training" id="training">
 
-    <div class="container">
+<div class="offer-card">
 
-      <div class="training-box">
+<div class="offer-label">
+POPULAR
+</div>
 
-        <div class="eyebrow">BEAUTY TRAINING CENTER</div>
+<h3>
+Glow Package
+</h3>
 
-        <h2>Learn Beauty. Build Your Future.</h2>
+<div class="offer-price">
+₹999
+</div>
 
-        <p>
-          Charming Beauty Care also provides professional beautician
-          training for aspiring beauty professionals. Learn practical
-          beauty skills, develop confidence and take your first step
-          towards a rewarding career in the beauty industry.
-        </p>
+<p>
+Facial • D-Tan/Bleach • Waxing • Pedicure
+</p>
 
-        <a href="https://wa.me/919826246652?text=Hello%20Charming%20Beauty%20Care%2C%20I%20want%20information%20about%20beautician%20training."
-           class="btn btn-primary"
-           target="_blank">
-          ENQUIRE ABOUT TRAINING
-        </a>
+<a href="appointment.html" class="offer-btn">
+BOOK OFFER
+</a>
 
-      </div>
+</div>
 
-    </div>
 
-  </section>
+<div class="offer-card">
 
+<div class="offer-label">
+SIGNATURE
+</div>
 
-  <!-- =======================================================
-       GALLERY
-       ======================================================= -->
+<h3>
+Beauty Ritual
+</h3>
 
-  <section class="section gallery" id="gallery">
+<div class="offer-price">
+₹1499
+</div>
 
-    <div class="container">
+<p>
+Premium beauty services for a complete refresh.
+</p>
 
-      <div class="section-heading">
+<a href="appointment.html" class="offer-btn">
+BOOK OFFER
+</a>
 
-        <div class="eyebrow">OUR WORLD</div>
+</div>
 
-        <h2>A Glimpse of Charming Beauty Care</h2>
 
-        <div class="gold-line"></div>
+<div class="offer-card">
 
-        <p>
-          A preview of the beauty, care and elegance that define
-          the Charming Beauty Care experience.
-        </p>
+<div class="offer-label">
+SEASONAL
+</div>
 
-      </div>
+<h3>
+Special Offer
+</h3>
 
+<div class="offer-price">
+₹1799
+</div>
 
-      <div class="gallery-grid">
+<p>
+Selected beauty services combined for exceptional value.
+</p>
 
-        <div class="gallery-item large"
-          style="background-image:url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80');">
-        </div>
+<a href="appointment.html" class="offer-btn">
+BOOK OFFER
+</a>
 
-        <div class="gallery-item"
-          style="background-image:url('https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=800&q=80');">
-        </div>
+</div>
 
-        <div class="gallery-item tall"
-          style="background-image:url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80');">
-        </div>
 
-        <div class="gallery-item"
-          style="background-image:url('https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=800&q=80');">
-        </div>
+</div>
 
-        <div class="gallery-item"
-          style="background-image:url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80');">
-        </div>
+</div>
 
-        <div class="gallery-item"
-          style="background-image:url('https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=800&q=80');">
-        </div>
+</section>
 
-      </div>
 
-    </div>
+<!-- ================= TRAINING ================= -->
 
-  </section>
+<section class="training" id="training">
 
+<div class="container">
 
-  <!-- =======================================================
-       TESTIMONIALS
-       ======================================================= -->
+<div class="training-content">
 
-  <section class="section testimonials">
+<div class="section-tag">
+BEAUTY TRAINING CENTER
+</div>
 
-    <div class="container">
+<h2 class="section-title">
+Learn Beauty. Build Your Future.
+</h2>
 
-      <div class="section-heading">
+<p>
+Charming Beauty Care also provides professional beautician training for aspiring beauty professionals. Learn practical beauty skills, develop confidence and take your first step towards a rewarding career in the beauty industry.
+</p>
 
-        <div class="eyebrow">CLIENT LOVE</div>
+<a href="https://wa.me/919826246652?text=Hello%20Charming%20Beauty%20Care,%20I%20want%20information%20about%20beautician%20training." class="btn btn-gold" target="_blank">
+ENQUIRE ABOUT TRAINING
+</a>
 
-        <h2>What Our Clients Say</h2>
+</div>
 
-        <div class="gold-line"></div>
+</div>
 
-        <p>
-          Your satisfaction and trust inspire everything we do.
-        </p>
+</section>
 
-      </div>
 
+<!-- ================= GALLERY ================= -->
 
-      <div class="testimonial-grid">
+<section id="gallery">
 
+<div class="container">
 
-        <div class="testimonial">
+<div class="gallery-heading">
 
-          <div class="stars">★★★★★</div>
+<div class="section-tag">
+OUR WORLD
+</div>
 
-          <p>
-            “The service was professional and the entire experience
-            was very comfortable. I loved the attention to detail.”
-          </p>
+<h2 class="section-title">
+A Glimpse of Charming Beauty Care
+</h2>
 
-          <div class="customer">— Customer Name</div>
+<p class="section-text" style="margin:auto;">
+A preview of the beauty, care and elegance that define the Charming Beauty Care experience.
+</p>
 
-        </div>
+</div>
 
 
-        <div class="testimonial">
+<div class="gallery-grid">
 
-          <div class="stars">★★★★★</div>
+<div class="gallery-item"></div>
+<div class="gallery-item"></div>
+<div class="gallery-item"></div>
+<div class="gallery-item"></div>
+<div class="gallery-item"></div>
+<div class="gallery-item"></div>
+<div class="gallery-item"></div>
+<div class="gallery-item"></div>
 
-          <p>
-            “A beautiful and comfortable place for ladies. The staff
-            is caring and the beauty services are excellent.”
-          </p>
+</div>
 
-          <div class="customer">— Customer Name</div>
+</div>
 
-        </div>
+</section>
 
 
-        <div class="testimonial">
+<!-- ================= TESTIMONIALS ================= -->
 
-          <div class="stars">★★★★★</div>
+<section class="testimonials">
 
-          <p>
-            “I really enjoyed my salon experience. Professional
-            service, personal attention and beautiful results.”
-          </p>
+<div class="container">
 
-          <div class="customer">— Customer Name</div>
+<div class="testimonial-heading">
 
-        </div>
+<div class="section-tag">
+CLIENT LOVE
+</div>
 
+<h2 class="section-title">
+What Our Clients Say
+</h2>
 
-      </div>
+<p class="section-text" style="margin:auto;">
+Your satisfaction and trust inspire everything we do.
+</p>
 
-    </div>
+</div>
 
-  </section>
 
+<div class="testimonial-grid">
 
-  <!-- =======================================================
-       APPOINTMENT
-       ======================================================= -->
+<div class="testimonial">
 
-  <section class="section appointment" id="appointment">
+<div class="stars">
+★★★★★
+</div>
 
-    <div class="container">
+<p>
+“The service was professional and the entire experience was very comfortable. I loved the attention to detail.”
+</p>
 
-      <div class="eyebrow">YOUR MOMENT</div>
+<div class="customer">
+— Customer Name
+</div>
 
-      <h2>Your Beauty. Your Confidence. Your Moment.</h2>
+</div>
 
-      <p>
-        Ready to give yourself the care you deserve?
-        Book your appointment with Charming Beauty Care today.
-      </p>
 
-      <div class="appointment-buttons">
+<div class="testimonial">
 
-        <a href="appointment.html" class="btn btn-primary">
-           BOOK AN APPOINTMENT
-        </a>
+<div class="stars">
+★★★★★
+</div>
 
-        <a href="https://wa.me/919826246652?text=Hello%20Charming%20Beauty%20Care%2C%20I%20want%20to%20book%20an%20appointment."
-           class="btn btn-outline"
-           target="_blank">
-          WHATSAPP US
-        </a>
+<p>
+“A beautiful and comfortable place for ladies. The staff is caring and the beauty services are excellent.”
+</p>
 
-      </div>
+<div class="customer">
+— Customer Name
+</div>
 
-    </div>
+</div>
 
-  </section>
 
+<div class="testimonial">
 
-  <!-- =======================================================
-       CONTACT
-       ======================================================= -->
+<div class="stars">
+★★★★★
+</div>
 
-  <section class="section contact" id="contact">
+<p>
+“I really enjoyed my salon experience. Professional service, personal attention and beautiful results.”
+</p>
 
-    <div class="container contact-grid">
+<div class="customer">
+— Customer Name
+</div>
 
+</div>
 
-      <div class="contact-info">
+</div>
 
-        <div class="eyebrow">GET IN TOUCH</div>
+</div>
 
-        <h3>Charming Beauty Care</h3>
+</section>
 
-        <div class="contact-subtitle">
-          LADIES BEAUTY SALON & CARE
-        </div>
 
-        <div class="contact-detail">
+<!-- ================= CTA ================= -->
 
-          <div class="contact-icon">⌖</div>
+<section class="cta">
 
-          <div>
-            <strong>LOCATION</strong>
-            <span>
-              E-6/95, Flat No. 1, Shalimar Homes,
-              Arera Colony, Bhopal
-            </span>
-          </div>
+<div class="container">
 
-        </div>
+<h2 class="section-title">
+Your Beauty. Your Confidence. Your Moment.
+</h2>
 
+<p>
+Ready to give yourself the care you deserve? Book your appointment with Charming Beauty Care today.
+</p>
 
-        <div class="contact-detail">
+<div class="cta-buttons">
 
-          <div class="contact-icon">☎</div>
+<a href="appointment.html" class="btn btn-gold">
+BOOK AN APPOINTMENT
+</a>
 
-          <div>
-            <strong>PHONE / WHATSAPP</strong>
-            <span>9826246652</span>
-          </div>
+<a href="https://wa.me/919826246652?text=Hello%20Charming%20Beauty%20Care,%20I%20want%20to%20book%20an%20appointment." class="btn btn-outline" target="_blank">
+WHATSAPP US
+</a>
 
-        </div>
+</div>
 
+</div>
 
-        <div class="contact-detail">
+</section>
 
-          <div class="contact-icon">◷</div>
 
-          <div>
-            <strong>OPENING HOURS</strong>
-            <span>11:00 AM – 7:30 PM</span>
-          </div>
+<!-- ================= CONTACT ================= -->
 
-        </div>
+<section class="contact" id="contact">
 
+<div class="container contact-grid">
 
-        <div class="contact-detail">
 
-          <div class="contact-icon">♡</div>
+<div class="contact-info">
 
-          <div>
-            <strong>FOR LADIES</strong>
-            <span>
-              Ladies-only beauty salon & training center.
-            </span>
-          </div>
+<div class="section-tag">
+GET IN TOUCH
+</div>
 
-        </div>
+<h2 class="section-title">
+Charming Beauty Care
+</h2>
 
+<p>
+LADIES BEAUTY SALON & CARE
+</p>
 
-        <br>
+<div class="contact-detail">
+📍 E-6/95, Flat No. 1, Shalimar Homes, Arera Colony, Bhopal
+</div>
 
-        <a
-          href="https://www.google.com/maps/search/?api=1&query=Charming+Beauty+Care+Bhopal"
-          target="_blank"
-          class="btn btn-wine">
-          OPEN GOOGLE MAPS
-        </a>
+<div class="contact-detail">
+📞 9826246652
+</div>
 
-      </div>
+<div class="contact-detail">
+🕚 11:00 AM – 7:30 PM
+</div>
 
+<div class="contact-detail">
+♡ Ladies-only beauty salon & training center
+</div>
 
-      <div class="contact-form">
+<br>
 
-        <h3>Send Us a Message</h3>
+<a href="https://www.google.com/maps/search/?api=1&query=Charming%20Beauty%20Care%20Bhopal" target="_blank" class="btn btn-gold">
+OPEN GOOGLE MAPS
+</a>
 
-        <form onsubmit="sendWhatsApp(event)">
+</div>
 
-          <div class="form-group">
-            <input
-              type="text"
-              id="name"
-              placeholder="Your Name"
-              required>
-          </div>
 
-          <div class="form-group">
-            <input
-              type="tel"
-              id="phone"
-              placeholder="Mobile Number"
-              required>
-          </div>
+<div class="contact-form">
 
-          <div class="form-group">
-            <textarea
-              id="message"
-              placeholder="How can we help you?"
-              required></textarea>
-          </div>
+<h3 style="font-family:'Playfair Display',serif;color:var(--wine);margin-bottom:20px;">
+Send Us a Message
+</h3>
 
-          <button type="submit" class="btn btn-wine">
-            SEND ON WHATSAPP
-          </button>
+<form onsubmit="sendWhatsApp(event)">
 
-        </form>
+<input
+type="text"
+id="contactName"
+placeholder="Your Name"
+required
+>
 
-      </div>
+<input
+type="tel"
+id="contactPhone"
+placeholder="Mobile Number"
+required
+>
 
+<button type="submit" class="btn btn-gold">
+SEND ON WHATSAPP
+</button>
 
-    </div>
+</form>
 
-  </section>
+</div>
 
+</div>
 
-  <!-- =======================================================
-       FOOTER
-       ======================================================= -->
+</section>
 
-  <footer>
 
-    <div class="container">
+<!-- ================= FOOTER ================= -->
 
-      <div class="footer-grid">
+<footer>
 
+<div class="container">
 
-        <div class="footer-brand">
+<div class="footer-grid">
 
-          <div class="logo">
-            CHARMING
-            <span>BEAUTY CARE</span>
-          </div>
 
-          <p>
-            Luxury ladies beauty salon and beautician training
-            center in Bhopal. Creating beautiful experiences
-            since 2004.
-          </p>
+<div>
 
-          <div class="socials">
+<div class="footer-logo">
+CHARMING BEAUTY CARE
+</div>
 
-            <a href="#" aria-label="Instagram">IG</a>
+<p>
+Luxury ladies beauty salon and beautician training center in Bhopal. Creating beautiful experiences since 2004.
+</p>
 
-            <a href="#" aria-label="Facebook">FB</a>
+</div>
 
-            <a
-              href="https://wa.me/919826246652"
-              target="_blank"
-              aria-label="WhatsApp">
-              WA
-            </a>
 
-          </div>
+<div>
 
-        </div>
+<h4>
+Quick Links
+</h4>
 
+<ul>
 
-        <div>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="#offers">Offers</a></li>
+<li><a href="#gallery">Gallery</a></li>
 
-          <h4>Quick Links</h4>
+</ul>
 
-          <ul>
+</div>
 
-            <li><a href="#home">Home</a></li>
 
-            <li><a href="#about">About</a></li>
+<div>
 
-            <li><a href="#services">Services</a></li>
+<h4>
+Services
+</h4>
 
-            <li><a href="#offers">Offers</a></li>
+<ul>
 
-            <li><a href="#gallery">Gallery</a></li>
+<li><a href="services.html">Facial & Skin Care</a></li>
+<li><a href="services.html">Hair Care</a></li>
+<li><a href="services.html">Bridal Makeup</a></li>
+<li><a href="services.html">Manicure & Pedicure</a></li>
+<li><a href="services.html">Waxing</a></li>
 
-          </ul>
+</ul>
 
-        </div>
+</div>
 
 
-        <div>
+<div>
 
-          <h4>Services</h4>
+<h4>
+Contact
+</h4>
 
-          <ul>
+<ul>
 
-            <li><a href="#services">Facial & Skin Care</a></li>
+<li>Bhopal, Madhya Pradesh</li>
+<li>9826246652</li>
+<li>11:00 AM – 7:30 PM</li>
+<li>Ladies Only</li>
+<li><a href="#training">Beautician Training</a></li>
 
-            <li><a href="#services">Hair Care</a></li>
+</ul>
 
-            <li><a href="#services">Bridal Makeup</a></li>
+</div>
 
-            <li><a href="#services">Manicure & Pedicure</a></li>
 
-            <li><a href="#services">Waxing</a></li>
+</div>
 
-          </ul>
 
-        </div>
+<div class="footer-bottom">
 
+© 2026 Charming Beauty Care. All Rights Reserved.
+&nbsp; | &nbsp;
+Privacy Policy
+&nbsp; | &nbsp;
+Terms & Conditions
 
-        <div>
+</div>
 
-          <h4>Contact</h4>
+</div>
 
-          <ul>
+</footer>
 
-            <li>Bhopal, Madhya Pradesh</li>
 
-            <li>
-              <a href="tel:+919826246652">
-                9826246652
-              </a>
-            </li>
+<!-- ================= JAVASCRIPT ================= -->
 
-            <li>11:00 AM – 7:30 PM</li>
+<script>
 
-            <li>Ladies Only</li>
+function toggleMenu(){
 
-            <li>
-              <a href="#training">
-                Beautician Training
-              </a>
-            </li>
+    const menu = document.getElementById("navLinks");
 
-          </ul>
+    menu.classList.toggle("active");
 
-        </div>
+}
 
 
-      </div>
+document.querySelectorAll(".nav-links a").forEach(function(link){
 
+    link.addEventListener("click", function(){
 
-      <div class="footer-bottom">
-
-        © 2026 Charming Beauty Care.
-        All Rights Reserved.
-        &nbsp; | &nbsp;
-        Privacy Policy
-        &nbsp; | &nbsp;
-        Terms & Conditions
-
-      </div>
-
-    </div>
-
-  </footer>
-
-
-  <!-- =======================================================
-       FLOATING WHATSAPP
-       ======================================================= -->
-
-  <a
-    href="https://wa.me/919826246652?text=Hello%20Charming%20Beauty%20Care%2C%20I%20want%20to%20know%20more%20about%20your%20services."
-    class="whatsapp"
-    target="_blank"
-    aria-label="WhatsApp">
-    WA
-  </a>
-
-
-  <!-- =======================================================
-       JAVASCRIPT
-       ======================================================= -->
-
-  <script>
-
-    /* =========================================================
-       HEADER SCROLL EFFECT
-       ========================================================= */
-
-    const header = document.getElementById("header");
-
-    window.addEventListener("scroll", function () {
-
-      if (window.scrollY > 40) {
-        header.classList.add("scrolled");
-      } else {
-        header.classList.remove("scrolled");
-      }
+        document.getElementById("navLinks").classList.remove("active");
 
     });
 
-
-    /* =========================================================
-       MOBILE MENU
-       ========================================================= */
-
-    const menuBtn = document.getElementById("menuBtn");
-    const navLinks = document.getElementById("navLinks");
-
-    menuBtn.addEventListener("click", function () {
-
-      navLinks.classList.toggle("active");
-
-    });
+});
 
 
-    /* Close mobile menu after clicking */
+function sendWhatsApp(event){
 
-    document.querySelectorAll(".nav-links a").forEach(function(link) {
+    event.preventDefault();
 
-      link.addEventListener("click", function() {
+    const name =
+        document.getElementById("contactName").value.trim();
 
-        navLinks.classList.remove("active");
+    const phone =
+        document.getElementById("contactPhone").value.trim();
 
-      });
+    if(!name || !phone){
 
-    });
+        alert("Please enter your name and mobile number.");
 
-
-    /* =========================================================
-       WHATSAPP CONTACT FORM
-       ========================================================= */
-
-    function sendWhatsApp(event) {
-
-      event.preventDefault();
-
-      const name =
-        document.getElementById("name").value;
-
-      const phone =
-        document.getElementById("phone").value;
-
-      const message =
-        document.getElementById("message").value;
-
-      const whatsappMessage =
-        "Hello Charming Beauty Care,%0A%0A" +
-        "Name: " + encodeURIComponent(name) +
-        "%0AMobile: " + encodeURIComponent(phone) +
-        "%0AMessage: " + encodeURIComponent(message);
-
-      window.open(
-        "https://wa.me/919826246652?text=" +
-        whatsappMessage,
-        "_blank"
-      );
+        return;
 
     }
 
+    const message =
+        "Hello Charming Beauty Care,%0A%0A" +
+        "Name: " + encodeURIComponent(name) + "%0A" +
+        "Mobile: " + encodeURIComponent(phone) + "%0A%0A" +
+        "I would like to know more about your beauty services.";
 
-    /* =========================================================
-       SCROLL REVEAL ANIMATION
-       ========================================================= */
-
-    const animatedElements = document.querySelectorAll(
-      ".section-heading, " +
-      ".about-text, " +
-      ".image-placeholder, " +
-      ".service-card, " +
-      ".feature, " +
-      ".offer-card, " +
-      ".training-box, " +
-      ".gallery-item, " +
-      ".testimonial, " +
-      ".contact-info, " +
-      ".contact-form"
+    window.open(
+        "https://wa.me/919826246652?text=" + message,
+        "_blank"
     );
 
+}
 
-    animatedElements.forEach(function(element) {
-
-      element.classList.add("reveal");
-
-    });
-
-
-    /* Intersection Observer */
-
-    const revealObserver = new IntersectionObserver(
-      function(entries, observer) {
-
-        entries.forEach(function(entry) {
-
-          if (entry.isIntersecting) {
-
-            entry.target.classList.add("visible");
-
-            observer.unobserve(entry.target);
-
-          }
-
-        });
-
-      },
-      {
-        threshold: 0.12
-      }
-    );
-
-
-    document.querySelectorAll(".reveal").forEach(function(element) {
-
-      revealObserver.observe(element);
-
-    });
-
-
-  </script>
+</script>
 
 </body>
 </html>
