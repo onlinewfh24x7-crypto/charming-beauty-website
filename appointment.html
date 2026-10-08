@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Book Appointment | Charming Beauty Care</title>
+
+  <meta name="description"
+        content="Book your beauty appointment at Charming Beauty Care, ladies beauty salon in Bhopal.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+  <style>
+
+    :root {
+      --wine: #5b1828;
+      --wine-dark: #350d18;
+      --gold: #c9a45c;
+      --gold-light: #e5ca8d;
+      --ivory: #fffaf3;
+      --cream: #f7efe5;
+      --text: #33252a;
+      --muted: #76666b;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background:
+        linear-gradient(
+          135deg,
+          var(--ivory),
+          var(--cream)
+        );
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* HEADER */
+
+    header {
+      background: var(--wine-dark);
+      padding: 20px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(229,202,141,.35);
+    }
+
+    .logo {
+      color: var(--gold-light);
+      text-decoration: none;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .back-link {
+      color: white;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      border: 1px solid rgba(229,202,141,.5);
+      padding: 10px 18px;
+      border-radius: 30px;
+      transition: .3s;
+    }
+
+    .back-link:hover {
+      background: var(--gold);
+      color: var(--wine-dark);
+    }
+
+    /* PAGE */
+
+    .page {
+      max-width: 1100px;
+      margin: auto;
+      padding: 70px 20px;
+    }
+
+    .heading {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: 3px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(42px, 7vw, 70px);
+      color: var(--wine-dark);
+      line-height: 1;
+      margin-bottom: 15px;
+    }
+
+    .heading p {
+      max-width: 650px;
+      margin: auto;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 14px;
+    }
+
+    /* BOOKING BOX */
+
+    .booking-wrapper {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 35px;
+      background: rgba(255,255,255,.75);
+      padding: 15px;
+      border-radius: 25px;
+      box-shadow: 0 25px 70px rgba(52,13,24,.12);
+      border: 1px solid rgba(201,164,92,.25);
+    }
+
+    /* LEFT */
+
+    .booking-info {
+      background: var(--wine-dark);
+      color: white;
+      border-radius: 20px;
+      padding: 45px 35px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .booking-info::before {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border: 1px solid rgba(229,202,141,.25);
+      border-radius: 50%;
+      right: -100px;
+      top: -80px;
+    }
+
+    .booking-info h2 {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--gold-light);
+      font-size: 38px;
+      margin-bottom: 18px;
+    }
+
+    .booking-info p {
+      color: rgba(255,255,255,.75);
+      font-size: 13px;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    .info-item {
+      display: flex;
+      gap: 15px;
+      margin: 23px 0;
+      align-items: flex-start;
+    }
+
+    .info-icon {
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(229,202,141,.5);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-light);
+      flex-shrink: 0;
+    }
+
+    .info-item strong {
+      display: block;
+      color: white;
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    .info-item span {
+      color: rgba(255,255,255,.65);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    /* FORM */
+
+    .booking-form {
+      padding: 35px;
+    }
+
+    .booking-form h2 {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--wine-dark);
+      font-size: 36px;
+      margin-bottom: 25px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .7px;
+      color: var(--wine);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid #e1d5c9;
+      background: #fffdf9;
+      padding: 14px 15px;
+      border-radius: 10px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      color: var(--text);
+      outline: none;
+      transition: .3s;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201,164,92,.12);
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      width: 100%;
+      border: none;
+      background: var(--wine);
+      color: white;
+      padding: 17px;
+      border-radius: 12px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: .3s;
+      box-shadow: 0 10px 25px rgba(91,24,40,.2);
+    }
+
+    .submit-btn:hover {
+      background: var(--wine-dark);
+      transform: translateY(-2px);
+    }
+
+    .note {
+      text-align: center;
+      color: var(--muted);
+      font-size: 11px;
+      margin-top: 13px;
+      line-height: 1.6;
+    }
+
+    /* FOOTER */
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background: var(--wine-dark);
+      color: rgba(255,255,255,.65);
+      font-size: 11px;
+    }
+
+    footer strong {
+      color: var(--gold-light);
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      header {
+        padding: 16px 20px;
+      }
+
+      .logo {
+        font-size: 24px;
+      }
+
+      .page {
+        padding: 50px 15px;
+      }
+
+      .booking-wrapper {
+        grid-template-columns: 1fr;
+        padding: 8px;
+      }
+
+      .booking-info {
+        padding: 35px 25px;
+      }
+
+      .booking-form {
+        padding: 25px 18px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      h1 {
+        font-size: 50px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+
+  <a href="index.html" class="logo">
+    Charming Beauty Care
+  </a>
+
+  <a href="index.html" class="back-link">
+    ← Back to Home
+  </a>
+
+</header>
+
+
+<main class="page">
+
+  <div class="heading">
+
+    <div class="eyebrow">
+      APPOINTMENT • CHARMING BEAUTY CARE
+    </div>
+
+    <h1>
+      Book Your Appointment
+    </h1>
+
+    <p>
+      Your beauty deserves your time.
+      Choose your preferred service, date and time,
+      and send your appointment request directly on WhatsApp.
+    </p>
+
+  </div>
+
+
+  <div class="booking-wrapper">
+
+
+    <!-- LEFT INFORMATION -->
+
+    <div class="booking-info">
+
+      <h2>
+        Beauty • Care • Confidence
+      </h2>
+
+      <p>
+        Since 2004, Charming Beauty Care has been
+        creating beautiful experiences with professional
+        beauty care and personalized attention.
+      </p>
+
+
+      <div class="info-item">
+
+        <div class="info-icon">♡</div>
+
+        <div>
+          <strong>Ladies Only</strong>
+          <span>
+            A comfortable and elegant beauty experience
+            specially for ladies.
+          </span>
+        </div>
+
+      </div>
+
+
+      <div class="info-item">
+
+        <div class="info-icon">✦</div>
+
+        <div>
+          <strong>Premium Beauty Care</strong>
+          <span>
+            Professional beauty services with
+            personalized care.
+          </span>
+        </div>
+
+      </div>
+
+
+      <div class="info-item">
+
+        <div class="info-icon">◷</div>
+
+        <div>
+          <strong>Opening Hours</strong>
+          <span>
+            11:00 AM – 7:30 PM
+          </span>
+        </div>
+
+      </div>
+
+
+      <div class="info-item">
+
+        <div class="info-icon">☎</div>
+
+        <div>
+          <strong>Call / WhatsApp</strong>
+          <span>
+            9826246652
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- FORM -->
+
+    <div class="booking-form">
+
+      <h2>
+        Appointment Details
+      </h2>
+
+
+      <form onsubmit="sendAppointment(event)">
+
+
+        <div class="form-row">
+
+          <div class="form-group">
+
+            <label>
+              Your Name *
+            </label>
+
+            <input
+              type="text"
+              id="name"
+              placeholder="Enter your name"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label>
+              Mobile Number *
+            </label>
+
+            <input
+              type="tel"
+              id="phone"
+              placeholder="Enter mobile number"
+              pattern="[0-9]{10}"
+              maxlength="10"
+              required
+            >
+
+          </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>
+            Select Service *
+          </label>
+
+          <select id="service" required>
+
+            <option value="">
+              Choose your beauty service
+            </option>
+
+            <option>Hydra Facial</option>
+            <option>Korean Facial / Bleach</option>
+            <option>Bridal Makeup</option>
+            <option>Party Makeup</option>
+            <option>Hair Spa</option>
+            <option>Keratin Treatment</option>
+            <option>Hair Smoothening</option>
+            <option>Hair Coloring</option>
+            <option>Hair Cut & Styling</option>
+            <option>Manicure</option>
+            <option>Pedicure</option>
+            <option>Rica Wax</option>
+            <option>D-Tan</option>
+            <option>Threading</option>
+            <option>Beauty Package</option>
+            <option>Other Service</option>
+
+          </select>
+
+        </div>
+
+
+        <div class="form-row">
+
+          <div class="form-group">
+
+            <label>
+              Preferred Date *
+            </label>
+
+            <input
+              type="date"
+              id="date"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label>
+              Preferred Time *
+            </label>
+
+            <select id="time" required>
+
+              <option value="">
+                Select time
+              </option>
+
+              <option>11:00 AM</option>
+              <option>11:30 AM</option>
+              <option>12:00 PM</option>
+              <option>12:30 PM</option>
+              <option>1:00 PM</option>
+              <option>1:30 PM</option>
+              <option>2:00 PM</option>
+              <option>2:30 PM</option>
+              <option>3:00 PM</option>
+              <option>3:30 PM</option>
+              <option>4:00 PM</option>
+              <option>4:30 PM</option>
+              <option>5:00 PM</option>
+              <option>5:30 PM</option>
+              <option>6:00 PM</option>
+              <option>6:30 PM</option>
+              <option>7:00 PM</option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>
+            Special Request / Message
+          </label>
+
+          <textarea
+            id="message"
+            placeholder="Any special request or information..."
+          ></textarea>
+
+        </div>
+
+
+        <button
+          type="submit"
+          class="submit-btn"
+        >
+          CONFIRM APPOINTMENT ON WHATSAPP
+        </button>
+
+
+        <div class="note">
+
+          Your appointment request will open in WhatsApp.
+          Final appointment confirmation will be provided by
+          Charming Beauty Care.
+
+        </div>
+
+
+      </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+
+<footer>
+
+  <strong>CHARMING BEAUTY CARE</strong>
+  <br><br>
+
+  Ladies Beauty Salon & Care • Bhopal
+  <br>
+
+  Since 2004
+
+</footer>
+
+
+<script>
+
+  /* SET TODAY AS MINIMUM DATE */
+
+  const today =
+    new Date().toISOString().split("T")[0];
+
+  document.getElementById("date").min = today;
+
+
+  /* SEND APPOINTMENT TO WHATSAPP */
+
+  function sendAppointment(event) {
+
+    event.preventDefault();
+
+
+    const name =
+      document.getElementById("name").value.trim();
+
+    const phone =
+      document.getElementById("phone").value.trim();
+
+    const service =
+      document.getElementById("service").value;
+
+    const date =
+      document.getElementById("date").value;
+
+    const time =
+      document.getElementById("time").value;
+
+    const message =
+      document.getElementById("message").value.trim();
+
+
+    const formattedDate =
+      date.split("-").reverse().join("-");
+
+
+    const whatsappMessage =
+`✨ *NEW APPOINTMENT REQUEST*
+
+*Charming Beauty Care*
+
+👩 Name: ${name}
+📱 Mobile: ${phone}
+
+💆 Service: ${service}
+
+📅 Preferred Date: ${formattedDate}
+⏰ Preferred Time: ${time}
+
+📝 Special Request:
+${message || "No special request"}
+
+Please confirm my appointment.
+
+Thank you!`;
+
+
+    const whatsappURL =
+      "https://wa.me/919826246652?text=" +
+      encodeURIComponent(whatsappMessage);
+
+
+    window.open(
+      whatsappURL,
+      "_blank"
+    );
+
+  }
+
+</script>
+
+</body>
+</html>
