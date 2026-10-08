@@ -21,6 +21,7 @@
     :root {
       --wine: #5b1828;
       --wine-dark: #350d18;
+      --wine-light: #7b2a3d;
       --gold: #c9a45c;
       --gold-light: #e5ca8d;
       --ivory: #fffaf3;
@@ -262,6 +263,137 @@
       resize: vertical;
     }
 
+    /* SELECTED SERVICES */
+
+    .selected-services-box {
+      margin-bottom: 25px;
+      padding: 20px;
+      background: linear-gradient(
+        135deg,
+        #fffaf3,
+        #f8eee3
+      );
+      border: 1px solid rgba(201,164,92,.35);
+      border-radius: 15px;
+    }
+
+    .selected-services-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .selected-services-title h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 25px;
+      color: var(--wine-dark);
+    }
+
+    .service-count {
+      background: var(--wine);
+      color: white;
+      padding: 6px 11px;
+      border-radius: 20px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .5px;
+      white-space: nowrap;
+    }
+
+    .selected-list {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .selected-service {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: white;
+      border: 1px solid #eadfd3;
+      padding: 11px 13px;
+      border-radius: 9px;
+    }
+
+    .selected-service-name {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .remove-service {
+      border: none;
+      background: transparent;
+      color: #a33a4d;
+      cursor: pointer;
+      font-size: 18px;
+      line-height: 1;
+      padding: 2px 5px;
+    }
+
+    .remove-service:hover {
+      color: var(--wine-dark);
+    }
+
+    .empty-services {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.6;
+      padding: 5px 0;
+    }
+
+    /* ADD MORE SERVICES */
+
+    .add-more-box {
+      margin-bottom: 25px;
+    }
+
+    .add-more-box label {
+      margin-bottom: 8px;
+    }
+
+    .add-more-row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .add-more-row select {
+      flex: 1;
+    }
+
+    .add-btn {
+      border: 1px solid var(--gold);
+      background: var(--wine);
+      color: white;
+      padding: 0 18px;
+      border-radius: 10px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .5px;
+      cursor: pointer;
+      transition: .3s;
+      white-space: nowrap;
+    }
+
+    .add-btn:hover {
+      background: var(--wine-dark);
+      transform: translateY(-2px);
+    }
+
+    .selected-note {
+      margin-top: 9px;
+      font-size: 10px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* BUTTON */
+
     .submit-btn {
       width: 100%;
       border: none;
@@ -339,6 +471,14 @@
         gap: 0;
       }
 
+      .add-more-row {
+        flex-direction: column;
+      }
+
+      .add-btn {
+        min-height: 45px;
+      }
+
       h1 {
         font-size: 50px;
       }
@@ -377,7 +517,7 @@
 
     <p>
       Your beauty deserves your time.
-      Choose your preferred service, date and time,
+      Choose your preferred services, date and time,
       and send your appointment request directly on WhatsApp.
     </p>
 
@@ -408,6 +548,7 @@
 
         <div>
           <strong>Ladies Only</strong>
+
           <span>
             A comfortable and elegant beauty experience
             specially for ladies.
@@ -423,6 +564,7 @@
 
         <div>
           <strong>Premium Beauty Care</strong>
+
           <span>
             Professional beauty services with
             personalized care.
@@ -438,6 +580,7 @@
 
         <div>
           <strong>Opening Hours</strong>
+
           <span>
             11:00 AM – 7:30 PM
           </span>
@@ -452,6 +595,7 @@
 
         <div>
           <strong>Call / WhatsApp</strong>
+
           <span>
             9826246652
           </span>
@@ -512,36 +656,91 @@
         </div>
 
 
-        <div class="form-group">
+        <!-- SELECTED SERVICES -->
+
+        <div class="selected-services-box">
+
+          <div class="selected-services-title">
+
+            <h3>
+              Your Selected Services
+            </h3>
+
+            <div
+              class="service-count"
+              id="serviceCount"
+            >
+              0 SERVICES
+            </div>
+
+          </div>
+
+
+          <div
+            class="selected-list"
+            id="selectedList"
+          >
+
+            <div class="empty-services">
+              No service selected yet.
+              Please add a service below.
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ADD MORE SERVICES -->
+
+        <div class="add-more-box">
 
           <label>
-            Select Service *
+            Add More Services
           </label>
 
-          <select id="service" required>
+          <div class="add-more-row">
 
-            <option value="">
-              Choose your beauty service
-            </option>
+            <select id="additionalService">
 
-            <option>Hydra Facial</option>
-            <option>Korean Facial / Bleach</option>
-            <option>Bridal Makeup</option>
-            <option>Party Makeup</option>
-            <option>Hair Spa</option>
-            <option>Keratin Treatment</option>
-            <option>Hair Smoothening</option>
-            <option>Hair Coloring</option>
-            <option>Hair Cut & Styling</option>
-            <option>Manicure</option>
-            <option>Pedicure</option>
-            <option>Rica Wax</option>
-            <option>D-Tan</option>
-            <option>Threading</option>
-            <option>Beauty Package</option>
-            <option>Other Service</option>
+              <option value="">
+                Choose another beauty service
+              </option>
 
-          </select>
+              <option>Hydra Facial</option>
+              <option>Korean Facial / Bleach</option>
+              <option>D-Tan & Bleach</option>
+              <option>Bridal Makeup</option>
+              <option>Party Makeup</option>
+              <option>Hair Spa</option>
+              <option>Keratin Treatment</option>
+              <option>Hair Smoothening</option>
+              <option>Hair Coloring</option>
+              <option>Hair Cut & Styling</option>
+              <option>Manicure</option>
+              <option>Pedicure</option>
+              <option>Rica Wax</option>
+              <option>Threading</option>
+              <option>Beauty Package</option>
+              <option>Other Service</option>
+
+            </select>
+
+
+            <button
+              type="button"
+              class="add-btn"
+              onclick="addMoreService()"
+            >
+              + ADD
+            </button>
+
+          </div>
+
+
+          <div class="selected-note">
+            You can add more than one service to your appointment.
+          </div>
 
         </div>
 
@@ -643,9 +842,11 @@
 <footer>
 
   <strong>CHARMING BEAUTY CARE</strong>
+
   <br><br>
 
   Ladies Beauty Salon & Care • Bhopal
+
   <br>
 
   Since 2004
@@ -655,43 +856,269 @@
 
 <script>
 
-  /* SET TODAY AS MINIMUM DATE */
+  /* =====================================================
+     SELECTED SERVICES
+     Reads services selected on services.html
+     ===================================================== */
+
+  let selectedServices =
+    JSON.parse(localStorage.getItem("selectedServices")) || [];
+
+
+  /* =====================================================
+     SERVICE LIST
+     ===================================================== */
+
+  const allServices = [
+
+    "Hydra Facial",
+    "Korean Facial / Bleach",
+    "D-Tan & Bleach",
+    "Bridal Makeup",
+    "Party Makeup",
+    "Hair Spa",
+    "Keratin Treatment",
+    "Hair Smoothening",
+    "Hair Coloring",
+    "Hair Cut & Styling",
+    "Manicure",
+    "Pedicure",
+    "Rica Wax",
+    "Threading",
+    "Beauty Package",
+    "Other Service"
+
+  ];
+
+
+  /* =====================================================
+     DISPLAY SELECTED SERVICES
+     ===================================================== */
+
+  function updateSelectedServices() {
+
+    const list =
+      document.getElementById("selectedList");
+
+    const count =
+      document.getElementById("serviceCount");
+
+
+    count.textContent =
+      selectedServices.length +
+      (selectedServices.length === 1
+        ? " SERVICE"
+        : " SERVICES");
+
+
+    if (selectedServices.length === 0) {
+
+      list.innerHTML = `
+        <div class="empty-services">
+          No service selected yet.
+          Please add a service below.
+        </div>
+      `;
+
+      return;
+    }
+
+
+    list.innerHTML = "";
+
+
+    selectedServices.forEach(function(service, index) {
+
+      const item =
+        document.createElement("div");
+
+      item.className =
+        "selected-service";
+
+
+      item.innerHTML = `
+
+        <span class="selected-service-name">
+          ${service}
+        </span>
+
+        <button
+          type="button"
+          class="remove-service"
+          onclick="removeService(${index})"
+          aria-label="Remove service"
+          title="Remove service"
+        >
+          ×
+        </button>
+
+      `;
+
+
+      list.appendChild(item);
+
+    });
+
+
+    localStorage.setItem(
+      "selectedServices",
+      JSON.stringify(selectedServices)
+    );
+
+  }
+
+
+  /* =====================================================
+     REMOVE SERVICE
+     ===================================================== */
+
+  function removeService(index) {
+
+    selectedServices.splice(index, 1);
+
+    localStorage.setItem(
+      "selectedServices",
+      JSON.stringify(selectedServices)
+    );
+
+    updateSelectedServices();
+
+  }
+
+
+  /* =====================================================
+     ADD MORE SERVICES
+     ===================================================== */
+
+  function addMoreService() {
+
+    const select =
+      document.getElementById("additionalService");
+
+    const service =
+      select.value;
+
+
+    if (!service) {
+
+      alert("Please select a service first.");
+
+      return;
+
+    }
+
+
+    if (selectedServices.includes(service)) {
+
+      alert("This service is already selected.");
+
+      select.value = "";
+
+      return;
+
+    }
+
+
+    selectedServices.push(service);
+
+
+    localStorage.setItem(
+      "selectedServices",
+      JSON.stringify(selectedServices)
+    );
+
+
+    updateSelectedServices();
+
+
+    select.value = "";
+
+  }
+
+
+  /* =====================================================
+     SET TODAY AS MINIMUM DATE
+     ===================================================== */
 
   const today =
     new Date().toISOString().split("T")[0];
 
-  document.getElementById("date").min = today;
+
+  document.getElementById("date").min =
+    today;
 
 
-  /* SEND APPOINTMENT TO WHATSAPP */
+  /* =====================================================
+     SEND APPOINTMENT TO WHATSAPP
+     ===================================================== */
 
   function sendAppointment(event) {
 
     event.preventDefault();
 
 
+    /* CHECK SERVICE */
+
+    if (selectedServices.length === 0) {
+
+      alert(
+        "Please select at least one beauty service."
+      );
+
+      return;
+
+    }
+
+
     const name =
-      document.getElementById("name").value.trim();
+      document.getElementById("name")
+      .value
+      .trim();
+
 
     const phone =
-      document.getElementById("phone").value.trim();
+      document.getElementById("phone")
+      .value
+      .trim();
 
-    const service =
-      document.getElementById("service").value;
 
     const date =
-      document.getElementById("date").value;
+      document.getElementById("date")
+      .value;
+
 
     const time =
-      document.getElementById("time").value;
+      document.getElementById("time")
+      .value;
+
 
     const message =
-      document.getElementById("message").value.trim();
+      document.getElementById("message")
+      .value
+      .trim();
 
 
     const formattedDate =
       date.split("-").reverse().join("-");
 
+
+    /* FORMAT SERVICES */
+
+    const servicesText =
+      selectedServices
+        .map(function(service, index) {
+
+          return (
+            (index + 1) +
+            ". " +
+            service
+          );
+
+        })
+        .join("\n");
+
+
+    /* WHATSAPP MESSAGE */
 
     const whatsappMessage =
 `✨ *NEW APPOINTMENT REQUEST*
@@ -701,7 +1128,8 @@
 👩 Name: ${name}
 📱 Mobile: ${phone}
 
-💆 Service: ${service}
+💆 *Selected Services:*
+${servicesText}
 
 📅 Preferred Date: ${formattedDate}
 ⏰ Preferred Time: ${time}
@@ -719,12 +1147,28 @@ Thank you!`;
       encodeURIComponent(whatsappMessage);
 
 
+    /* OPEN WHATSAPP */
+
     window.open(
       whatsappURL,
       "_blank"
     );
 
+
+    /* CLEAR SELECTED SERVICES AFTER BOOKING */
+
+    localStorage.removeItem(
+      "selectedServices"
+    );
+
   }
+
+
+  /* =====================================================
+     INITIAL LOAD
+     ===================================================== */
+
+  updateSelectedServices();
 
 </script>
 
