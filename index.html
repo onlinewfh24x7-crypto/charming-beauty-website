@@ -1,23 +1,210 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charming Beauty Care</title>
-</head>
+<title>Charming Beauty Care | Ladies Beauty Salon in Bhopal</title>
 
-<body>
+<meta name="description"
+      content="Charming Beauty Care - Ladies Only Beauty Salon in Arera Colony, Bhopal. Facial, Hair Spa, Waxing, Manicure, Pedicure, Bridal Makeup and more.">
 
-    <h1>Charming Beauty Care</h1>
+<meta name="theme-color" content="#5b1827">
 
-    <h2>Ladies Only Beauty Salon</h2>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-    <p>
-        E-6/95, Flat No. 1, Shalimar Homes,
-        Arera Colony, Bhopal
-    </p>
+    html {
+        scroll-behavior: smooth;
+    }
 
-    <p>Call: 9826246652</p>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #fffaf7;
+        color: #321c22;
+        line-height: 1.6;
+    }
 
-</body>
-</html>
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    /* HEADER */
+
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: rgba(255, 250, 247, 0.96);
+        border-bottom: 1px solid #ead7c9;
+        backdrop-filter: blur(10px);
+    }
+
+    .nav {
+        max-width: 1150px;
+        margin: auto;
+        padding: 15px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        font-size: 21px;
+        font-weight: 800;
+        color: #651c2c;
+        letter-spacing: .5px;
+    }
+
+    .logo span {
+        display: block;
+        font-size: 11px;
+        color: #a77b55;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 25px;
+        font-size: 14px;
+    }
+
+    .nav-links a:hover {
+        color: #a77b55;
+    }
+
+    .nav-btn {
+        background: #651c2c;
+        color: white;
+        padding: 10px 18px;
+        border-radius: 30px;
+        font-size: 13px;
+    }
+
+    /* HERO */
+
+    .hero {
+        min-height: 650px;
+        display: flex;
+        align-items: center;
+        background:
+            linear-gradient(90deg, rgba(52,18,27,.94), rgba(52,18,27,.63), rgba(52,18,27,.20)),
+            url("https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1800&q=85")
+            center/cover no-repeat;
+        color: white;
+    }
+
+    .hero-content {
+        width: min(1150px, 100%);
+        margin: auto;
+        padding: 80px 20px;
+    }
+
+    .eyebrow {
+        color: #e7c49f;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        font-size: 12px;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    .hero h1 {
+        font-family: Georgia, serif;
+        font-size: clamp(48px, 7vw, 82px);
+        line-height: 1;
+        max-width: 750px;
+        margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+        color: #e6bf91;
+    }
+
+    .hero p {
+        max-width: 600px;
+        font-size: 18px;
+        color: #f7eae3;
+        margin-bottom: 32px;
+    }
+
+    .buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 14px 25px;
+        border-radius: 30px;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    .btn-gold {
+        background: #d4a46f;
+        color: #351821;
+    }
+
+    .btn-light {
+        border: 1px solid rgba(255,255,255,.55);
+        color: white;
+    }
+
+    /* QUICK ACTIONS */
+
+    .quick {
+        max-width: 1000px;
+        margin: -38px auto 0;
+        position: relative;
+        z-index: 5;
+        padding: 0 20px;
+    }
+
+    .quick-box {
+        background: white;
+        border-radius: 18px;
+        box-shadow: 0 15px 45px rgba(65, 28, 35, .14);
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        overflow: hidden;
+    }
+
+    .quick a {
+        text-align: center;
+        padding: 20px 10px;
+        border-right: 1px solid #eee2da;
+        font-weight: bold;
+        font-size: 13px;
+    }
+
+    .quick a:last-child {
+        border-right: 0;
+    }
+
+    .quick small {
+        display: block;
+        color: #9b7663;
+        margin-top: 3px;
+        font-weight: normal;
+    }
+
+    /* GENERAL */
+
+    section {
+        padding: 85px 20px;
+    }
+
+    .container {
+        max-width: 1100px;
+        margin: auto;
+    }
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 45px;
+    }
+
+    .section-title small {
+        color: #a77b55;
