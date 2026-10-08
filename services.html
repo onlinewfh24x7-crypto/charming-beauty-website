@@ -1,33 +1,1222 @@
-<script>
-/* =========================================
-   CHARMING BEAUTY CARE
-   SERVICE SELECTION SYSTEM
-   ========================================= */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-let selectedServices = [];
+<title>Our Beauty Services | Charming Beauty Care Bhopal</title>
 
-/* Safely load saved services */
-try {
-    const saved = localStorage.getItem("selectedServices");
+<meta name="description" content="Explore premium beauty, facial, hair, makeup, waxing, threading, manicure and pedicure services at Charming Beauty Care, Bhopal.">
 
-    if (saved) {
-        const parsed = JSON.parse(saved);
+<style>
 
-        if (Array.isArray(parsed)) {
-            selectedServices = parsed;
-        }
+:root{
+    --wine:#5a1828;
+    --wine-dark:#35101a;
+    --wine-light:#7b3043;
+    --gold:#c9a45c;
+    --gold-light:#e7cf91;
+    --cream:#fffaf3;
+    --ivory:#f7efe5;
+    --text:#33262a;
+    --muted:#75686b;
+    --white:#ffffff;
+    --shadow:0 15px 40px rgba(53,16,26,.10);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:var(--cream);
+    color:var(--text);
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font-family:inherit;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,250,243,.96);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(201,164,92,.25);
+}
+
+.navbar{
+    max-width:1250px;
+    margin:auto;
+    padding:16px 25px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    color:var(--wine);
+}
+
+.logo-main{
+    font-family:Georgia,serif;
+    font-size:22px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.logo-sub{
+    display:block;
+    font-size:9px;
+    letter-spacing:3px;
+    color:var(--gold);
+    margin-top:2px;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:24px;
+}
+
+.nav-links a{
+    font-size:13px;
+    color:#49383c;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--gold);
+}
+
+.nav-book{
+    background:var(--wine);
+    color:white !important;
+    padding:11px 18px;
+    border-radius:30px;
+}
+
+.menu-btn{
+    display:none;
+    background:none;
+    border:0;
+    font-size:28px;
+    color:var(--wine);
+    cursor:pointer;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:430px;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    overflow:hidden;
+
+    background:
+    linear-gradient(rgba(53,16,26,.73),rgba(53,16,26,.80)),
+    url("https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1800&q=85")
+    center/cover;
+}
+
+.hero-content{
+    max-width:800px;
+    padding:70px 25px;
+    color:white;
+}
+
+.hero-small{
+    color:var(--gold-light);
+    letter-spacing:4px;
+    font-size:12px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.hero h1{
+    font-family:Georgia,serif;
+    font-size:clamp(42px,7vw,72px);
+    line-height:1.05;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:650px;
+    margin:auto;
+    color:#f5e9df;
+    font-size:16px;
+}
+
+.gold-line{
+    width:70px;
+    height:2px;
+    background:var(--gold);
+    margin:22px auto;
+}
+
+/* ================= INTRO ================= */
+
+.intro{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+    padding:75px 25px 45px;
+}
+
+.section-label{
+    color:var(--gold);
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+.intro h2{
+    font-family:Georgia,serif;
+    color:var(--wine);
+    font-size:clamp(30px,5vw,46px);
+    margin:10px 0 15px;
+}
+
+.intro p{
+    color:var(--muted);
+    max-width:700px;
+    margin:auto;
+}
+
+/* ================= SERVICE SECTIONS ================= */
+
+.services-wrapper{
+    max-width:1200px;
+    margin:auto;
+    padding:10px 22px 150px;
+}
+
+.category{
+    margin-top:55px;
+}
+
+.category-title{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.category-title h2{
+    font-family:Georgia,serif;
+    color:var(--wine);
+    font-size:30px;
+}
+
+.category-title span{
+    height:1px;
+    flex:1;
+    background:rgba(201,164,92,.4);
+}
+
+/* ================= CARDS ================= */
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.service-card{
+    background:white;
+    border:1px solid rgba(201,164,92,.22);
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    transition:.35s ease;
+    display:flex;
+    flex-direction:column;
+}
+
+.service-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 45px rgba(53,16,26,.16);
+    border-color:rgba(201,164,92,.55);
+}
+
+.service-image{
+    height:190px;
+    overflow:hidden;
+}
+
+.service-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.service-card:hover .service-image img{
+    transform:scale(1.06);
+}
+
+.service-content{
+    padding:22px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+}
+
+.service-content h3{
+    color:var(--wine);
+    font-family:Georgia,serif;
+    font-size:21px;
+    margin-bottom:8px;
+}
+
+.service-content p{
+    color:var(--muted);
+    font-size:13px;
+    margin-bottom:18px;
+    flex:1;
+}
+
+.add-btn{
+    width:100%;
+    border:1px solid var(--wine);
+    background:white;
+    color:var(--wine);
+    padding:11px 15px;
+    border-radius:30px;
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:1px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.add-btn:hover{
+    background:var(--wine);
+    color:white;
+}
+
+.add-btn.added{
+    background:var(--wine);
+    color:white;
+    border-color:var(--wine);
+}
+
+/* ================= STICKY BASKET ================= */
+
+.selection-bar{
+    position:fixed;
+    left:50%;
+    bottom:18px;
+    transform:translateX(-50%);
+    width:min(950px,calc(100% - 30px));
+    background:rgba(53,16,26,.97);
+    color:white;
+    border:1px solid rgba(231,207,145,.4);
+    border-radius:18px;
+    padding:14px 18px;
+    z-index:2000;
+    box-shadow:0 15px 45px rgba(0,0,0,.28);
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.basket-info{
+    flex:1;
+    min-width:0;
+}
+
+.basket-count{
+    color:var(--gold-light);
+    font-weight:bold;
+    font-size:14px;
+}
+
+.basket-items{
+    color:#eee;
+    font-size:12px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    margin-top:3px;
+}
+
+.view-appointment{
+    border:0;
+    background:var(--gold);
+    color:var(--wine-dark);
+    padding:13px 20px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:12px;
+    letter-spacing:.5px;
+    cursor:pointer;
+    white-space:nowrap;
+}
+
+.view-appointment:hover{
+    background:var(--gold-light);
+}
+
+/* ================= CTA ================= */
+
+.cta{
+    background:
+    linear-gradient(rgba(53,16,26,.93),rgba(53,16,26,.93)),
+    url("https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1600&q=85")
+    center/cover;
+
+    text-align:center;
+    padding:80px 25px;
+    color:white;
+}
+
+.cta h2{
+    font-family:Georgia,serif;
+    font-size:40px;
+    margin-bottom:12px;
+}
+
+.cta p{
+    color:#eaded5;
+    max-width:600px;
+    margin:0 auto 25px;
+}
+
+.cta a{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--wine-dark);
+    padding:14px 25px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:13px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#270b13;
+    color:#d8c9c1;
+    padding:55px 25px 25px;
+}
+
+.footer-inner{
+    max-width:1150px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:45px;
+}
+
+.footer-brand h2{
+    font-family:Georgia,serif;
+    color:white;
+    letter-spacing:2px;
+    margin-bottom:5px;
+}
+
+.footer-brand span{
+    color:var(--gold);
+    font-size:11px;
+    letter-spacing:3px;
+}
+
+.footer-brand p{
+    font-size:13px;
+    max-width:380px;
+    margin-top:15px;
+    color:#bcaeb0;
+}
+
+.footer-col h3{
+    color:var(--gold-light);
+    font-family:Georgia,serif;
+    margin-bottom:15px;
+}
+
+.footer-col a{
+    display:block;
+    font-size:13px;
+    margin-bottom:8px;
+    color:#cdbfc0;
+}
+
+.footer-col a:hover{
+    color:white;
+}
+
+.footer-bottom{
+    max-width:1150px;
+    margin:40px auto 0;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,.1);
+    text-align:center;
+    font-size:11px;
+    color:#9d8e91;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:850px){
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:70px;
+        left:0;
+        right:0;
+        background:var(--cream);
+        flex-direction:column;
+        align-items:stretch;
+        padding:20px 25px 25px;
+        border-bottom:1px solid rgba(201,164,92,.25);
+        box-shadow:0 15px 30px rgba(0,0,0,.08);
     }
-} catch (error) {
-    console.log("Invalid old service data cleared.");
-    localStorage.removeItem("selectedServices");
-    selectedServices = [];
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .nav-links a{
+        padding:10px 0;
+    }
+
+    .nav-book{
+        text-align:center;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .service-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .footer-inner{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .navbar{
+        padding:14px 18px;
+    }
+
+    .logo-main{
+        font-size:18px;
+    }
+
+    .hero{
+        min-height:400px;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .intro{
+        padding-top:55px;
+    }
+
+    .category-title h2{
+        font-size:25px;
+    }
+
+    .service-grid{
+        grid-template-columns:1fr;
+    }
+
+    .service-image{
+        height:210px;
+    }
+
+    .selection-bar{
+        bottom:10px;
+        padding:12px;
+        gap:10px;
+    }
+
+    .basket-items{
+        max-width:150px;
+    }
+
+    .view-appointment{
+        padding:11px 14px;
+        font-size:11px;
+    }
+
+    .cta h2{
+        font-size:32px;
+    }
+
+    .footer-inner{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<div class="navbar">
+
+<a href="index.html" class="logo">
+    <div class="logo-main">CHARMING BEAUTY CARE</div>
+    <span class="logo-sub">LUXURY LADIES BEAUTY SALON</span>
+</a>
+
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+<nav class="nav-links" id="navLinks">
+
+<a href="index.html">Home</a>
+<a href="index.html#about">About</a>
+<a href="services.html">Services</a>
+<a href="index.html#offers">Offers</a>
+<a href="index.html#training">Training</a>
+<a href="index.html#gallery">Gallery</a>
+<a href="index.html#contact">Contact</a>
+
+<a href="appointment.html" class="nav-book">
+BOOK APPOINTMENT
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="hero-small">
+CHARMING BEAUTY CARE • BHOPAL
+</div>
+
+<h1>Our Beauty Services</h1>
+
+<div class="gold-line"></div>
+
+<p>
+Discover professional beauty care designed to enhance
+your natural beauty, confidence and elegance.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ================= INTRO ================= -->
+
+<section class="intro">
+
+<div class="section-label">Beauty • Care • Confidence</div>
+
+<h2>Signature Beauty Experiences</h2>
+
+<p>
+From glowing facials and professional hair care to bridal
+makeup, waxing, threading and relaxing hand & foot care,
+choose the services that make you feel your most beautiful.
+</p>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<main class="services-wrapper">
+
+
+<!-- FACIAL -->
+
+<section class="category">
+
+<div class="category-title">
+<h2>Facial & Skin Care</h2>
+<span></span>
+</div>
+
+<div class="service-grid">
+
+<div class="service-card">
+
+<div class="service-image">
+<img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=85" alt="Hydra Facial">
+</div>
+
+<div class="service-content">
+<h3>Hydra Facial</h3>
+<p>Deep cleansing, hydration and refreshing skin care for a beautiful glow.</p>
+<button class="add-btn" onclick="addService('Hydra Facial', this)">+ ADD</button>
+</div>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-image">
+<img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=900&q=85" alt="Korean Facial">
+</div>
+
+<div class="service-content">
+<h3>Korean Facial</h3>
+<p>Professional skin care inspired by Korean beauty rituals for fresh-looking skin.</p>
+<button class="add-btn" onclick="addService('Korean Facial', this)">+ ADD</button>
+</div>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-image">
+<img src="https://images.unsplash.com/photo-1556760544-74068565f05c?auto=format&fit=crop&w=900&q=85" alt="D Tan and Bleach">
+</div>
+
+<div class="service-content">
+<h3>D-Tan & Bleach</h3>
+<p>Beauty care designed to refresh the appearance of dull and tanned skin.</p>
+<button class="add-btn" onclick="addService('D-Tan & Bleach', this)">+ ADD</button>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- HAIR -->
+
+<section class="category">
+
+<div class="category-title">
+<h2>Hair Care & Styling</h2>
+<span></span>
+</div>
+
+<div class="service-grid">
+
+<div class="service-card">
+
+<div class="service-image">
+<img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=900&q=85" alt="Hair Cut and Styling">
+</div>
+
+<div class="service-content">
+<h3>Hair Cut & Styling</h3>
+<p>Professional haircuts and styling tailored to your personality and look.</p>
+<button class="add-btn" onclick="addService('Hair Cut & Styling', this)">+ ADD</button>
+</div>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-image">
+<img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=85" alt="Hair Spa">
+</div>
+
+<div class="service-content">
+<h3>Hair Spa</h3>
+<p>Relaxing professional hair care to nourish, refresh and condition your hair.</p>
+<button class="add-btn" onclick="addService('Hair Spa', this)">+ ADD</button>
+</div>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-image">
+<img src="https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?auto=format&fit=crop&w=900&q=85" alt="Hair Coloring">
+</div>
+
+<div class="service-content">
+<h3>Hair Coloring</h3>
+<p>Beautiful hair colour services with a polished and elegant finish.</p>
+<button class="add-btn" onclick="addService('Hair Coloring', this)">+ ADD</button>
+</div>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-image">
+<img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=85" alt="Keratin and Smoothening">
+</div>
+
+<div class="service-content">
+<h3>Keratin & Smoothening</h3>
+<p>Professional treatments for smoother, manageable and polished-looking hair.</p>
+<button class="add-btn" onclick="addService('Keratin & Smoothening', this)">+ ADD</button>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- MAKEUP -->
+
+<section class="category">
+
+<div class="category-title">
+<h2>Bridal & Makeup</h2>
+<span></span>
+</div>
+
+<div class="service-grid">
+
+<div class="service-card">
+
+<div class="service-image">
+<img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=85" alt="Bridal Makeup">
+</div>
+
+<div class="service-content">
+<h3>Bridal Makeup</h3>
+<p>Elegant bridal makeup designed for your special day and unforgettable moments.</p>
+<button class="add-btn" onclick="addService('Bridal Makeup', this)">+ ADD</button>
+</div>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-image">
+<img src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=900&q=85" alt="Party Makeup">
+</div>
+
+<div class="service-content">
+<h3>Party Makeup</h3>
+<p>Glamorous yet elegant makeup for parties, celebrations and special occasions.</p>
+<button class="add-btn" onclick="addService('Party Makeup', this)">+ ADD</button>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- HANDS FEET -->
+
+<section class="category">
+
+<div class="category-title">
+<h2>Hands & Feet</h2>
+<span></span>
+</div>
+
+<div class="service-grid">
+
+<div class="service-card">
+
+<div class="service-image">
+<img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=900&q=85" alt="Manicure">
+</div>
+
+<div class="service-content">
+<h3>Manicure</h3>
+<p>Relaxing hand and nail care for beautifully groomed, soft and elegant hands.</p>
+<button class="add-btn" onclick="addService('Manicure', this)">+ ADD</button>
+</div>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-image">
+<img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=900&q=85" alt="Pedicure">
+</div>
+
+<div class="service-content">
+<h3>Pedicure</h3>
+<p>Refreshing foot and nail care for soft, clean and beautifully groomed feet.</p>
+<button class="add-btn" onclick="addService('Pedicure', this)">+ ADD</button>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- WAXING -->
+
+<section class="category">
+
+<div class="category-title">
+<h2>Waxing</h2>
+<span></span>
+</div>
+
+<div class="service-grid">
+
+<div class="service-card">
+
+<div class="service-image">
+<img src="https://images.unsplash.com/photo-1552693673-1bf958298935?auto=format&fit=crop&w=900&q=85" alt="Rica Wax">
+</div>
+
+<div class="service-content">
+<h3>Rica Wax</h3>
+<p>Premium waxing care for a smoother and cleaner-looking finish.</p>
+<button class="add-btn" onclick="addService('Rica Wax', this)">+ ADD</button>
+</div>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-image">
+<img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=900&q=85" alt="Honey Wax">
+</div>
+
+<div class="service-content">
+<h3>Honey Wax</h3>
+<p>Gentle waxing care designed for a smooth and comfortable beauty experience.</p>
+<button class="add-btn" onclick="addService('Honey Wax', this)">+ ADD</button>
+</div>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-image">
+<img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=900&q=85" alt="Hand and Leg Wax">
+</div>
+
+<div class="service-content">
+<h3>Hand & Leg Wax</h3>
+<p>Professional waxing for smooth-looking hands and legs.</p>
+<button class="add-btn" onclick="addService('Hand & Leg Wax', this)">+ ADD</button>
+</div>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-image">
+<img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=900&q=85" alt="Full Body Wax">
+</div>
+
+<div class="service-content">
+<h3>Full Body Wax</h3>
+<p>Complete professional waxing service for smooth, well-groomed skin.</p>
+<button class="add-btn" onclick="addService('Full Body Wax', this)">+ ADD</button>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- THREADING -->
+
+<section class="category">
+
+<div class="category-title">
+<h2>Threading</h2>
+<span></span>
+</div>
+
+<div class="service-grid">
+
+<div class="service-card">
+
+<div class="service-image">
+<img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=900&q=85" alt="Eyebrow Threading">
+</div>
+
+<div class="service-content">
+<h3>Eyebrow Threading</h3>
+<p>Precise eyebrow shaping for a clean and beautifully defined look.</p>
+<button class="add-btn" onclick="addService('Eyebrow Threading', this)">+ ADD</button>
+</div>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-image">
+<img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=900&q=85" alt="Upper Lips Threading">
+</div>
+
+<div class="service-content">
+<h3>Upper Lips Threading</h3>
+<p>Quick and precise threading for a clean, polished appearance.</p>
+<button class="add-btn" onclick="addService('Upper Lips Threading', this)">+ ADD</button>
+</div>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-image">
+<img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=900&q=85" alt="Full Face Threading">
+</div>
+
+<div class="service-content">
+<h3>Full Face Threading</h3>
+<p>Detailed facial threading for a smooth and refined look.</p>
+<button class="add-btn" onclick="addService('Full Face Threading', this)">+ ADD</button>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- PACKAGES -->
+
+<section class="category">
+
+<div class="category-title">
+<h2>Beauty Packages</h2>
+<span></span>
+</div>
+
+<div class="service-grid">
+
+<div class="service-card">
+
+<div class="service-image">
+<img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=85" alt="Glow Package">
+</div>
+
+<div class="service-content">
+<h3>Glow Package</h3>
+<p>A thoughtfully selected combination of beauty services for a fresh glowing look.</p>
+<button class="add-btn" onclick="addService('Glow Package', this)">+ ADD</button>
+</div>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-image">
+<img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=900&q=85" alt="Special Beauty Package">
+</div>
+
+<div class="service-content">
+<h3>Special Beauty Package</h3>
+<p>Custom beauty combinations designed according to your personal needs.</p>
+<button class="add-btn" onclick="addService('Special Beauty Package', this)">+ ADD</button>
+</div>
+
+</div>
+
+</div>
+</section>
+
+</main>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+<h2>Your Beauty. Your Choice.</h2>
+
+<p>
+Select one or multiple services and continue to our appointment
+page to choose your preferred date and time.
+</p>
+
+<a href="appointment.html">
+BOOK AN APPOINTMENT
+</a>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="footer-inner">
+
+<div class="footer-brand">
+
+<h2>CHARMING BEAUTY CARE</h2>
+
+<span>LUXURY LADIES BEAUTY SALON</span>
+
+<p>
+Professional ladies beauty salon and beautician training center
+in Bhopal. Creating beautiful experiences since 2004.
+</p>
+
+</div>
+
+
+<div class="footer-col">
+
+<h3>Quick Links</h3>
+
+<a href="index.html">Home</a>
+<a href="index.html#about">About</a>
+<a href="services.html">Services</a>
+<a href="appointment.html">Appointment</a>
+<a href="index.html#contact">Contact</a>
+
+</div>
+
+
+<div class="footer-col">
+
+<h3>Contact</h3>
+
+<a href="tel:9826246652">9826246652</a>
+
+<a href="https://wa.me/919826246652" target="_blank">
+WhatsApp
+</a>
+
+<a href="index.html#contact">
+E-6/95, Flat No. 1,<br>
+Shalimar Homes, Arera Colony,<br>
+Bhopal
+</a>
+
+</div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+© 2026 Charming Beauty Care. All Rights Reserved.
+
+</div>
+
+</footer>
+
+
+<!-- ================= SELECTION BAR ================= -->
+
+<div class="selection-bar">
+
+<div class="basket-info">
+
+<div class="basket-count" id="basketCount">
+0 Services Selected
+</div>
+
+<div class="basket-items" id="basketItems">
+Select services to continue
+</div>
+
+</div>
+
+<button class="view-appointment" onclick="goToAppointment()">
+VIEW APPOINTMENT →
+</button>
+
+</div>
+
+
+<script>
+
+/* ================= MOBILE MENU ================= */
+
+function toggleMenu(){
+
+    const nav = document.getElementById("navLinks");
+
+    nav.classList.toggle("active");
+
 }
 
 
-/* ADD SERVICE */
-function addService(serviceName, button) {
+/* ================= SERVICE SELECTION ================= */
 
-    if (!selectedServices.includes(serviceName)) {
+let selectedServices = [];
+
+
+/* Safely load previously selected services */
+
+try{
+
+    const savedServices =
+        localStorage.getItem("selectedServices");
+
+    if(savedServices){
+
+        const parsedServices =
+            JSON.parse(savedServices);
+
+        if(Array.isArray(parsedServices)){
+            selectedServices = parsedServices;
+        }
+
+    }
+
+}catch(error){
+
+    localStorage.removeItem("selectedServices");
+    selectedServices = [];
+
+}
+
+
+/* Add service */
+
+function addService(serviceName, button){
+
+    if(!selectedServices.includes(serviceName)){
 
         selectedServices.push(serviceName);
 
@@ -35,19 +1224,24 @@ function addService(serviceName, button) {
             "selectedServices",
             JSON.stringify(selectedServices)
         );
+
     }
 
     updateBasket();
 
-    if (button) {
+    if(button){
+
         button.classList.add("added");
         button.textContent = "✓ ADDED";
+
     }
+
 }
 
 
-/* UPDATE BASKET */
-function updateBasket() {
+/* Update basket */
+
+function updateBasket(){
 
     const countElement =
         document.getElementById("basketCount");
@@ -55,13 +1249,12 @@ function updateBasket() {
     const itemsElement =
         document.getElementById("basketItems");
 
-    if (!countElement || !itemsElement) {
-        return;
-    }
 
-    const count = selectedServices.length;
+    const count =
+        selectedServices.length;
 
-    if (count === 0) {
+
+    if(count === 0){
 
         countElement.textContent =
             "0 Services Selected";
@@ -70,52 +1263,90 @@ function updateBasket() {
             "Select services to continue";
 
         return;
+
     }
+
 
     countElement.textContent =
         count === 1
-            ? "1 Service Selected"
-            : count + " Services Selected";
+        ? "1 Service Selected"
+        : count + " Services Selected";
+
 
     itemsElement.textContent =
         selectedServices.join(" • ");
+
 }
 
 
-/* RESTORE BUTTON STATUS AFTER REFRESH */
-function restoreSelectedButtons() {
+/* Restore selected buttons */
+
+function restoreSelectedButtons(){
 
     const buttons =
-        document.querySelectorAll(".book");
+        document.querySelectorAll(".add-btn");
 
-    buttons.forEach(function(button) {
+
+    buttons.forEach(function(button){
 
         const onclickValue =
             button.getAttribute("onclick");
 
-        if (!onclickValue) {
+
+        if(!onclickValue){
             return;
         }
 
-        selectedServices.forEach(function(service) {
 
-            if (
+        selectedServices.forEach(function(service){
+
+            if(
                 onclickValue.includes(
                     "'" + service + "'"
                 )
-            ) {
+            ){
 
                 button.classList.add("added");
 
                 button.textContent =
                     "✓ ADDED";
+
             }
+
         });
+
     });
+
 }
 
 
-/* INITIAL LOAD */
+/* Go to appointment */
+
+function goToAppointment(){
+
+    if(selectedServices.length === 0){
+
+        alert(
+            "Please select at least one service first."
+        );
+
+        return;
+
+    }
+
+
+    window.location.href =
+        "appointment.html";
+
+}
+
+
+/* Initial load */
+
 updateBasket();
 restoreSelectedButtons();
+
 </script>
+
+</body>
+</html>
