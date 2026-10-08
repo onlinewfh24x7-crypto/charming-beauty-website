@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Beauty Services | Charming Beauty Care</title>
+
+  <meta name="description"
+        content="Explore premium ladies beauty salon services at Charming Beauty Care, Bhopal. Facial, hair care, makeup, waxing, manicure, pedicure and more.">
+
+  <meta name="keywords"
+        content="beauty parlour Bhopal, ladies salon Bhopal, facial, bridal makeup, hair spa, waxing, manicure, pedicure">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+  <style>
+
+    :root {
+      --wine: #5b1828;
+      --wine-dark: #350d18;
+      --wine-light: #7b2a3d;
+      --gold: #c9a45c;
+      --gold-light: #e5ca8d;
+      --ivory: #fffaf3;
+      --cream: #f7efe5;
+      --blush: #f4dfe1;
+      --text: #33252a;
+      --muted: #76666b;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--ivory);
+      color: var(--text);
+    }
+
+    /* ================= HEADER ================= */
+
+    header {
+      background: var(--wine-dark);
+      padding: 18px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(229,202,141,.25);
+    }
+
+    .logo {
+      text-decoration: none;
+      color: var(--gold-light);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .back-home {
+      text-decoration: none;
+      color: white;
+      border: 1px solid rgba(229,202,141,.5);
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 600;
+      transition: .3s;
+    }
+
+    .back-home:hover {
+      background: var(--gold);
+      color: var(--wine-dark);
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      min-height: 430px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px;
+      background:
+        linear-gradient(
+          rgba(53,13,24,.90),
+          rgba(53,13,24,.94)
+        ),
+        url("https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .eyebrow {
+      color: var(--gold-light);
+      font-size: 12px;
+      letter-spacing: 4px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      color: white;
+      font-size: clamp(48px, 8vw, 82px);
+      line-height: .95;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: var(--gold-light);
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: auto;
+      color: rgba(255,255,255,.78);
+      line-height: 1.8;
+      font-size: 14px;
+    }
+
+    /* ================= MAIN ================= */
+
+    .section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 80px 20px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-heading .small {
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+    }
+
+    .section-heading h2 {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--wine-dark);
+      font-size: clamp(40px, 6vw, 60px);
+      line-height: 1;
+      margin-bottom: 15px;
+    }
+
+    .section-heading p {
+      max-width: 650px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    /* ================= CATEGORY ================= */
+
+    .category {
+      margin-bottom: 75px;
+    }
+
+    .category-title {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    .category-title .line {
+      width: 45px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .category-title h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 34px;
+      color: var(--wine);
+    }
+
+    /* ================= SERVICE GRID ================= */
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      background: white;
+      border: 1px solid #eadfd4;
+      border-radius: 18px;
+      overflow: hidden;
+      transition: .45s ease;
+      box-shadow: 0 10px 30px rgba(52,13,24,.06);
+    }
+
+    .service-card:hover {
+      transform: translateY(-9px);
+      box-shadow: 0 22px 45px rgba(52,13,24,.13);
+      border-color: rgba(201,164,92,.65);
+    }
+
+    .service-image {
+      height: 210px;
+      overflow: hidden;
+      background: var(--cream);
+    }
+
+    .service-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: .7s ease;
+    }
+
+    .service-card:hover .service-image img {
+      transform: scale(1.07);
+    }
+
+    .service-content {
+      padding: 25px;
+    }
+
+    .service-content h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 29px;
+      color: var(--wine-dark);
+      margin-bottom: 10px;
+    }
+
+    .service-content p {
+      font-size: 12px;
+      line-height: 1.8;
+      color: var(--muted);
+      min-height: 65px;
+      margin-bottom: 20px;
+    }
+
+    .service-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .explore {
+      color: var(--wine);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .8px;
+      text-decoration: none;
+    }
+
+    .book {
+      text-decoration: none;
+      background: var(--wine);
+      color: white;
+      padding: 10px 14px;
+      border-radius: 30px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .5px;
+      transition: .3s;
+    }
+
+    .book:hover {
+      background: var(--gold);
+      color: var(--wine-dark);
+    }
+
+    /* ================= CTA ================= */
+
+    .cta {
+      background:
+        linear-gradient(
+          135deg,
+          var(--wine-dark),
+          var(--wine)
+        );
+      padding: 70px 25px;
+      text-align: center;
+      border-radius: 25px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta::before,
+    .cta::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(229,202,141,.2);
+      border-radius: 50%;
+    }
+
+    .cta::before {
+      width: 250px;
+      height: 250px;
+      left: -120px;
+      top: -100px;
+    }
+
+    .cta::after {
+      width: 300px;
+      height: 300px;
+      right: -150px;
+      bottom: -150px;
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta h2 {
+      font-family: 'Cormorant Garamond', serif;
+      color: white;
+      font-size: clamp(40px, 6vw, 58px);
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      color: rgba(255,255,255,.75);
+      font-size: 13px;
+      line-height: 1.7;
+      max-width: 600px;
+      margin: 0 auto 28px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      text-decoration: none;
+      background: var(--gold);
+      color: var(--wine-dark);
+      padding: 15px 28px;
+      border-radius: 30px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      transition: .3s;
+    }
+
+    .cta-btn:hover {
+      background: white;
+      transform: translateY(-3px);
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      background: var(--wine-dark);
+      color: rgba(255,255,255,.65);
+      text-align: center;
+      padding: 35px 20px;
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    footer strong {
+      color: var(--gold-light);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media (max-width: 900px) {
+
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+    }
+
+    @media (max-width: 600px) {
+
+      header {
+        padding: 15px 18px;
+      }
+
+      .logo {
+        font-size: 24px;
+      }
+
+      .back-home {
+        padding: 8px 13px;
+        font-size: 10px;
+      }
+
+      .hero {
+        min-height: 390px;
+      }
+
+      .section {
+        padding: 60px 15px;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-image {
+        height: 230px;
+      }
+
+      .category-title h3 {
+        font-size: 29px;
+      }
+
+      .cta {
+        border-radius: 18px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+  <a href="index.html" class="logo">
+    Charming Beauty Care
+  </a>
+
+  <a href="index.html" class="back-home">
+    ← HOME
+  </a>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="eyebrow">
+      LADIES BEAUTY SALON • BHOPAL
+    </div>
+
+    <h1>
+      Our <span>Beauty</span> Services
+    </h1>
+
+    <p>
+      Discover professional beauty care designed to enhance
+      your natural beauty, confidence and elegance.
+      From everyday grooming to special occasions,
+      experience personalized care at Charming Beauty Care.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section class="section">
+
+  <div class="section-heading">
+
+    <div class="small">
+      BEAUTY • CARE • CONFIDENCE
+    </div>
+
+    <h2>
+      Our Signature Services
+    </h2>
+
+    <p>
+      Explore our carefully selected range of beauty,
+      hair, skin and grooming services.
+    </p>
+
+  </div>
+
+
+  <!-- FACIAL -->
+
+  <div class="category">
+
+    <div class="category-title">
+      <div class="line"></div>
+      <h3>Facial & Skin Care</h3>
+    </div>
+
+    <div class="service-grid">
+
+
+      <div class="service-card">
+
+        <div class="service-image">
+          <img
+            src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=85"
+            alt="Facial and skin care"
+          >
+        </div>
+
+        <div class="service-content">
+
+          <h4>Hydra Facial</h4>
+
+          <p>
+            A refreshing professional facial experience
+            designed for hydrated, smooth and glowing skin.
+          </p>
+
+          <div class="service-bottom">
+
+            <span class="explore">
+              PREMIUM CARE
+            </span>
+
+            <a href="appointment.html?service=Hydra%20Facial"
+               class="book">
+              BOOK SERVICE
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="service-card">
+
+        <div class="service-image">
+          <img
+            src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=900&q=85"
+            alt="Korean facial beauty treatment"
+          >
+        </div>
+
+        <div class="service-content">
+
+          <h4>Korean Facial</h4>
+
+          <p>
+            A premium skincare ritual focused on
+            freshness, softness and a beautiful glow.
+          </p>
+
+          <div class="service-bottom">
+
+            <span class="explore">
+              GLOW CARE
+            </span>
+
+            <a href="appointment.html?service=Korean%20Facial"
+               class="book">
+              BOOK SERVICE
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="service-card">
+
+        <div class="service-image">
+          <img
+            src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=900&q=85"
+            alt="D Tan beauty treatment"
+          >
+        </div>
+
+        <div class="service-content">
+
+          <h4>D-Tan & Bleach</h4>
+
+          <p>
+            Professional care to refresh the appearance
+            of your skin and create a clean, even look.
+          </p>
+
+          <div class="service-bottom">
+
+            <span class="explore">
+              SKIN CARE
+            </span>
+
+            <a href="appointment.html?service=D-Tan"
+               class="book">
+              BOOK SERVICE
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- HAIR -->
+
+  <div class="category">
+
+    <div class="category-title">
+      <div class="line"></div>
+      <h3>Hair Care & Styling</h3>
+    </div>
+
+    <div class="service-grid">
+
+
+      <div class="service-card">
+
+        <div class="service-image">
+          <img
+            src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=85"
+            alt="Hair styling"
+          >
+        </div>
+
+        <div class="service-content">
+
+          <h4>Hair Cut & Styling</h4>
+
+          <p>
+            Personalized cuts and styling designed
+            to complement your look and personality.
+          </p>
+
+          <div class="service-bottom">
+
+            <span class="explore">
+              SIGNATURE STYLE
+            </span>
+
+            <a href="appointment.html?service=Hair%20Cut%20%26%20Styling"
+               class="book">
+              BOOK SERVICE
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="service-card">
+
+        <div class="service-image">
+          <img
+            src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=900&q=85"
+            alt="Hair spa treatment"
+          >
+        </div>
+
+        <div class="service-content">
+
+          <h4>Hair Spa</h4>
+
+          <p>
+            Relaxing professional hair care for
+            nourished, smoother and healthier-looking hair.
+          </p>
+
+          <div class="service-bottom">
+
+            <span class="explore">
+              HAIR WELLNESS
+            </span>
+
+            <a href="appointment.html?service=Hair%20Spa"
+               class="book">
+              BOOK SERVICE
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="service-card">
+
+        <div class="service-image">
+          <img
+            src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=85"
+            alt="Hair coloring"
+          >
+        </div>
+
+        <div class="service-content">
+
+          <h4>Coloring</h4>
+
+          <p>
+            Professional hair colour services with
+            personalized attention to your desired look.
+          </p>
+
+          <div class="service-bottom">
+
+            <span class="explore">
+              BEAUTIFUL COLOR
+            </span>
+
+            <a href="appointment.html?service=Hair%20Coloring"
+               class="book">
+              BOOK SERVICE
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="service-card">
+
+        <div class="service-image">
+          <img
+            src="https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=900&q=85"
+            alt="Keratin and smoothening"
+          >
+        </div>
+
+        <div class="service-content">
+
+          <h4>Keratin & Smoothening</h4>
+
+          <p>
+            Professional hair treatments for a smoother,
+            polished and beautifully managed appearance.
+          </p>
+
+          <div class="service-bottom">
+
+            <span class="explore">
+              HAIR TREATMENT
+            </span>
+
+            <a href="appointment.html?service=Keratin%20Treatment"
+               class="book">
+              BOOK SERVICE
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- MAKEUP -->
+
+  <div class="category">
+
+    <div class="category-title">
+      <div class="line"></div>
+      <h3>Makeup & Special Occasions</h3>
+    </div>
+
+    <div class="service-grid">
+
+
+      <div class="service-card">
+
+        <div class="service-image">
+          <img
+            src="https://images.unsplash.com/photo-1487412912498-0447578fcca8?auto=format&fit=crop&w=900&q=85"
+            alt="Bridal makeup"
+          >
+        </div>
+
+        <div class="service-content">
+
+          <h4>Bridal Makeup</h4>
+
+          <p>
+            Elegant bridal beauty designed to make
+            your special day truly unforgettable.
+          </p>
+
+          <div class="service-bottom">
+
+            <span class="explore">
+              BRIDAL BEAUTY
+            </span>
+
+            <a href="appointment.html?service=Bridal%20Makeup"
+               class="book">
+              BOOK SERVICE
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="service-card">
+
+        <div class="service-image">
+          <img
+            src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=85"
+            alt="Party makeup"
+          >
+        </div>
+
+        <div class="service-content">
+
+          <h4>Party Makeup</h4>
+
+          <p>
+            Sophisticated makeup looks for parties,
+            celebrations and memorable occasions.
+          </p>
+
+          <div class="service-bottom">
+
+            <span class="explore">
+              GLAMOUR
+            </span>
+
+            <a href="appointment.html?service=Party%20Makeup"
+               class="book">
+              BOOK SERVICE
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- HANDS FEET -->
+
+  <div class="category">
+
+    <div class="category-title">
+      <div class="line"></div>
+      <h3>Hands, Feet & Waxing</h3>
+    </div>
+
+    <div class="service-grid">
+
+
+      <div class="service-card">
+
+        <div class="service-image">
+          <img
+            src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=900&q=85"
+            alt="Manicure"
+          >
+        </div>
+
+        <div class="service-content">
+
+          <h4>Manicure</h4>
+
+          <p>
+            Relaxing hand and nail care for soft,
+            clean and beautifully groomed hands.
+          </p>
+
+          <div class="service-bottom">
+
+            <span class="explore">
+              HAND CARE
+            </span>
+
+            <a href="appointment.html?service=Manicure"
+               class="book">
+              BOOK SERVICE
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="service-card">
+
+        <div class="service-image">
+          <img
+            src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=900&q=85"
+            alt="Pedicure"
+          >
+        </div>
+
+        <div class="service-content">
+
+          <h4>Pedicure</h4>
+
+          <p>
+            A relaxing foot care experience for
+            refreshed, smooth and well-groomed feet.
+          </p>
+
+          <div class="service-bottom">
+
+            <span class="explore">
+              FOOT CARE
+            </span>
+
+            <a href="appointment.html?service=Pedicure"
+               class="book">
+              BOOK SERVICE
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="service-card">
+
+        <div class="service-image">
+          <img
+            src="https://images.unsplash.com/photo-1596206680665-2e1a8f7b3a54?auto=format&fit=crop&w=900&q=85"
+            alt="Waxing service"
+          >
+        </div>
+
+        <div class="service-content">
+
+          <h4>Rica Wax</h4>
+
+          <p>
+            Professional waxing care focused on a
+            smooth and comfortable beauty experience.
+          </p>
+
+          <div class="service-bottom">
+
+            <span class="explore">
+              SMOOTH CARE
+            </span>
+
+            <a href="appointment.html?service=Rica%20Wax"
+               class="book">
+              BOOK SERVICE
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="service-card">
+
+        <div class="service-image">
+          <img
+            src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=900&q=85"
+            alt="Threading service"
+          >
+        </div>
+
+        <div class="service-content">
+
+          <h4>Threading</h4>
+
+          <p>
+            Precise grooming for beautifully defined
+            brows and a polished everyday look.
+          </p>
+
+          <div class="service-bottom">
+
+            <span class="explore">
+              PRECISION CARE
+            </span>
+
+            <a href="appointment.html?service=Threading"
+               class="book">
+              BOOK SERVICE
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- CTA -->
+
+  <div class="cta">
+
+    <div class="cta-content">
+
+      <h2>
+        Ready for Your Beauty Moment?
+      </h2>
+
+      <p>
+        Choose your service and reserve your preferred
+        appointment time with Charming Beauty Care.
+      </p>
+
+      <a href="appointment.html" class="cta-btn">
+        BOOK YOUR APPOINTMENT
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+  <strong>
+    CHARMING BEAUTY CARE
+  </strong>
+
+  <br>
+
+  Ladies Beauty Salon & Care • Bhopal
+
+  <br>
+
+  E-6/95, Flat No. 1, Shalimar Homes, Arera Colony, Bhopal
+
+  <br>
+
+  📞 9826246652
+
+  <br><br>
+
+  Since 2004 • Beauty • Care • Confidence
+
+</footer>
+
+
+</body>
+</html>
