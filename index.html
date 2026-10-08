@@ -1,907 +1,1796 @@
-color: var(--text);
-line-height: 1.7;
-overflow-x: hidden;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
 
-      /* Page entrance animation */
-      animation: pageFadeIn 1s ease both;
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Charming Beauty Care - Premium Ladies Beauty Salon & Care in Bhopal. Professional beauty care, bridal makeup, facial, hair care, waxing and beautician training.">
+
+<meta name="keywords" content="beauty parlour Bhopal, ladies beauty salon Bhopal, Charming Beauty Care, facial Bhopal, bridal makeup Bhopal, beauty training Bhopal">
+
+<meta name="author" content="Charming Beauty Care">
+
+<title>Charming Beauty Care | Luxury Ladies Beauty Salon & Care</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --wine:#54152a;
+    --wine-dark:#2d0c18;
+    --wine-light:#72243d;
+    --gold:#c9a45c;
+    --gold-light:#e5cb91;
+    --cream:#fbf7f0;
+    --ivory:#fffdf9;
+    --blush:#f3e4e3;
+    --text:#35252b;
+    --muted:#76666b;
+    --white:#ffffff;
 }
 
-img {
-@@ -136,6 +139,19 @@
-height: 1px;
-background: var(--gold);
-margin: 20px auto;
-      position: relative;
-      overflow: hidden;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Montserrat',sans-serif;
+    color:var(--text);
+    background:var(--ivory);
+    line-height:1.7;
+    overflow-x:hidden;
+}
+
+img{
+    width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    padding:18px 0;
+    transition:.4s;
+}
+
+header.scrolled{
+    background:rgba(45,12,24,.96);
+    box-shadow:0 8px 30px rgba(0,0,0,.18);
+    padding:12px 0;
+}
+
+.navbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    color:white;
+    font-family:'Cormorant Garamond',serif;
+    font-size:28px;
+    font-weight:600;
+    letter-spacing:2px;
+}
+
+.logo span{
+    display:block;
+    color:var(--gold-light);
+    font-family:'Montserrat',sans-serif;
+    font-size:9px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    margin-top:-5px;
+}
+
+.nav-links{
+    display:flex;
+    gap:28px;
+    align-items:center;
+}
+
+.nav-links a{
+    color:white;
+    font-size:12px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--gold-light);
+}
+
+.nav-book{
+    border:1px solid var(--gold);
+    padding:10px 18px;
+    color:var(--gold-light)!important;
+}
+
+.menu-btn{
+    display:none;
+    color:white;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    position:relative;
+    background:
+    linear-gradient(90deg,rgba(25,5,14,.88),rgba(25,5,14,.48),rgba(25,5,14,.18)),
+    url("https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=2000&q=85")
+    center/cover;
+}
+
+.hero-content{
+    color:white;
+    max-width:720px;
+    padding-top:70px;
+    animation:fadeUp 1.2s ease;
+}
+
+.eyebrow{
+    color:var(--gold-light);
+    letter-spacing:4px;
+    font-size:12px;
+    text-transform:uppercase;
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(55px,8vw,100px);
+    line-height:.88;
+    font-weight:500;
+    letter-spacing:2px;
+    margin-bottom:18px;
+}
+
+.hero h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(25px,4vw,42px);
+    font-weight:400;
+    color:#fff;
+    margin-bottom:12px;
+}
+
+.hero-tagline{
+    color:var(--gold-light);
+    font-size:18px;
+    letter-spacing:2px;
+    font-style:italic;
+    margin-bottom:22px;
+}
+
+.hero p{
+    max-width:650px;
+    color:#f5eeee;
+    font-size:15px;
+    margin-bottom:30px;
+}
+
+.buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+}
+
+.btn{
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    min-height:50px;
+    padding:0 26px;
+    border:1px solid var(--gold);
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    font-size:11px;
+    font-weight:600;
+    transition:.35s;
+}
+
+.btn-gold{
+    background:var(--gold);
+    color:var(--wine-dark);
+}
+
+.btn-gold:hover{
+    background:var(--gold-light);
+    transform:translateY(-3px);
+}
+
+.btn-outline{
+    color:white;
+}
+
+.btn-outline:hover{
+    background:white;
+    color:var(--wine-dark);
+    transform:translateY(-3px);
+}
+
+.trust{
+    margin-top:38px;
+    color:var(--gold-light);
+    font-size:11px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+/* ================= GENERAL ================= */
+
+section{
+    padding:100px 0;
+}
+
+.section-head{
+    text-align:center;
+    max-width:720px;
+    margin:0 auto 55px;
+}
+
+.section-label{
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:11px;
+    font-weight:600;
+    margin-bottom:10px;
+}
+
+.section-title{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(40px,5vw,60px);
+    line-height:1;
+    color:var(--wine-dark);
+    font-weight:500;
+    margin-bottom:18px;
+}
+
+.section-head p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+/* ================= ABOUT ================= */
+
+.about{
+    background:var(--cream);
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.about-image{
+    position:relative;
+}
+
+.about-image img{
+    height:560px;
+    object-fit:cover;
+}
+
+.about-image:after{
+    content:"";
+    position:absolute;
+    width:80%;
+    height:80%;
+    border:1px solid var(--gold);
+    left:-18px;
+    bottom:-18px;
+    z-index:0;
+}
+
+.about-image img{
+    position:relative;
+    z-index:1;
+}
+
+.about-content .section-title{
+    text-align:left;
+}
+
+.about-content p{
+    color:var(--muted);
+    margin-bottom:22px;
+}
+
+.experience{
+    display:inline-block;
+    border-left:3px solid var(--gold);
+    padding:10px 0 10px 18px;
+    margin-top:8px;
+}
+
+.experience strong{
+    display:block;
+    font-family:'Cormorant Garamond',serif;
+    color:var(--wine);
+    font-size:32px;
+}
+
+.experience span{
+    color:var(--muted);
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+/* ================= SERVICES ================= */
+
+.services{
+    background:var(--ivory);
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.service-card{
+    background:white;
+    border:1px solid #eee4df;
+    overflow:hidden;
+    transition:.4s;
+    box-shadow:0 10px 30px rgba(55,20,30,.05);
+}
+
+.service-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 45px rgba(55,20,30,.12);
+}
+
+.service-image{
+    height:240px;
+    overflow:hidden;
+}
+
+.service-image img{
+    height:100%;
+    object-fit:cover;
+    transition:.6s;
+}
+
+.service-card:hover .service-image img{
+    transform:scale(1.06);
+}
+
+.service-content{
+    padding:25px;
+}
+
+.service-content h3{
+    font-family:'Cormorant Garamond',serif;
+    font-size:28px;
+    color:var(--wine);
+    margin-bottom:8px;
+}
+
+.service-content p{
+    font-size:12px;
+    color:var(--muted);
+    margin-bottom:18px;
+}
+
+.service-link{
+    color:var(--wine);
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:1.5px;
+}
+
+/* ================= WHY US ================= */
+
+.why{
+    background:var(--wine-dark);
+    color:white;
+}
+
+.why .section-title{
+    color:white;
+}
+
+.why .section-head p{
+    color:#d8c8cc;
+}
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:18px;
+}
+
+.why-card{
+    text-align:center;
+    padding:30px 15px;
+    border:1px solid rgba(201,164,92,.25);
+    transition:.35s;
+}
+
+.why-card:hover{
+    border-color:var(--gold);
+    transform:translateY(-5px);
+}
+
+.why-icon{
+    color:var(--gold);
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+.why-card h3{
+    font-family:'Cormorant Garamond',serif;
+    font-size:24px;
+    font-weight:500;
+    margin-bottom:8px;
+}
+
+.why-card p{
+    color:#d7c9cc;
+    font-size:11px;
+}
+
+/* ================= OFFERS ================= */
+
+.offers{
+    background:var(--blush);
+}
+
+.offer-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.offer-card{
+    background:white;
+    border:1px solid rgba(201,164,92,.35);
+    overflow:hidden;
+    position:relative;
+}
+
+.offer-card img{
+    height:260px;
+    object-fit:cover;
+}
+
+.offer-content{
+    padding:25px;
+}
+
+.offer-content h3{
+    font-family:'Cormorant Garamond',serif;
+    color:var(--wine);
+    font-size:30px;
+}
+
+.offer-price{
+    color:var(--wine);
+    font-size:28px;
+    font-weight:600;
+    margin:8px 0 15px;
+}
+
+.offer-content p{
+    font-size:12px;
+    color:var(--muted);
+    margin-bottom:18px;
+}
+
+/* ================= TRAINING ================= */
+
+.training{
+    background:
+    linear-gradient(90deg,rgba(45,12,24,.88),rgba(45,12,24,.60)),
+    url("https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=1800&q=85")
+    center/cover;
+    color:white;
+}
+
+.training-content{
+    max-width:650px;
+}
+
+.training .section-title{
+    color:white;
+    text-align:left;
+}
+
+.training p{
+    color:#eee0e2;
+    margin-bottom:25px;
+}
+
+/* ================= GALLERY ================= */
+
+.gallery{
+    background:var(--ivory);
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-auto-rows:220px;
+    gap:12px;
+}
+
+.gallery-item{
+    overflow:hidden;
+}
+
+.gallery-item:first-child{
+    grid-column:span 2;
+    grid-row:span 2;
+}
+
+.gallery-item:nth-child(4){
+    grid-row:span 2;
+}
+
+.gallery-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.6s;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.06);
+}
+
+/* ================= TESTIMONIALS ================= */
+
+.testimonials{
+    background:var(--cream);
+}
+
+.testimonial-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.testimonial{
+    background:white;
+    padding:30px;
+    border:1px solid #eee4df;
+}
+
+.stars{
+    color:var(--gold);
+    letter-spacing:3px;
+    margin-bottom:15px;
+}
+
+.testimonial p{
+    color:var(--muted);
+    font-size:13px;
+    font-style:italic;
+    margin-bottom:20px;
+}
+
+.client{
+    color:var(--wine);
+    font-weight:600;
+    font-size:12px;
+}
+
+/* ================= APPOINTMENT CTA ================= */
+
+.appointment-cta{
+    background:var(--wine);
+    color:white;
+    text-align:center;
+}
+
+.appointment-cta .section-title{
+    color:white;
+}
+
+.appointment-cta p{
+    color:#eadde0;
+    max-width:650px;
+    margin:0 auto 28px;
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+    background:var(--cream);
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+}
+
+.contact-info h3{
+    font-family:'Cormorant Garamond',serif;
+    font-size:38px;
+    color:var(--wine);
+    margin-bottom:4px;
+}
+
+.contact-info .subtitle{
+    color:var(--gold);
+    font-size:12px;
+    letter-spacing:1px;
+    margin-bottom:25px;
+}
+
+.contact-item{
+    margin-bottom:18px;
+}
+
+.contact-item strong{
+    display:block;
+    color:var(--wine);
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.contact-item span,
+.contact-item a{
+    color:var(--muted);
+    font-size:13px;
+}
+
+.contact-box{
+    background:white;
+    padding:35px;
+    border:1px solid #eaded9;
+}
+
+.contact-box h3{
+    font-family:'Cormorant Garamond',serif;
+    font-size:34px;
+    color:var(--wine);
+    margin-bottom:20px;
+}
+
+.form-group{
+    margin-bottom:15px;
+}
+
+.form-group input,
+.form-group textarea{
+    width:100%;
+    border:1px solid #e4d9d5;
+    padding:14px;
+    font-family:inherit;
+    font-size:12px;
+    outline:none;
+    background:#fffdfb;
+}
+
+.form-group textarea{
+    height:120px;
+    resize:none;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#210914;
+    color:white;
+    padding:65px 0 25px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1.3fr;
+    gap:40px;
+    padding-bottom:45px;
+}
+
+.footer-brand .logo{
+    margin-bottom:18px;
+}
+
+.footer-brand p{
+    color:#cdbfc3;
+    font-size:12px;
+    max-width:330px;
+}
+
+footer h4{
+    color:var(--gold-light);
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    margin-bottom:18px;
+}
+
+footer ul{
+    list-style:none;
+}
+
+footer li{
+    margin-bottom:9px;
+}
+
+footer li a{
+    color:#cdbfc3;
+    font-size:12px;
+}
+
+footer li a:hover{
+    color:var(--gold-light);
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.1);
+    padding-top:20px;
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    color:#a99a9f;
+    font-size:10px;
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.reveal{
+    opacity:0;
+    transform:translateY(35px);
+    transition:opacity .8s ease,transform .8s ease;
+}
+
+.reveal.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+    .nav-links{
+        position:absolute;
+        top:100%;
+        left:0;
+        width:100%;
+        background:var(--wine-dark);
+        display:none;
+        flex-direction:column;
+        padding:25px;
+        gap:18px;
     }
 
-    .gold-line::after {
-      content: "";
-      position: absolute;
-      left: -100%;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: var(--gold-light);
-      animation: goldLineMove 3s ease-in-out infinite;
-}
-
-.btn {
-@@ -147,19 +163,26 @@
-font-size: 12px;
-font-weight: 700;
-letter-spacing: 1.2px;
-      transition: .3s ease;
-      transition:
-        transform .3s ease,
-        box-shadow .3s ease,
-        background .3s ease,
-        color .3s ease;
-border: 1px solid transparent;
-cursor: pointer;
-}
-
-    .btn:hover {
-      transform: translateY(-3px);
+    .nav-links.active{
+        display:flex;
     }
 
-.btn-primary {
-background: var(--gold);
-color: var(--wine-dark);
-}
-
-.btn-primary:hover {
-background: var(--gold-light);
-      transform: translateY(-3px);
-box-shadow: 0 10px 25px rgba(201,164,92,.25);
-}
-
-@@ -172,7 +195,6 @@
-.btn-outline:hover {
-background: var(--gold);
-color: var(--wine-dark);
-      transform: translateY(-3px);
-}
-
-.btn-wine {
-@@ -182,7 +204,6 @@
-
-.btn-wine:hover {
-background: var(--wine-dark);
-      transform: translateY(-3px);
-}
-
-/* =========================================================
-@@ -195,12 +216,13 @@
-left: 0;
-width: 100%;
-z-index: 1000;
-      transition: .3s ease;
-      transition: .4s ease;
-}
-
-header.scrolled {
-background: rgba(53, 13, 24, .97);
-box-shadow: 0 5px 25px rgba(0,0,0,.15);
-      backdrop-filter: blur(10px);
-}
-
-.nav {
-@@ -216,6 +238,12 @@
-font-size: 27px;
-font-weight: 700;
-letter-spacing: 1px;
-      transition: .3s ease;
+    .menu-btn{
+        display:block;
     }
 
-    .logo:hover {
-      color: var(--gold-light);
-      transform: translateY(-1px);
-}
-
-.logo span {
-@@ -241,6 +269,22 @@
-font-weight: 600;
-letter-spacing: .8px;
-transition: .3s;
-      position: relative;
+    .service-grid,
+    .offer-grid,
+    .testimonial-grid{
+        grid-template-columns:1fr 1fr;
     }
 
-    .nav-links a:not(.nav-cta)::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -7px;
-      width: 0;
-      height: 1px;
-      background: var(--gold-light);
-      transition: width .3s ease;
+    .why-grid{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    .nav-links a:not(.nav-cta):hover::after {
-      width: 100%;
-}
-
-.nav-links a:hover {
-@@ -258,6 +302,11 @@
-color: white;
-font-size: 27px;
-cursor: pointer;
-      transition: .3s ease;
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
     }
 
-    .menu-btn:hover {
-      color: var(--gold-light);
-}
-
-/* =========================================================
-@@ -277,41 +326,68 @@
-url("https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=2000&q=85")
-center/cover;
-color: white;
-      overflow: hidden;
+    .about-grid,
+    .contact-grid{
+        grid-template-columns:1fr;
     }
 
-    /* Elegant light movement */
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: -20%;
-      left: -30%;
-      width: 35%;
-      height: 150%;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,.08),
-        transparent
-      );
-      transform: rotate(18deg);
-      animation: heroLight 9s ease-in-out infinite;
-      pointer-events: none;
-}
-
-.hero-content {
-max-width: 700px;
-padding-top: 70px;
-      position: relative;
-      z-index: 2;
-}
-
-.hero .eyebrow {
-color: var(--gold-light);
-      animation: luxuryFadeUp 1s ease .2s both;
-}
-
-.hero h1 {
-color: white;
-font-size: clamp(58px, 9vw, 105px);
-margin-bottom: 8px;
-      animation: luxuryFadeUp 1s ease .4s both;
-}
-
-.hero-tagline {
-font-family: var(--serif);
-font-size: clamp(25px, 4vw, 40px);
-color: var(--gold-light);
-margin-bottom: 20px;
-      animation: luxuryFadeUp 1s ease .6s both;
-}
-
-.hero-description {
-max-width: 610px;
-font-size: 15px;
-color: rgba(255,255,255,.86);
-margin-bottom: 30px;
-      animation: luxuryFadeUp 1s ease .8s both;
-}
-
-.hero-buttons {
-display: flex;
-gap: 15px;
-flex-wrap: wrap;
-      animation: luxuryFadeUp 1s ease 1s both;
-}
-
-.trust {
-@@ -323,6 +399,7 @@
-font-size: 12px;
-letter-spacing: 1px;
-font-weight: 600;
-      animation: luxuryFadeUp 1s ease 1.2s both;
-}
-
-.trust-line {
-@@ -355,6 +432,20 @@
-border-radius: 4px;
-box-shadow: var(--shadow);
-position: relative;
-      overflow: visible;
+    .about-image img{
+        height:450px;
     }
 
-    .image-placeholder::after {
-      content: "";
-      position: absolute;
-      inset: 12px;
-      border: 1px solid rgba(229,202,141,.6);
-      pointer-events: none;
-      transition: inset .5s ease;
+    .gallery-grid{
+        grid-template-columns:repeat(2,1fr);
     }
-
-    .image-placeholder:hover::after {
-      inset: 18px;
 }
 
-.experience-box {
-@@ -366,6 +457,8 @@
-padding: 25px 30px;
-text-align: center;
-box-shadow: var(--shadow);
-      animation: gentleFloat 4s ease-in-out infinite;
-      z-index: 2;
-}
+@media(max-width:600px){
 
-.experience-box strong {
-@@ -392,6 +485,11 @@
-color: var(--wine);
-font-size: 28px;
-margin-top: 25px;
-      transition: letter-spacing .4s ease;
+    section{
+        padding:75px 0;
     }
 
-    .about-signature:hover {
-      letter-spacing: 1px;
-}
-
-/* =========================================================
-@@ -412,19 +510,43 @@
-background: var(--white);
-border: 1px solid rgba(201,164,92,.25);
-overflow: hidden;
-      transition: .35s ease;
-      transition:
-        transform .45s ease,
-        box-shadow .45s ease;
-box-shadow: 0 8px 30px rgba(50,20,25,.05);
-      position: relative;
+    .hero{
+        min-height:100svh;
+        background-position:center;
     }
 
-    .service-card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--gold);
-      transition: width .45s ease;
-      z-index: 2;
-}
-
-.service-card:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow);
-      transform: translateY(-10px);
-      box-shadow: 0 20px 45px rgba(52,13,24,.15);
+    .hero h1{
+        font-size:58px;
     }
 
-    .service-card:hover::before {
-      width: 100%;
-}
-
-.service-image {
-height: 230px;
-background-size: cover;
-background-position: center;
-      transition: transform .7s ease;
+    .hero h2{
+        font-size:27px;
     }
 
-    .service-card:hover .service-image {
-      transform: scale(1.06);
-}
-
-.service-content {
-@@ -434,6 +556,11 @@
-.service-content h3 {
-font-size: 29px;
-margin-bottom: 9px;
-      transition: color .3s ease;
+    .hero p{
+        font-size:13px;
     }
 
-    .service-card:hover .service-content h3 {
-      color: var(--wine-light);
-}
-
-.service-content p {
-@@ -447,6 +574,12 @@
-font-size: 11px;
-font-weight: 700;
-letter-spacing: 1px;
-      transition: letter-spacing .3s ease;
+    .buttons{
+        flex-direction:column;
+        align-items:stretch;
     }
 
-    .learn-more:hover {
-      letter-spacing: 1.8px;
-      color: var(--gold);
-}
-
-/* =========================================================
-@@ -477,13 +610,30 @@
-padding: 28px 15px;
-border: 1px solid rgba(201,164,92,.3);
-border-radius: 5px;
-      transition:
-        transform .4s ease,
-        border-color .4s ease,
-        background .4s ease,
-        box-shadow .4s ease;
+    .btn{
+        width:100%;
     }
 
-    .feature:hover {
-      transform: translateY(-7px);
-      border-color: var(--gold);
-      background: rgba(255,255,255,.04);
-      box-shadow: 0 15px 35px rgba(0,0,0,.18);
-}
-
-.feature-number {
-font-family: var(--serif);
-color: var(--gold-light);
-font-size: 34px;
-margin-bottom: 12px;
-      transition: transform .4s ease;
+    .service-grid,
+    .offer-grid,
+    .testimonial-grid,
+    .why-grid,
+    .footer-grid{
+        grid-template-columns:1fr;
     }
 
-    .feature:hover .feature-number {
-      transform: scale(1.12);
-}
-
-.feature h3 {
-@@ -517,12 +667,30 @@
-text-align: center;
-border: 1px solid rgba(201,164,92,.35);
-position: relative;
-      transition: .3s;
-      transition:
-        transform .45s ease,
-        box-shadow .45s ease;
-      overflow: hidden;
+    .gallery-grid{
+        grid-template-columns:1fr 1fr;
+        grid-auto-rows:170px;
     }
 
-    .offer-card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 2px;
-      background: var(--gold);
-      transition: left .5s ease;
-}
-
-.offer-card:hover {
-      transform: translateY(-7px);
-      box-shadow: var(--shadow);
-      transform: translateY(-10px);
-      box-shadow: 0 20px 45px rgba(91,24,40,.15);
+    .gallery-item:first-child{
+        grid-column:span 2;
     }
 
-    .offer-card:hover::before {
-      left: 0;
-}
-
-.offer-label {
-@@ -543,6 +711,11 @@
-font-size: 48px;
-font-weight: 700;
-margin-bottom: 15px;
-      transition: transform .4s ease;
+    .gallery-item:nth-child(4){
+        grid-row:span 1;
     }
 
-    .offer-card:hover .price {
-      transform: scale(1.06);
-}
-
-.offer-card p {
-@@ -573,6 +746,16 @@
-color: white;
-text-align: center;
-border-radius: 5px;
-      position: relative;
-      overflow: hidden;
+    .footer-bottom{
+        flex-direction:column;
     }
-
-    .training-box::before {
-      content: "";
-      position: absolute;
-      inset: 15px;
-      border: 1px solid rgba(229,202,141,.35);
-      pointer-events: none;
-}
-
-.training-box h2 {
-@@ -603,12 +786,28 @@
-.gallery-item {
-background-size: cover;
-background-position: center;
-      transition: .4s;
-      transition:
-        transform .6s ease,
-        filter .6s ease;
-overflow: hidden;
-      position: relative;
-    }
-
-    .gallery-item::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(91,24,40,0);
-      transition: background .5s ease;
-}
-
-.gallery-item:hover {
-      transform: scale(1.02);
-      transform: scale(1.025);
-      filter: brightness(1.05);
-    }
-
-    .gallery-item:hover::after {
-      background: rgba(91,24,40,.08);
-}
-
-.gallery-item.large {
-@@ -639,6 +838,14 @@
-padding: 35px 28px;
-border: 1px solid rgba(201,164,92,.25);
-box-shadow: 0 8px 25px rgba(50,20,25,.05);
-      transition:
-        transform .4s ease,
-        box-shadow .4s ease;
-    }
-
-    .testimonial:hover {
-      transform: translateY(-7px);
-      box-shadow: 0 18px 40px rgba(52,13,24,.12);
-}
-
-.stars {
-@@ -668,23 +875,54 @@
-background: var(--wine);
-text-align: center;
-color: white;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .appointment::before,
-    .appointment::after {
-      content: "";
-      position: absolute;
-      border: 1px solid rgba(229,202,141,.2);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-
-    .appointment::before {
-      width: 350px;
-      height: 350px;
-      left: -180px;
-      top: -180px;
-    }
-
-    .appointment::after {
-      width: 300px;
-      height: 300px;
-      right: -150px;
-      bottom: -150px;
-}
-
-.appointment h2 {
-color: white;
-      position: relative;
-      z-index: 1;
-}
-
-.appointment p {
-max-width: 650px;
-margin: 0 auto 28px;
-color: rgba(255,255,255,.8);
-      position: relative;
-      z-index: 1;
-}
-
-.appointment-buttons {
-display: flex;
-justify-content: center;
-gap: 15px;
-flex-wrap: wrap;
-      position: relative;
-      z-index: 1;
-}
-
-/* =========================================================
-@@ -731,6 +969,14 @@
-align-items: center;
-justify-content: center;
-flex-shrink: 0;
-      transition:
-        transform .3s ease,
-        background .3s ease;
-    }
-
-    .contact-detail:hover .contact-icon {
-      transform: scale(1.08);
-      background: var(--wine-light);
-}
-
-.contact-detail strong {
-@@ -749,6 +995,12 @@
-background: white;
-padding: 35px;
-box-shadow: var(--shadow);
-      transition: transform .4s ease, box-shadow .4s ease;
-    }
-
-    .contact-form:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 50px rgba(52,13,24,.15);
-}
-
-.contact-form h3 {
-@@ -768,6 +1020,10 @@
-outline: none;
-background: var(--ivory);
-color: var(--text);
-      transition:
-        border-color .3s ease,
-        box-shadow .3s ease,
-        transform .3s ease;
-}
-
-.form-group textarea {
-@@ -778,6 +1034,8 @@
-.form-group input:focus,
-.form-group textarea:focus {
-border-color: var(--gold);
-      box-shadow: 0 0 0 3px rgba(201,164,92,.10);
-      transform: translateY(-1px);
-}
-
-/* =========================================================
-@@ -845,6 +1103,16 @@
-justify-content: center;
-align-items: center;
-color: var(--gold-light);
-      transition:
-        transform .3s ease,
-        background .3s ease,
-        color .3s ease;
-    }
-
-    .socials a:hover {
-      transform: translateY(-4px);
-      background: var(--gold);
-      color: var(--wine-dark);
-}
-
-.footer-bottom {
-@@ -875,12 +1143,138 @@
-z-index: 999;
-box-shadow: 0 8px 25px rgba(0,0,0,.2);
-transition: .3s;
-      animation: whatsappPulse 3s infinite;
-}
-
-.whatsapp:hover {
-transform: scale(1.08);
-}
-
-    /* =========================================================
-       SCROLL REVEAL
-       ========================================================= */
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(35px);
-      transition:
-        opacity .8s ease,
-        transform .8s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Stagger animation for cards */
-    .service-card.reveal:nth-child(2),
-    .offer-card.reveal:nth-child(2),
-    .feature.reveal:nth-child(2),
-    .testimonial.reveal:nth-child(2) {
-      transition-delay: .08s;
-    }
-
-    .service-card.reveal:nth-child(3),
-    .offer-card.reveal:nth-child(3),
-    .feature.reveal:nth-child(3),
-    .testimonial.reveal:nth-child(3) {
-      transition-delay: .16s;
-    }
-
-    .service-card.reveal:nth-child(4),
-    .feature.reveal:nth-child(4) {
-      transition-delay: .24s;
-    }
-
-    .service-card.reveal:nth-child(5),
-    .feature.reveal:nth-child(5) {
-      transition-delay: .32s;
-    }
-
-    /* =========================================================
-       KEYFRAMES
-       ========================================================= */
-
-    @keyframes pageFadeIn {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
-    }
-
-    @keyframes luxuryFadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes gentleFloat {
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-8px);
-      }
-    }
-
-    @keyframes whatsappPulse {
-      0%,
-      70%,
-      100% {
-        box-shadow:
-          0 8px 25px rgba(0,0,0,.2);
-      }
-
-      75% {
-        box-shadow:
-          0 0 0 10px rgba(37,211,102,.12),
-          0 8px 25px rgba(0,0,0,.2);
-      }
-
-      85% {
-        box-shadow:
-          0 0 0 18px rgba(37,211,102,0),
-          0 8px 25px rgba(0,0,0,.2);
-      }
-    }
-
-    @keyframes heroLight {
-      0% {
-        left: -35%;
-      }
-
-      50% {
-        left: 110%;
-      }
-
-      100% {
-        left: 110%;
-      }
-    }
-
-    @keyframes goldLineMove {
-      0% {
-        left: -100%;
-      }
-
-      45%,
-      100% {
-        left: 100%;
-      }
-    }
-
-/* =========================================================
-      MOBILE
-      ========================================================= */
-@@ -901,6 +1295,7 @@
-
-.nav-links.active {
-display: flex;
-        animation: mobileMenuOpen .35s ease both;
-}
-
-.nav-links li {
-@@ -942,6 +1337,10 @@
-.image-placeholder {
-min-height: 450px;
-}
-
-      .experience-box {
-        right: 15px;
-      }
-}
-
-@media (max-width: 650px) {
-@@ -954,6 +1353,10 @@
-height: 72px;
-}
-
-      .nav-links {
-        top: 72px;
-      }
-
-.logo {
-font-size: 22px;
-}
-@@ -1026,6 +1429,51 @@
-.contact-form {
-padding: 25px;
-}
-
-      .whatsapp {
-        width: 54px;
-        height: 54px;
-        right: 15px;
-        bottom: 15px;
-      }
-    }
-
-    /* =========================================================
-       MOBILE MENU ANIMATION
-       ========================================================= */
-
-    @keyframes mobileMenuOpen {
-      from {
-        opacity: 0;
-        transform: translateY(-10px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* =========================================================
-       ACCESSIBILITY
-       ========================================================= */
-
-    @media (prefers-reduced-motion: reduce) {
-
-      *,
-      *::before,
-      *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
-        scroll-behavior: auto !important;
-      }
-
-      .reveal {
-        opacity: 1 !important;
-        transform: none !important;
-      }
-
 }
 
 </style>
-@@ -2014,7 +2462,9 @@ <h4>Contact</h4>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header id="header">
+
+<div class="container navbar">
+
+<a href="#home" class="logo">
+    CHARMING
+    <span>Beauty Care • Since 2004</span>
+</a>
+
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+<nav class="nav-links" id="navLinks">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="services.html">Services</a>
+    <a href="#offers">Offers</a>
+    <a href="#training">Training</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+    <a href="appointment.html" class="nav-book">Book Appointment</a>
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+<div class="container">
+
+<div class="hero-content">
+
+<div class="eyebrow">
+Luxury Ladies Beauty Salon & Care
+</div>
+
+<h1>CHARMING<br>BEAUTY CARE</h1>
+
+<h2>Where Beauty Meets Elegance</h2>
+
+<div class="hero-tagline">
+Beauty • Confidence • Elegance
+</div>
+
+<p>
+Since 2004, we have been creating beautiful experiences with professional beauty care, personalized attention and timeless elegance.
+</p>
+
+<div class="buttons">
+
+<a href="appointment.html" class="btn btn-gold">
+Book An Appointment
+</a>
+
+<a href="services.html" class="btn btn-outline">
+Explore Our Services
+</a>
+
+</div>
+
+<div class="trust">
+✦ Trusted Beauty Care Since 2004 ✦
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about reveal" id="about">
+
+<div class="container about-grid">
+
+<div class="about-image">
+<img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1000&q=85" alt="Charming Beauty Care salon">
+</div>
+
+<div class="about-content">
+
+<div class="section-label">
+About Charming Beauty Care
+</div>
+
+<h2 class="section-title">
+Beauty, Experience & Elegance Since 2004
+</h2>
+
+<p>
+Charming Beauty Care is a ladies-only beauty salon dedicated to providing professional, personalized and premium beauty care in a comfortable and elegant environment.
+</p>
+
+<p>
+With years of experience, we focus on helping every woman look beautiful, feel confident and enjoy a truly special salon experience.
+</p>
+
+<div class="experience">
+<strong>20+ Years</strong>
+<span>of Beauty Experience</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section class="services reveal" id="services">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="section-label">
+Our Expertise
+</div>
+
+<h2 class="section-title">
+Our Signature Beauty Services
+</h2>
+
+<p>
+Professional beauty services designed with care, expertise and attention to every detail.
+</p>
+
+</div>
+
+
+<div class="service-grid">
+
+<div class="service-card">
+
+<div class="service-image">
+<img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=85" alt="Facial and skin care">
+</div>
+
+<div class="service-content">
+<h3>Facial & Skin Care</h3>
+<p>Glow-enhancing facials and professional skin care treatments.</p>
+<a href="services.html" class="service-link">LEARN MORE →</a>
+</div>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-image">
+<img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=85" alt="Hair care and styling">
+</div>
+
+<div class="service-content">
+<h3>Hair Care & Styling</h3>
+<p>Beautiful cuts, styling, spa and professional hair treatments.</p>
+<a href="services.html" class="service-link">LEARN MORE →</a>
+</div>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-image">
+<img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=900&q=85" alt="Bridal makeup">
+</div>
+
+<div class="service-content">
+<h3>Bridal Makeup</h3>
+<p>Elegant bridal beauty experiences created for your special day.</p>
+<a href="services.html" class="service-link">LEARN MORE →</a>
+</div>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-image">
+<img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=900&q=85" alt="Party makeup">
+</div>
+
+<div class="service-content">
+<h3>Party Makeup</h3>
+<p>Beautiful makeup looks for celebrations and special occasions.</p>
+<a href="services.html" class="service-link">LEARN MORE →</a>
+</div>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-image">
+<img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=900&q=85" alt="Manicure and pedicure">
+</div>
+
+<div class="service-content">
+<h3>Manicure & Pedicure</h3>
+<p>Relaxing hand and foot care for beautifully groomed results.</p>
+<a href="services.html" class="service-link">LEARN MORE →</a>
+</div>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-image">
+<img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=900&q=85" alt="Waxing">
+</div>
+
+<div class="service-content">
+<h3>Waxing</h3>
+<p>Professional waxing services with attention to comfort and care.</p>
+<a href="services.html" class="service-link">LEARN MORE →</a>
+</div>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-image">
+<img src="https://images.unsplash.com/photo-1599206676335-193c82b13c1a?auto=format&fit=crop&w=900&q=85" alt="Threading">
+</div>
+
+<div class="service-content">
+<h3>Threading</h3>
+<p>Precise eyebrow and facial threading for a polished look.</p>
+<a href="services.html" class="service-link">LEARN MORE →</a>
+</div>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-image">
+<img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=85" alt="Hair treatments">
+</div>
+
+<div class="service-content">
+<h3>Hair Treatments</h3>
+<p>Professional treatments designed to nourish and transform hair.</p>
+<a href="services.html" class="service-link">LEARN MORE →</a>
+</div>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-image">
+<img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=900&q=85" alt="Beauty packages">
+</div>
+
+<div class="service-content">
+<h3>Beauty Packages</h3>
+<p>Thoughtfully created combinations for complete beauty care.</p>
+<a href="services.html" class="service-link">LEARN MORE →</a>
+</div>
+
+</div>
+
+</div>
+
+<div style="text-align:center;margin-top:45px;">
+<a href="services.html" class="btn btn-gold">
+View All Services
+</a>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= WHY CHOOSE US ================= -->
+
+<section class="why reveal">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="section-label">
+Why Choose Us
+</div>
+
+<h2 class="section-title">
+Why Women Choose Charming Beauty Care
+</h2>
+
+<p>
+A trusted beauty destination built around experience, comfort and professional care.
+</p>
+
+</div>
+
+<div class="why-grid">
+
+<div class="why-card">
+<div class="why-icon">✦</div>
+<h3>Since 2004</h3>
+<p>Years of trusted beauty experience.</p>
+</div>
+
+<div class="why-card">
+<div class="why-icon">♡</div>
+<h3>Ladies Only</h3>
+<p>A comfortable environment exclusively for women.</p>
+</div>
+
+<div class="why-card">
+<div class="why-icon">✧</div>
+<h3>Professional Care</h3>
+<p>Experienced professionals focused on quality.</p>
+</div>
+
+<div class="why-card">
+<div class="why-icon">◇</div>
+<h3>Premium Experience</h3>
+<p>Personalized attention and elegant service.</p>
+</div>
+
+<div class="why-card">
+<div class="why-icon">✓</div>
+<h3>Hygiene & Care</h3>
+<p>Clean, comfortable and carefully maintained.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= OFFERS ================= -->
+
+<section class="offers reveal" id="offers">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="section-label">
+Special Beauty Offers
+</div>
+
+<h2 class="section-title">
+Exclusive Beauty Offers
+</h2>
+
+<p>
+Beautiful experiences, thoughtfully combined for you.
+</p>
+
+</div>
+
+<div class="offer-grid">
+
+<div class="offer-card">
+
+<img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=85" alt="Beauty offer">
+
+<div class="offer-content">
+<h3>Glow & Care</h3>
+<div class="offer-price">₹999</div>
+<p>Experience a beautiful combination of professional beauty care.</p>
+<a href="appointment.html" class="btn btn-gold">Book Offer</a>
+</div>
+
+</div>
+
+
+<div class="offer-card">
+
+<img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=1000&q=85" alt="Facial offer">
+
+<div class="offer-content">
+<h3>Facial Glow</h3>
+<div class="offer-price">₹1499</div>
+<p>Give your skin a fresh, radiant and beautifully cared-for look.</p>
+<a href="appointment.html" class="btn btn-gold">Book Offer</a>
+</div>
+
+</div>
+
+
+<div class="offer-card">
+
+<img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=1000&q=85" alt="Beauty package">
+
+<div class="offer-content">
+<h3>Beauty Ritual</h3>
+<div class="offer-price">₹1799</div>
+<p>A premium beauty care experience designed for complete grooming.</p>
+<a href="appointment.html" class="btn btn-gold">Book Offer</a>
+</div>
+
+</div>
+
+</div>
+
+<div style="text-align:center;margin-top:40px;">
+<a href="services.html" class="btn btn-outline" style="color:var(--wine);">
+View All Offers
+</a>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= TRAINING ================= -->
+
+<section class="training reveal" id="training">
+
+<div class="container">
+
+<div class="training-content">
+
+<div class="section-label">
+Beautician Training Center
+</div>
+
+<h2 class="section-title">
+Learn Beauty. Build Your Future.
+</h2>
+
+<p>
+Charming Beauty Care also provides professional beautician training for aspiring beauty professionals. Learn practical beauty skills, develop confidence and take your first step towards a rewarding career in the beauty industry.
+</p>
+
+<a href="appointment.html" class="btn btn-gold">
+Enquire About Training
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= GALLERY ================= -->
+
+<section class="gallery reveal" id="gallery">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="section-label">
+Our World
+</div>
+
+<h2 class="section-title">
+A Glimpse of Charming Beauty Care
+</h2>
+
+<p>
+A look into our beauty, care and professional salon experience.
+</p>
+
+</div>
+
+<div class="gallery-grid">
+
+<div class="gallery-item">
+<img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=85" alt="Salon interior">
+</div>
+
+<div class="gallery-item">
+<img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=900&q=85" alt="Makeup">
+</div>
+
+<div class="gallery-item">
+<img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=85" alt="Hair styling">
+</div>
+
+<div class="gallery-item">
+<img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=85" alt="Facial">
+</div>
+
+<div class="gallery-item">
+<img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=900&q=85" alt="Nail care">
+</div>
+
+<div class="gallery-item">
+<img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=900&q=85" alt="Beauty care">
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= TESTIMONIALS ================= -->
+
+<section class="testimonials reveal">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="section-label">
+Client Love
+</div>
+
+<h2 class="section-title">
+What Our Clients Say
+</h2>
+
+<p>
+Editable testimonial placeholders — replace these with your real customer reviews.
+</p>
+
+</div>
+
+<div class="testimonial-grid">
+
+<div class="testimonial">
+<div class="stars">★★★★★</div>
+<p>
+“Beautiful salon experience with professional care and a very comfortable environment.”
+</p>
+<div class="client">— Customer Name</div>
+</div>
+
+<div class="testimonial">
+<div class="stars">★★★★★</div>
+<p>
+“Very happy with the service. The attention to detail and overall experience was wonderful.”
+</p>
+<div class="client">— Customer Name</div>
+</div>
+
+<div class="testimonial">
+<div class="stars">★★★★★</div>
+<p>
+“A trusted place for ladies beauty care. Professional, elegant and welcoming.”
+</p>
+<div class="client">— Customer Name</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= APPOINTMENT CTA ================= -->
+
+<section class="appointment-cta reveal">
+
+<div class="container">
+
+<div class="section-label">
+Book Your Beauty Experience
+</div>
+
+<h2 class="section-title">
+Your Beauty. Your Confidence. Your Moment.
+</h2>
+
+<p>
+Ready to give yourself the care you deserve? Book your appointment with Charming Beauty Care today.
+</p>
+
+<div class="buttons" style="justify-content:center;">
+
+<a href="appointment.html" class="btn btn-gold">
+Book An Appointment
+</a>
+
+<a href="https://wa.me/919826246652" class="btn btn-outline" target="_blank">
+WhatsApp Us
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact reveal" id="contact">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="section-label">
+Get In Touch
+</div>
+
+<h2 class="section-title">
+Visit Charming Beauty Care
+</h2>
+
+</div>
+
+<div class="contact-grid">
+
+<div class="contact-info">
+
+<h3>Charming Beauty Care</h3>
+
+<div class="subtitle">
+Ladies Beauty Salon & Care
+</div>
+
+<div class="contact-item">
+<strong>Address</strong>
+<span>E-6/95, Flat No. 1, Shalimar Homes, Arera Colony, Bhopal</span>
+</div>
+
+<div class="contact-item">
+<strong>Phone / WhatsApp</strong>
+<a href="tel:+919826246652">9826246652</a>
+</div>
+
+<div class="contact-item">
+<strong>Opening Hours</strong>
+<span>11:00 AM – 7:30 PM</span>
+</div>
+
+<div class="contact-item">
+<strong>Specialization</strong>
+<span>Ladies Beauty Salon & Beautician Training Center</span>
+</div>
+
+<div class="buttons" style="margin-top:25px;">
+
+<a href="tel:+919826246652" class="btn btn-gold">
+Call Now
+</a>
+
+<a href="https://wa.me/919826246652" class="btn" style="color:var(--wine);">
+WhatsApp
+</a>
+
+</div>
+
+</div>
+
+
+<div class="contact-box">
+
+<h3>Send Us A Message</h3>
+
+<form onsubmit="sendMessage(event)">
+
+<div class="form-group">
+<input type="text" id="contactName" placeholder="Your Name" required>
+</div>
+
+<div class="form-group">
+<input type="tel" id="contactPhone" placeholder="Mobile Number" required>
+</div>
+
+<div class="form-group">
+<textarea id="contactMessage" placeholder="How can we help you?" required></textarea>
+</div>
+
+<button type="submit" class="btn btn-gold">
+Send On WhatsApp
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div class="footer-brand">
+
+<a href="#home" class="logo">
+CHARMING
+<span>Beauty Care • Since 2004</span>
+</a>
+
+<p>
+A premium ladies beauty salon and beautician training center dedicated to professional beauty care, personalized attention and timeless elegance.
+</p>
+
+</div>
+
+
+<div>
+
+<h4>Quick Links</h4>
+
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="#offers">Offers</a></li>
+<li><a href="#gallery">Gallery</a></li>
+</ul>
+
+</div>
+
+
+<div>
+
+<h4>Services</h4>
+
+<ul>
+<li><a href="services.html">Facial & Skin Care</a></li>
+<li><a href="services.html">Hair Care</a></li>
+<li><a href="services.html">Bridal Makeup</a></li>
+<li><a href="services.html">Waxing</a></li>
+<li><a href="services.html">Manicure & Pedicure</a></li>
+</ul>
+
+</div>
+
+
+<div>
+
+<h4>Contact</h4>
+
+<ul>
+<li><a href="tel:+919826246652">9826246652</a></li>
+<li><a href="https://wa.me/919826246652">WhatsApp</a></li>
+<li><a href="#contact">Bhopal, MP</a></li>
+<li><a href="appointment.html">Book Appointment</a></li>
+</ul>
+
+</div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+<div>
+© 2026 Charming Beauty Care. All Rights Reserved.
+</div>
+
+<div>
+Privacy Policy &nbsp; • &nbsp; Terms & Conditions
+</div>
+
+</div>
+
+</div>
+
+</footer>
+
 
 <script>
 
-    /* Header scroll effect */
-    /* =========================================================
-       HEADER SCROLL EFFECT
-       ========================================================= */
+/* HEADER SCROLL */
 
-const header = document.getElementById("header");
+window.addEventListener("scroll", function(){
 
-@@ -2029,7 +2479,9 @@ <h4>Contact</h4>
+    const header = document.getElementById("header");
+
+    if(window.scrollY > 50){
+        header.classList.add("scrolled");
+    }else{
+        header.classList.remove("scrolled");
+    }
+
 });
 
 
-    /* Mobile menu */
-    /* =========================================================
-       MOBILE MENU
-       ========================================================= */
+/* MOBILE MENU */
 
-const menuBtn = document.getElementById("menuBtn");
-const navLinks = document.getElementById("navLinks");
-@@ -2054,7 +2506,9 @@ <h4>Contact</h4>
-});
+function toggleMenu(){
 
-
-    /* WhatsApp Contact Form */
-    /* =========================================================
-       WHATSAPP CONTACT FORM
-       ========================================================= */
-
-function sendWhatsApp(event) {
-
-@@ -2083,6 +2537,64 @@ <h4>Contact</h4>
+    document
+    .getElementById("navLinks")
+    .classList.toggle("active");
 
 }
 
 
-    /* =========================================================
-       SCROLL REVEAL ANIMATION
-       ========================================================= */
+/* CLOSE MOBILE MENU */
 
-    const animatedElements = document.querySelectorAll(
-      ".section-heading, " +
-      ".about-text, " +
-      ".image-placeholder, " +
-      ".service-card, " +
-      ".feature, " +
-      ".offer-card, " +
-      ".training-box, " +
-      ".gallery-item, " +
-      ".testimonial, " +
-      ".contact-info, " +
-      ".contact-form"
-    );
+document.querySelectorAll(".nav-links a").forEach(function(link){
 
+    link.addEventListener("click",function(){
 
-    animatedElements.forEach(function(element) {
-
-      element.classList.add("reveal");
+        document
+        .getElementById("navLinks")
+        .classList.remove("active");
 
     });
 
-
-    /* Intersection Observer */
-
-    const revealObserver = new IntersectionObserver(
-      function(entries, observer) {
-
-        entries.forEach(function(entry) {
-
-          if (entry.isIntersecting) {
-
-            entry.target.classList.add("visible");
-
-            observer.unobserve(entry.target);
-
-          }
-
-        });
-
-      },
-      {
-        threshold: 0.12
-      }
-    );
+});
 
 
-    document.querySelectorAll(".reveal").forEach(function(element) {
+/* SCROLL ANIMATION */
 
-      revealObserver.observe(element);
+const observer = new IntersectionObserver(function(entries){
+
+    entries.forEach(function(entry){
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("show");
+
+        }
 
     });
 
+},{
+    threshold:0.12
+});
+
+
+document.querySelectorAll(".reveal").forEach(function(element){
+
+    observer.observe(element);
+
+});
+
+
+/* WHATSAPP CONTACT FORM */
+
+function sendMessage(event){
+
+    event.preventDefault();
+
+    const name =
+        document.getElementById("contactName").value.trim();
+
+    const phone =
+        document.getElementById("contactPhone").value.trim();
+
+    const message =
+        document.getElementById("contactMessage").value.trim();
+
+    const whatsappMessage =
+`Hello Charming Beauty Care,
+
+Name: ${name}
+Mobile: ${phone}
+
+Message:
+${message}`;
+
+    const url =
+        "https://wa.me/919826246652?text=" +
+        encodeURIComponent(whatsappMessage);
+
+    window.open(url,"_blank");
+
+}
 
 </script>
 
 </body>
+</html>
