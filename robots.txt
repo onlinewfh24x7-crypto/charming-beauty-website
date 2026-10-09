@@ -1,0 +1,6 @@
+```text
+User-agent: *
+Allow: /
+
+Sitemap: https://onlinewfh24x7-crypto.github.io/charming-beauty-website/sitemap.xml
+```
