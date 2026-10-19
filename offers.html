@@ -387,27 +387,28 @@ function bookOffer(offerName, imagePath) {
 }
 
 /* SHARE: lets the customer share the actual poster where supported */
-async function shareOfferImage(imagePath, offerName) {
-  const imageUrl = getOfferImageUrl(imagePath);
+async function shareOfferImage(imagePath, offerName, isBooking = false) {
+  const imageUrl = new URL(imagePath, window.location.href).href;
 
-  const message =
-    "Charming Beauty Care - " + offerName +
-    "\nCheck out this beauty offer!\n" + imageUrl;
+  const message = isBooking
+    ? "Hello Charming Beauty Care!\n" +
+      "Mujhe " + offerName + " book karna hai.\n" +
+      "Please booking details batayein."
+    : "Charming Beauty Care - " + offerName +
+      "\nYe offer apne friends ke saath share karein!";
 
   try {
     const response = await fetch(imageUrl);
 
     if (!response.ok) {
-      throw new Error("Offer image could not be loaded");
+      throw new Error("Offer image nahi mili");
     }
 
     const blob = await response.blob();
-    const fileType = blob.type || "image/jpeg";
-
     const file = new File(
       [blob],
       imagePath.split("/").pop(),
-      { type: fileType }
+      { type: blob.type || "image/jpeg" }
     );
 
     if (
@@ -421,30 +422,26 @@ async function shareOfferImage(imagePath, offerName) {
         text: message
       });
     } else {
+      const fallbackMessage = message + "\nOffer image: " + imageUrl;
+
       window.open(
-        "https://wa.me/?text=" + encodeURIComponent(message),
+        "https://wa.me/919826246652?text=" +
+          encodeURIComponent(fallbackMessage),
         "_blank",
         "noopener"
       );
 
       alert(
-        "Is browser mein image ko directly share karna supported nahi hai. " +
-        "Message mein image link diya gaya hai. Poster ko download karke " +
-        "WhatsApp par manually attach kar sakte hain."
+        "Is browser mein image direct attach nahi ho sakti. " +
+        "WhatsApp mein message aur image link khulega."
       );
     }
   } catch (error) {
     if (error.name === "AbortError") return;
 
-    window.open(
-      "https://wa.me/?text=" + encodeURIComponent(message),
-      "_blank",
-      "noopener"
-    );
-
     alert(
-      "Image share nahi ho payi. WhatsApp message mein image link diya gaya hai. " +
-      "Aap poster ko kholkar download karein aur manually attach karein."
+      "Image share nahi ho payi. Kripya poster kholkar " +
+      "dobara koshish karein."
     );
   }
 }
