@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Beauty Offers | Charming Beauty Care</title>
-<meta name="description" content="Explore the latest beauty offers at Charming Beauty Care. Contact us on WhatsApp or call to book your appointment.">
+<meta name="description" content="Explore beauty offers at Charming Beauty Care, Bhopal. Contact us on WhatsApp or call to book your appointment.">
 
 <style>
 :root {
@@ -17,13 +17,9 @@
   --text: #33242a;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -47,14 +43,9 @@ header h1 {
   color: var(--gold);
 }
 
-header p {
-  margin: 0;
-  font-size: 15px;
-}
+header p { margin: 0; font-size: 15px; }
 
-nav {
-  margin-top: 18px;
-}
+nav { margin-top: 18px; }
 
 nav a {
   color: white;
@@ -135,23 +126,32 @@ nav a {
   margin-top: 12px;
 }
 
-.offer-buttons a {
+.offer-buttons a,
+.offer-buttons button {
   display: block;
+  width: 100%;
   padding: 12px 8px;
   text-align: center;
   text-decoration: none;
   font-size: 14px;
   font-weight: bold;
+  font-family: inherit;
   border-radius: 7px;
-  transition: background 0.2s ease, color 0.2s ease;
 }
 
-.whatsapp {
+.offer-buttons button {
+  border: none;
+  cursor: pointer;
+}
+
+.whatsapp,
+.offer-buttons button.whatsapp {
   background: var(--wine);
   color: white;
 }
 
-.whatsapp:hover {
+.whatsapp:hover,
+.offer-buttons button.whatsapp:hover {
   background: var(--wine-dark);
 }
 
@@ -161,9 +161,7 @@ nav a {
   background: var(--cream);
 }
 
-.call:hover {
-  background: #f5ead7;
-}
+.call:hover { background: #f5ead7; }
 
 footer {
   padding: 25px 16px;
@@ -179,60 +177,36 @@ footer h3 {
   font-family: Georgia, serif;
 }
 
-footer p {
-  margin: 8px 0;
-  font-size: 14px;
-}
-
-footer a {
-  color: white;
-}
+footer p { margin: 8px 0; font-size: 14px; }
+footer a { color: white; }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @media (max-width: 700px) {
-  .offers-section {
-    padding: 8px 12px 35px;
-  }
+  .offers-section { padding: 8px 12px 35px; }
 
   .offers-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
   }
 
-  .offer-card {
-    padding: 7px;
-    border-radius: 9px;
-  }
+  .offer-card { padding: 7px; border-radius: 9px; }
 
-  .offer-buttons {
-    gap: 7px;
-    margin-top: 8px;
-  }
+  .offer-buttons { gap: 7px; margin-top: 8px; }
 
-  .offer-buttons a {
+  .offer-buttons a,
+  .offer-buttons button {
     padding: 10px 4px;
     font-size: 12px;
   }
 }
 
 @media (max-width: 360px) {
-  .offers-grid {
-    grid-template-columns: 1fr;
-  }
-
-  nav a {
-    margin: 0 6px;
-  }
+  .offers-grid { grid-template-columns: 1fr; }
+  nav a { margin: 0 6px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -252,7 +226,6 @@ footer a {
 <header>
   <h1>Charming Beauty Care</h1>
   <p>Ladies Beauty Parlour &amp; Training Center</p>
-
   <nav aria-label="Main navigation">
     <a href="index.html">Home</a>
     <a href="#offers">Our Offers</a>
@@ -277,7 +250,7 @@ footer a {
         <img src="offer1.jpeg" alt="Charming Beauty Care Offer 1" loading="lazy">
       </a>
       <div class="offer-buttons">
-        <a class="whatsapp" href="https://wa.me/919826246652?text=Hello%20Charming%20Beauty%20Care%2C%20I%20am%20interested%20in%20Offer%201." target="_blank" rel="noopener">Book on WhatsApp</a>
+        <button class="whatsapp" type="button" onclick="shareOfferImage('offer1.jpeg','Offer 1')">Book on WhatsApp</button>
         <a class="call" href="tel:+919826246652">Call Now</a>
       </div>
     </article>
@@ -288,7 +261,7 @@ footer a {
         <img src="offer2.jpeg" alt="Charming Beauty Care Offer 2" loading="lazy">
       </a>
       <div class="offer-buttons">
-        <a class="whatsapp" href="https://wa.me/919826246652?text=Hello%20Charming%20Beauty%20Care%2C%20I%20am%20interested%20in%20Offer%202." target="_blank" rel="noopener">Book on WhatsApp</a>
+        <button class="whatsapp" type="button" onclick="shareOfferImage('offer2.jpeg','Offer 2')">Book on WhatsApp</button>
         <a class="call" href="tel:+919826246652">Call Now</a>
       </div>
     </article>
@@ -299,7 +272,7 @@ footer a {
         <img src="offer3.jpeg" alt="Charming Beauty Care Offer 3" loading="lazy">
       </a>
       <div class="offer-buttons">
-        <a class="whatsapp" href="https://wa.me/919826246652?text=Hello%20Charming%20Beauty%20Care%2C%20I%20am%20interested%20in%20Offer%203." target="_blank" rel="noopener">Book on WhatsApp</a>
+        <button class="whatsapp" type="button" onclick="shareOfferImage('offer3.jpeg','Offer 3')">Book on WhatsApp</button>
         <a class="call" href="tel:+919826246652">Call Now</a>
       </div>
     </article>
@@ -310,7 +283,7 @@ footer a {
         <img src="offer4.jpeg" alt="Charming Beauty Care Offer 4" loading="lazy">
       </a>
       <div class="offer-buttons">
-        <a class="whatsapp" href="https://wa.me/919826246652?text=Hello%20Charming%20Beauty%20Care%2C%20I%20am%20interested%20in%20Offer%204." target="_blank" rel="noopener">Book on WhatsApp</a>
+        <button class="whatsapp" type="button" onclick="shareOfferImage('offer4.jpeg','Offer 4')">Book on WhatsApp</button>
         <a class="call" href="tel:+919826246652">Call Now</a>
       </div>
     </article>
@@ -321,7 +294,7 @@ footer a {
         <img src="offer5.jpeg" alt="Charming Beauty Care Offer 5" loading="lazy">
       </a>
       <div class="offer-buttons">
-        <a class="whatsapp" href="https://wa.me/919826246652?text=Hello%20Charming%20Beauty%20Care%2C%20I%20am%20interested%20in%20Offer%205." target="_blank" rel="noopener">Book on WhatsApp</a>
+        <button class="whatsapp" type="button" onclick="shareOfferImage('offer5.jpeg','Offer 5')">Book on WhatsApp</button>
         <a class="call" href="tel:+919826246652">Call Now</a>
       </div>
     </article>
@@ -332,7 +305,7 @@ footer a {
         <img src="offer6.jpeg" alt="Charming Beauty Care Offer 6" loading="lazy">
       </a>
       <div class="offer-buttons">
-        <a class="whatsapp" href="https://wa.me/919826246652?text=Hello%20Charming%20Beauty%20Care%2C%20I%20am%20interested%20in%20Offer%206." target="_blank" rel="noopener">Book on WhatsApp</a>
+        <button class="whatsapp" type="button" onclick="shareOfferImage('offer6.jpeg','Offer 6')">Book on WhatsApp</button>
         <a class="call" href="tel:+919826246652">Call Now</a>
       </div>
     </article>
@@ -346,25 +319,37 @@ footer a {
   <p>Call: <a href="tel:+919826246652">98262 46652</a></p>
   <p>&copy; 2026 Charming Beauty Care. All Rights Reserved.</p>
 </footer>
+
 <script>
 async function shareOfferImage(imagePath, offerName) {
+  const imageUrl = new URL(imagePath, window.location.href).href;
+
   const message =
     "Hello Charming Beauty Care, mujhe " +
     offerName +
-    " book karna hai. Please details batayein.";
+    " book karna hai. Please details batayein.\n\nOffer image: " +
+    imageUrl;
+
+  const whatsappUrl =
+    "https://wa.me/919826246652?text=" +
+    encodeURIComponent(message);
 
   try {
-    const response = await fetch(imagePath);
+    const response = await fetch(imageUrl);
 
     if (!response.ok) {
-      throw new Error("Image nahi mili");
+      throw new Error("Offer image nahi mili");
     }
 
     const blob = await response.blob();
+
+    const fileType = blob.type || "image/jpeg";
+    const fileName = imagePath.split("/").pop();
+
     const file = new File(
       [blob],
-      imagePath.split("/").pop(),
-      { type: blob.type || "image/jpeg" }
+      fileName,
+      { type: fileType }
     );
 
     if (
@@ -378,26 +363,28 @@ async function shareOfferImage(imagePath, offerName) {
         text: message
       });
     } else {
-      window.open(
-        "https://wa.me/919826246652?text=" +
-        encodeURIComponent(message),
-        "_blank"
-      );
-
+      window.open(whatsappUrl, "_blank", "noopener");
       alert(
-        "WhatsApp khulne ke baad offer image ko " +
-        "manually attach karna hoga."
+        "Is browser mein image direct share support nahi hai. " +
+        "WhatsApp message mein offer image ka link diya gaya hai. " +
+        "Image attach karne ke liye use download karke manually attach karein."
       );
     }
   } catch (error) {
-    if (error.name !== "AbortError") {
-      alert(
-        "Image share nahi ho payi. Kripya image ka naam " +
-        "aur internet connection check karein."
-      );
+    if (error.name === "AbortError") {
+      return;
     }
+
+    window.open(whatsappUrl, "_blank", "noopener");
+
+    alert(
+      "Image direct share nahi ho payi. WhatsApp message mein " +
+      "offer image ka link diya gaya hai. Agar image na khule, " +
+      "to website se poster download karke attach karein."
+    );
   }
 }
 </script>
+
 </body>
 </html>
