@@ -196,6 +196,7 @@ footer a { color: white; }
   }
 
   .offer-card { padding: 7px; border-radius: 9px; }
+
   .offer-buttons { gap: 7px; margin-top: 8px; }
 
   .offer-buttons a,
@@ -252,11 +253,11 @@ footer a { color: white; }
       </a>
       <div class="offer-buttons">
         <button class="whatsapp" type="button"
-          onclick="shareOfferImage('offer1.jpeg','Offer 1',true)">
+          onclick="bookOffer('Offer 1','offer1.jpeg')">
           Book on WhatsApp
         </button>
         <button class="share-button" type="button"
-          onclick="shareOfferImage('offer1.jpeg','Offer 1',false)">
+          onclick="shareOfferImage('offer1.jpeg','Offer 1')">
           Share Offer with Friends
         </button>
         <a class="call" href="tel:+919826246652">Call Now</a>
@@ -270,11 +271,11 @@ footer a { color: white; }
       </a>
       <div class="offer-buttons">
         <button class="whatsapp" type="button"
-          onclick="shareOfferImage('offer2.jpeg','Offer 2',true)">
+          onclick="bookOffer('Offer 2','offer2.jpeg')">
           Book on WhatsApp
         </button>
         <button class="share-button" type="button"
-          onclick="shareOfferImage('offer2.jpeg','Offer 2',false)">
+          onclick="shareOfferImage('offer2.jpeg','Offer 2')">
           Share Offer with Friends
         </button>
         <a class="call" href="tel:+919826246652">Call Now</a>
@@ -288,11 +289,11 @@ footer a { color: white; }
       </a>
       <div class="offer-buttons">
         <button class="whatsapp" type="button"
-          onclick="shareOfferImage('offer3.jpeg','Offer 3',true)">
+          onclick="bookOffer('Offer 3','offer3.jpeg')">
           Book on WhatsApp
         </button>
         <button class="share-button" type="button"
-          onclick="shareOfferImage('offer3.jpeg','Offer 3',false)">
+          onclick="shareOfferImage('offer3.jpeg','Offer 3')">
           Share Offer with Friends
         </button>
         <a class="call" href="tel:+919826246652">Call Now</a>
@@ -306,11 +307,11 @@ footer a { color: white; }
       </a>
       <div class="offer-buttons">
         <button class="whatsapp" type="button"
-          onclick="shareOfferImage('offer4.jpeg','Offer 4',true)">
+          onclick="bookOffer('Offer 4','offer4.jpeg')">
           Book on WhatsApp
         </button>
         <button class="share-button" type="button"
-          onclick="shareOfferImage('offer4.jpeg','Offer 4',false)">
+          onclick="shareOfferImage('offer4.jpeg','Offer 4')">
           Share Offer with Friends
         </button>
         <a class="call" href="tel:+919826246652">Call Now</a>
@@ -324,11 +325,11 @@ footer a { color: white; }
       </a>
       <div class="offer-buttons">
         <button class="whatsapp" type="button"
-          onclick="shareOfferImage('offer5.jpeg','Offer 5',true)">
+          onclick="bookOffer('Offer 5','offer5.jpeg')">
           Book on WhatsApp
         </button>
         <button class="share-button" type="button"
-          onclick="shareOfferImage('offer5.jpeg','Offer 5',false)">
+          onclick="shareOfferImage('offer5.jpeg','Offer 5')">
           Share Offer with Friends
         </button>
         <a class="call" href="tel:+919826246652">Call Now</a>
@@ -342,11 +343,11 @@ footer a { color: white; }
       </a>
       <div class="offer-buttons">
         <button class="whatsapp" type="button"
-          onclick="shareOfferImage('offer6.jpeg','Offer 6',true)">
+          onclick="bookOffer('Offer 6','offer6.jpeg')">
           Book on WhatsApp
         </button>
         <button class="share-button" type="button"
-          onclick="shareOfferImage('offer6.jpeg','Offer 6',false)">
+          onclick="shareOfferImage('offer6.jpeg','Offer 6')">
           Share Offer with Friends
         </button>
         <a class="call" href="tel:+919826246652">Call Now</a>
@@ -364,28 +365,49 @@ footer a { color: white; }
 </footer>
 
 <script>
-async function shareOfferImage(imagePath, offerName, isBooking = false) {
-  const imageUrl = new URL(imagePath, window.location.href).href;
+function getOfferImageUrl(imagePath) {
+  return new URL(imagePath, window.location.href).href;
+}
 
-  const message = isBooking
-    ? "Hello Charming Beauty Care!\n" +
-      "Mujhe " + offerName + " book karna hai.\n" +
-      "Please booking details batayein."
-    : "Charming Beauty Care - " + offerName +
-      "\nYe offer apne friends ke saath share karein!";
+/* BOOKING: opens your WhatsApp chat with offer name and image link */
+function bookOffer(offerName, imagePath) {
+  const imageUrl = getOfferImageUrl(imagePath);
+
+  const message =
+    "Hello Charming Beauty Care!%0A" +
+    "Mujhe " + encodeURIComponent(offerName) +
+    " book karna hai.%0A" +
+    "Please booking details batayein.%0A%0A" +
+    "Selected offer image: " + encodeURIComponent(imageUrl);
+
+  const whatsappUrl =
+    "https://wa.me/919826246652?text=" + message;
+
+  window.open(whatsappUrl, "_blank", "noopener");
+}
+
+/* SHARE: lets the customer share the actual poster where supported */
+async function shareOfferImage(imagePath, offerName) {
+  const imageUrl = getOfferImageUrl(imagePath);
+
+  const message =
+    "Charming Beauty Care - " + offerName +
+    "\nCheck out this beauty offer!\n" + imageUrl;
 
   try {
     const response = await fetch(imageUrl);
 
     if (!response.ok) {
-      throw new Error("Offer image nahi mili");
+      throw new Error("Offer image could not be loaded");
     }
 
     const blob = await response.blob();
+    const fileType = blob.type || "image/jpeg";
+
     const file = new File(
       [blob],
       imagePath.split("/").pop(),
-      { type: blob.type || "image/jpeg" }
+      { type: fileType }
     );
 
     if (
@@ -395,45 +417,34 @@ async function shareOfferImage(imagePath, offerName, isBooking = false) {
     ) {
       await navigator.share({
         files: [file],
-        title: isBooking
-          ? "Booking - Charming Beauty Care - " + offerName
-          : "Charming Beauty Care - " + offerName,
+        title: "Charming Beauty Care - " + offerName,
         text: message
       });
     } else {
-      const fallbackMessage =
-        message + "\nOffer image: " + imageUrl;
-
-      const whatsappUrl = isBooking
-        ? "https://wa.me/919826246652?text=" +
-          encodeURIComponent(fallbackMessage)
-        : "https://wa.me/?text=" +
-          encodeURIComponent(fallbackMessage);
-
-      window.open(whatsappUrl, "_blank", "noopener");
+      window.open(
+        "https://wa.me/?text=" + encodeURIComponent(message),
+        "_blank",
+        "noopener"
+      );
 
       alert(
-        "Is browser mein image direct attach karna supported nahi hai. " +
-        "WhatsApp message mein offer image ka link diya gaya hai."
+        "Is browser mein image ko directly share karna supported nahi hai. " +
+        "Message mein image link diya gaya hai. Poster ko download karke " +
+        "WhatsApp par manually attach kar sakte hain."
       );
     }
   } catch (error) {
     if (error.name === "AbortError") return;
 
-    const fallbackMessage =
-      message + "\nOffer image: " + imageUrl;
-
-    const whatsappUrl = isBooking
-      ? "https://wa.me/919826246652?text=" +
-        encodeURIComponent(fallbackMessage)
-      : "https://wa.me/?text=" +
-        encodeURIComponent(fallbackMessage);
-
-    window.open(whatsappUrl, "_blank", "noopener");
+    window.open(
+      "https://wa.me/?text=" + encodeURIComponent(message),
+      "_blank",
+      "noopener"
+    );
 
     alert(
-      "Image direct share nahi ho payi. WhatsApp mein message aur " +
-      "image link khulne ka prayas kiya gaya hai."
+      "Image share nahi ho payi. WhatsApp message mein image link diya gaya hai. " +
+      "Aap poster ko kholkar download karein aur manually attach karein."
     );
   }
 }
