@@ -1,4 +1,3 @@
-
 <div class="offers-grid">
 
   <article class="offer-card">
@@ -55,6 +54,15 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
+  align-items: start;
+}
+
+.offer-card {
+  padding: 12px;
+  border: 1px solid #c9a45c;
+  border-radius: 12px;
+  background: #fffdf8;
+  box-shadow: 0 4px 16px rgba(53, 13, 24, 0.10);
 }
 
 .offer-card img {
@@ -64,9 +72,41 @@
   object-fit: contain;
 }
 
+.offer-card a.whatsapp,
+.offer-card a.call {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding: 12px 8px;
+  margin-top: 10px;
+  border-radius: 7px;
+  font-weight: 600;
+}
+
+.offer-card a.whatsapp {
+  background: #5b1828;
+  color: white;
+}
+
+.offer-card a.call {
+  border: 1px solid #c9a45c;
+  color: #5b1828;
+}
+
 @media (max-width: 700px) {
   .offers-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
   }
+
+  .offer-card {
+    padding: 7px;
+  }
 }
+
+@media (max-width: 380px) {
+  .offers-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
