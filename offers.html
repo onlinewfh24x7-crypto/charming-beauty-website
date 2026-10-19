@@ -18,7 +18,6 @@
 }
 
 * { box-sizing: border-box; }
-
 html { scroll-behavior: smooth; }
 
 body {
@@ -44,7 +43,6 @@ header h1 {
 }
 
 header p { margin: 0; font-size: 15px; }
-
 nav { margin-top: 18px; }
 
 nav a {
@@ -144,16 +142,20 @@ nav a {
   cursor: pointer;
 }
 
-.whatsapp,
-.offer-buttons button.whatsapp {
+.whatsapp {
   background: var(--wine);
   color: white;
 }
 
-.whatsapp:hover,
-.offer-buttons button.whatsapp:hover {
-  background: var(--wine-dark);
+.whatsapp:hover { background: var(--wine-dark); }
+
+.share-button {
+  color: var(--wine);
+  background: var(--cream);
+  border: 1px solid var(--gold) !important;
 }
+
+.share-button:hover { background: #f5ead7; }
 
 .call {
   color: var(--wine);
@@ -250,7 +252,14 @@ footer a { color: white; }
         <img src="offer1.jpeg" alt="Charming Beauty Care Offer 1" loading="lazy">
       </a>
       <div class="offer-buttons">
-        <button class="whatsapp" type="button" onclick="shareOfferImage('offer1.jpeg','Offer 1')">Book on WhatsApp</button>
+        <button class="whatsapp" type="button"
+          onclick="bookOffer('Offer 1','offer1.jpeg')">
+          Book on WhatsApp
+        </button>
+        <button class="share-button" type="button"
+          onclick="shareOfferImage('offer1.jpeg','Offer 1')">
+          Share Offer with Friends
+        </button>
         <a class="call" href="tel:+919826246652">Call Now</a>
       </div>
     </article>
@@ -261,7 +270,14 @@ footer a { color: white; }
         <img src="offer2.jpeg" alt="Charming Beauty Care Offer 2" loading="lazy">
       </a>
       <div class="offer-buttons">
-        <button class="whatsapp" type="button" onclick="shareOfferImage('offer2.jpeg','Offer 2')">Book on WhatsApp</button>
+        <button class="whatsapp" type="button"
+          onclick="bookOffer('Offer 2','offer2.jpeg')">
+          Book on WhatsApp
+        </button>
+        <button class="share-button" type="button"
+          onclick="shareOfferImage('offer2.jpeg','Offer 2')">
+          Share Offer with Friends
+        </button>
         <a class="call" href="tel:+919826246652">Call Now</a>
       </div>
     </article>
@@ -272,7 +288,14 @@ footer a { color: white; }
         <img src="offer3.jpeg" alt="Charming Beauty Care Offer 3" loading="lazy">
       </a>
       <div class="offer-buttons">
-        <button class="whatsapp" type="button" onclick="shareOfferImage('offer3.jpeg','Offer 3')">Book on WhatsApp</button>
+        <button class="whatsapp" type="button"
+          onclick="bookOffer('Offer 3','offer3.jpeg')">
+          Book on WhatsApp
+        </button>
+        <button class="share-button" type="button"
+          onclick="shareOfferImage('offer3.jpeg','Offer 3')">
+          Share Offer with Friends
+        </button>
         <a class="call" href="tel:+919826246652">Call Now</a>
       </div>
     </article>
@@ -283,7 +306,14 @@ footer a { color: white; }
         <img src="offer4.jpeg" alt="Charming Beauty Care Offer 4" loading="lazy">
       </a>
       <div class="offer-buttons">
-        <button class="whatsapp" type="button" onclick="shareOfferImage('offer4.jpeg','Offer 4')">Book on WhatsApp</button>
+        <button class="whatsapp" type="button"
+          onclick="bookOffer('Offer 4','offer4.jpeg')">
+          Book on WhatsApp
+        </button>
+        <button class="share-button" type="button"
+          onclick="shareOfferImage('offer4.jpeg','Offer 4')">
+          Share Offer with Friends
+        </button>
         <a class="call" href="tel:+919826246652">Call Now</a>
       </div>
     </article>
@@ -294,7 +324,14 @@ footer a { color: white; }
         <img src="offer5.jpeg" alt="Charming Beauty Care Offer 5" loading="lazy">
       </a>
       <div class="offer-buttons">
-        <button class="whatsapp" type="button" onclick="shareOfferImage('offer5.jpeg','Offer 5')">Book on WhatsApp</button>
+        <button class="whatsapp" type="button"
+          onclick="bookOffer('Offer 5','offer5.jpeg')">
+          Book on WhatsApp
+        </button>
+        <button class="share-button" type="button"
+          onclick="shareOfferImage('offer5.jpeg','Offer 5')">
+          Share Offer with Friends
+        </button>
         <a class="call" href="tel:+919826246652">Call Now</a>
       </div>
     </article>
@@ -305,7 +342,14 @@ footer a { color: white; }
         <img src="offer6.jpeg" alt="Charming Beauty Care Offer 6" loading="lazy">
       </a>
       <div class="offer-buttons">
-        <button class="whatsapp" type="button" onclick="shareOfferImage('offer6.jpeg','Offer 6')">Book on WhatsApp</button>
+        <button class="whatsapp" type="button"
+          onclick="bookOffer('Offer 6','offer6.jpeg')">
+          Book on WhatsApp
+        </button>
+        <button class="share-button" type="button"
+          onclick="shareOfferImage('offer6.jpeg','Offer 6')">
+          Share Offer with Friends
+        </button>
         <a class="call" href="tel:+919826246652">Call Now</a>
       </div>
     </article>
@@ -321,34 +365,48 @@ footer a { color: white; }
 </footer>
 
 <script>
-async function shareOfferImage(imagePath, offerName) {
-  const imageUrl = new URL(imagePath, window.location.href).href;
+function getOfferImageUrl(imagePath) {
+  return new URL(imagePath, window.location.href).href;
+}
+
+/* BOOKING: opens your WhatsApp chat with offer name and image link */
+function bookOffer(offerName, imagePath) {
+  const imageUrl = getOfferImageUrl(imagePath);
 
   const message =
-    "Hello Charming Beauty Care, mujhe " +
-    offerName +
-    " book karna hai. Please details batayein.\n\nOffer image: " +
-    imageUrl;
+    "Hello Charming Beauty Care!%0A" +
+    "Mujhe " + encodeURIComponent(offerName) +
+    " book karna hai.%0A" +
+    "Please booking details batayein.%0A%0A" +
+    "Selected offer image: " + encodeURIComponent(imageUrl);
 
   const whatsappUrl =
-    "https://wa.me/919826246652?text=" +
-    encodeURIComponent(message);
+    "https://wa.me/919826246652?text=" + message;
+
+  window.open(whatsappUrl, "_blank", "noopener");
+}
+
+/* SHARE: lets the customer share the actual poster where supported */
+async function shareOfferImage(imagePath, offerName) {
+  const imageUrl = getOfferImageUrl(imagePath);
+
+  const message =
+    "Charming Beauty Care - " + offerName +
+    "\nCheck out this beauty offer!\n" + imageUrl;
 
   try {
     const response = await fetch(imageUrl);
 
     if (!response.ok) {
-      throw new Error("Offer image nahi mili");
+      throw new Error("Offer image could not be loaded");
     }
 
     const blob = await response.blob();
-
     const fileType = blob.type || "image/jpeg";
-    const fileName = imagePath.split("/").pop();
 
     const file = new File(
       [blob],
-      fileName,
+      imagePath.split("/").pop(),
       { type: fileType }
     );
 
@@ -363,24 +421,30 @@ async function shareOfferImage(imagePath, offerName) {
         text: message
       });
     } else {
-      window.open(whatsappUrl, "_blank", "noopener");
+      window.open(
+        "https://wa.me/?text=" + encodeURIComponent(message),
+        "_blank",
+        "noopener"
+      );
+
       alert(
-        "Is browser mein image direct share support nahi hai. " +
-        "WhatsApp message mein offer image ka link diya gaya hai. " +
-        "Image attach karne ke liye use download karke manually attach karein."
+        "Is browser mein image ko directly share karna supported nahi hai. " +
+        "Message mein image link diya gaya hai. Poster ko download karke " +
+        "WhatsApp par manually attach kar sakte hain."
       );
     }
   } catch (error) {
-    if (error.name === "AbortError") {
-      return;
-    }
+    if (error.name === "AbortError") return;
 
-    window.open(whatsappUrl, "_blank", "noopener");
+    window.open(
+      "https://wa.me/?text=" + encodeURIComponent(message),
+      "_blank",
+      "noopener"
+    );
 
     alert(
-      "Image direct share nahi ho payi. WhatsApp message mein " +
-      "offer image ka link diya gaya hai. Agar image na khule, " +
-      "to website se poster download karke attach karein."
+      "Image share nahi ho payi. WhatsApp message mein image link diya gaya hai. " +
+      "Aap poster ko kholkar download karein aur manually attach karein."
     );
   }
 }
