@@ -346,6 +346,58 @@ footer a {
   <p>Call: <a href="tel:+919826246652">98262 46652</a></p>
   <p>&copy; 2026 Charming Beauty Care. All Rights Reserved.</p>
 </footer>
+<script>
+async function shareOfferImage(imagePath, offerName) {
+  const message =
+    "Hello Charming Beauty Care, mujhe " +
+    offerName +
+    " book karna hai. Please details batayein.";
 
+  try {
+    const response = await fetch(imagePath);
+
+    if (!response.ok) {
+      throw new Error("Image nahi mili");
+    }
+
+    const blob = await response.blob();
+    const file = new File(
+      [blob],
+      imagePath.split("/").pop(),
+      { type: blob.type || "image/jpeg" }
+    );
+
+    if (
+      navigator.share &&
+      navigator.canShare &&
+      navigator.canShare({ files: [file] })
+    ) {
+      await navigator.share({
+        files: [file],
+        title: "Charming Beauty Care - " + offerName,
+        text: message
+      });
+    } else {
+      window.open(
+        "https://wa.me/919826246652?text=" +
+        encodeURIComponent(message),
+        "_blank"
+      );
+
+      alert(
+        "WhatsApp khulne ke baad offer image ko " +
+        "manually attach karna hoga."
+      );
+    }
+  } catch (error) {
+    if (error.name !== "AbortError") {
+      alert(
+        "Image share nahi ho payi. Kripya image ka naam " +
+        "aur internet connection check karein."
+      );
+    }
+  }
+}
+</script>
 </body>
 </html>
